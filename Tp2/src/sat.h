@@ -1,6 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include "filaClau.h"
 
 void print_binary(int n, int leng);
 void semPreconceito();
