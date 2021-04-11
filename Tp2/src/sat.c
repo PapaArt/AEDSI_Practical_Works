@@ -77,12 +77,4 @@ void geraclauses(int (*mat)[40], int C, int N)
 		printf("Escolhas: %d %d %d\n", randomic1, randomic2, randomic3);
 		printf("Negacao: %d %d %d\n", test1, test2, test3);
 	}
-	percorrer(mat, N, 2, N, C);
-	//printa tabela geral
-	for(i=0; i<C; i++){
-		for(j=0; j<N; j++){
-			printf("%d",mat[i][j]);
-
-		}printf("\n");
-	}
 }
