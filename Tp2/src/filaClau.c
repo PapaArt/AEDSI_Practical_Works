@@ -2,8 +2,9 @@
 
 void FFVazia(TFila *pFila)
 {
-    pFila->pFrente = 0;
+    pFila->pFrente = (Apontador)malloc(sizeof(TCelula));
     pFila->pTras = pFila->pFrente;
+    pFila->pFrente->pProx = NULL;
 } /* FFVazia */
 
 int FEhVazia(TFila *pFila)
@@ -13,13 +14,26 @@ int FEhVazia(TFila *pFila)
 
 int FEnfileira(TFila *pFila, TItem *pItem)
 {
-    if (((pFila->pTras + 1) % (MaxTam + 1)) == pFila->pFrente)
-        return 0; /* fila cheia */
-    pFila->vItem[pFila->pTras] = *pItem;
-    pFila->pTras = (pFila->pTras + 1) % (MaxTam + 1);
-    /*
- if (pFila->iTras == MaxTam) pFila->iTras = 0;
- else pFila->iTras++;
-*/
+    Apontador pNovo;
+    pNovo = (Apontador)malloc(sizeof(TCelula));
+    if (pNovo == NULL) return 0;
+
+    pFila->pTras->pProx = pNovo;
+    pFila->pTras = pNovo;
+    pNovo->item = *pItem;
+    pNovo->pProx = NULL;
     return 1;
 } /* FEnfileira */
+
+int fDesenfileira(TFila* pFila, TItem* pItem)
+{
+    Apontador pAux;
+    if (FEhVazia(pFila)) return 0;
+
+    pAux = pFila->pFrente;
+    pFila->pFrente = pFila->pFrente->pProx;
+    *pItem = pFila->pFrente->item;
+    free(pAux);
+
+    return 1;
+}

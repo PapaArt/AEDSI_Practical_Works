@@ -4,11 +4,11 @@
 #include<time.h>
 #ifndef FILACLAU_H
 #define FILACLAU_H
-#define MaxTam 1000
 
-//typedef int TChave;
+
+typedef int TChave;
 typedef struct TItem{
-    //TChave chave;
+    TChave chave;
     int linha;
     int coluna;
     int valor;
@@ -24,7 +24,6 @@ typedef struct Celula{
 // tem como principal função "encapsular" o item, e gerar o apontador pro proximo item.
 
 typedef struct TFila{
-    TItem vItem[MaxTam+1];
     Apontador pFrente;
     Apontador pTras;
 }TFila; 
