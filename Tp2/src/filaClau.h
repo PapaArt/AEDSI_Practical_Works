@@ -10,7 +10,7 @@ typedef struct TItem{
     //TChave chave;
     int linha;
     int coluna;
-    int valor
+    int valor;
 }TItem; 
 // é o item da lista, por exemplo: o item m[i][j] da matriz. Ou seja, deve conter o conteúdo.
 // No exemplo acima (mat[i][j]) o conteúdo seria : linha, coluna e o valor da posição.
@@ -30,5 +30,11 @@ typedef struct TFila{
 
 // entretando, se apenas utilizarmos essa lista não poderemos obeter a matriz completa
 // precisaremos de uma lista de lista pra realizar esse processo
+
+void FFVazia(TFila* pFila);
+void FFVazia(TFila* pFila);
+int FEnfileira(TFila* pFila, TItem* pItem);
+int FDesenfileira(TFila* pFila, TItem* pItem);
+
 
 #endif
