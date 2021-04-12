@@ -7,7 +7,7 @@
 #define MATCLAU_H
 
 typedef struct Clauses{
-    TFila fila;
+    TLista fila;
     int linha;
 }Clauses; 
 
@@ -17,14 +17,14 @@ typedef struct CelClauses{
     struct CelClauses* pProx;
 }TCelClauses;
 
-typedef struct TFilaClauses{
+typedef struct TListaClauses{
     Apontador pFrente;
     Apontador pTras;
-}TFilaClauses; 
+}TlistaClauses; 
 
-void FCVazia(TFilaClauses* pFilaClauses);
-void FCVazia(TFilaClauses* pFilaClauses);
-int CEnfileira(TFilaClauses* pFilaClauses, Clauses* clauses);
-int CDesenfileira(TFilaClauses* pFilaClauses, Clauses* clauses);
+void FCVazia(TListaClauses* pListaClauses);
+void FCVazia(TListaClauses* pListaClauses);
+int CEnfileira(TListaClauses* pListaClauses, Clauses* clauses);
+int CDesenfileira(TListaClauses* pListaClauses, Clauses* clauses);
 
 #endif
