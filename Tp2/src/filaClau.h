@@ -18,26 +18,20 @@ typedef struct TItem{
 
 typedef struct Celula* Apontador;
 typedef struct Celula{
-    TItem Item;
+    TItem item;
     struct Celula* pProx;
 }TCelula;
 // tem como principal função "encapsular" o item, e gerar o apontador pro proximo item.
 
-typedef struct{
-    Apontador pPrimeiro;
-    Apontador pUltimo;
-}TLista; 
-// gera os identificadores da lista.
+typedef struct TFila{
+    TItem vItem[MaxTam+1];
+    Apontador pFrente;
+    Apontador pTras;
+}TFila; 
 
-// entretando, se apenas utilizarmos essa lista não poderemos obeter a matriz completa
-// precisaremos de uma lista de lista pra realizar esse processo
-
-void FLVazia(TLista* pLista);
-int LEhVazia(TLista* pLista);
-int LInsere(TLista* pLista, TItem *pItem);
-int LRetira(TLista* pLista, TItem *pItem); // n será necessário
-void LImprime(TLista* pLista);
-
-
+void FFVazia(TFila* pFila);
+int FEhVazia(TFila* pFila);
+int FEnfileira(TFila* pFila,TItem* pItem);
+int FDesenfileira(TFila* pFila,TItem* pItem);
 
 #endif
