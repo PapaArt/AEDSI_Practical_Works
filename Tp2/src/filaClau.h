@@ -4,6 +4,7 @@
 #include<time.h>
 #ifndef FILACLAU_H
 #define FILACLAU_H
+#define MaxTam 1000
 
 //typedef int TChave;
 typedef struct TItem{
