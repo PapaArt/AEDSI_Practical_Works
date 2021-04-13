@@ -1,7 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <time.h>
 #include "filaClau.h"
 #ifndef MATCLAU_H
 #define MATCLAU_H
@@ -25,9 +21,9 @@ typedef struct TListaClauses
     Apontador pTras;
 } TlistaClauses;
 
-void FCVazia(TListaClauses *pListaClauses);
-void FCVazia(TListaClauses *pListaClauses);
-int CEnfileira(TListaClauses *pListaClauses, Clauses *clauses);
-int CDesenfileira(TListaClauses *pListaClauses, Clauses *clauses);
+void FCVazia(TlistaClauses *pListaClauses);
+void FCVazia(TlistaClauses *pListaClauses);
+int CEnfileira(TlistaClauses *pListaClauses, Clauses *clauses);
+int CDesenfileira(TlistaClauses *pListaClauses, Clauses *clauses);
 
 #endif
