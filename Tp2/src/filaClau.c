@@ -36,17 +36,25 @@ int FEnfileira(TFila *pFila, TItem *pItem, int coluna)
 
 } /* FEnfileira */
 
-void percorrer(TFila *pFila, int N, int C, int coluna)
+void valorRand(TFila *pFila, int N, int C, int coluna)
 {
-    TFila* aux;
+    TFila *aux;
     aux = pFila->pFrente;
-    for (int i = 0; i < N; i++){
-        if((aux->pFrente->item.coluna) == coluna){
-            
+    int valor;
+    while ((aux->pFrente->item.coluna) != coluna)
+    {
+        aux = aux->pFrente->pProx;
+    }
+    if ((aux->pFrente->item.coluna) != coluna)
+    {
+        valor = rand() % 3;
+        if (valor == 0)
+        {
+            valor++;
         }
+        aux->pFrente->item.valor = valor;
     }
 }
-
 //criar "percorrer" antes de adaptar a função abaixo
 void geraclauses(int (*mat)[50], int N)
 {
@@ -70,21 +78,21 @@ void geraclauses(int (*mat)[50], int N)
         int test3 = 0;
 
         randomic1 = rand() % N;
-        test1 = rand() % 3;
-        if (test1 == 0)
-        {
-            test1++;
-        }
+        // test1 = rand() % 3;
+        // if (test1 == 0)
+        // {
+        //     test1++;
+        // }
         mat[i][randomic1] = test1;
 
         randomic2 = rand() % N;
 
-        test2 = rand() % 3;
+        // test2 = rand() % 3;
 
-        if (test2 == 0)
-        {
-            test2++;
-        }
+        // if (test2 == 0)
+        // {
+        //     test2++;
+        // }
         while (randomic2 == randomic1)
         {
             randomic2 = rand() % N;
@@ -94,11 +102,11 @@ void geraclauses(int (*mat)[50], int N)
 
         randomic3 = rand() % N;
 
-        test3 = rand() % 3;
-        if (test3 == 0)
-        {
-            test3++;
-        }
+        // test3 = rand() % 3;
+        // if (test3 == 0)
+        // {
+        //     test3++;
+        // }
 
         while (randomic3 == randomic2 || randomic3 == randomic1)
         {
@@ -106,7 +114,7 @@ void geraclauses(int (*mat)[50], int N)
         }
         mat[i][randomic3] = test3;
     }
-    percorrer(mat, N, 2, N, C);
+    //percorrer(mat, N, 2, N, C);
     //printa tabela geral
     // for(i=0; i<C; i++){
     // 	for(j=0; j<N; j++){
