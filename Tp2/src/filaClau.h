@@ -28,9 +28,11 @@ typedef struct TFila{
     Apontador pTras;
 }TFila; 
 
+void inicializaValor(TItem* item, int linha, int coluna, int valor);
 void FFVazia(TFila* pFila);
 int FEhVazia(TFila* pFila);
-int FEnfileira(TFila* pFila,TItem* pItem);
+int FEnfileira(TFila *pFila, TItem *pItem, int coluna);
+void geraclauses(int (*mat)[50], int N);
 int FDesenfileira(TFila* pFila,TItem* pItem);
 
 #endif
