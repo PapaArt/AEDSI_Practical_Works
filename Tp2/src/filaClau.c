@@ -55,7 +55,7 @@ void valorRand(TFila *pFila, int N, int C, int coluna)
         aux->pFrente->item.valor = valor;
     }
 }
-//criar "percorrer" antes de adaptar a função abaixo
+
 void geraclauses(int (*mat)[50], int N)
 {
     TFila* pFila;
