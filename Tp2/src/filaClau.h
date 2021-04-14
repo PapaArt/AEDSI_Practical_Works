@@ -10,7 +10,7 @@ typedef struct TItem
 {
     TChave chave;
     long long int linha;
-    int coluna;
+    int coluna[3];
     int valor;
 }TItem; 
 // Item da lista, por exemplo: o item m[i][j] da matriz. Ou seja, deve conter o conteúdo.
@@ -33,9 +33,9 @@ typedef struct TFila
 void inicializaValor(TItem *item, int linha, int coluna, int valor);
 void FFVazia(TFila *pFila);
 int FEhVazia(TFila *pFila);
-int FEnfileira(TFila *pFila, TItem *pItem, int coluna);
+int FEnfileira(TFila *pFila, TItem *pItem);
 void valorRand(TFila *pFila, int N, int C, int coluna);
-void geraclauses(int (*mat)[50], int N);
+void geraclauses(TCelula* pCell, int (*mat)[50], int N);
 int FDesenfileira(TFila *pFila, TItem *pItem);
 
 #endif

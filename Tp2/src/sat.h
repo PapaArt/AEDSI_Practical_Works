@@ -2,8 +2,7 @@
 
 void semPreconceito();
 void truthTable(int n, int leng);
-//void geraclauses(TFila* pFila, int C, int N);
 //void verifica(TItem* pItem);
-void verifica(TFila* pFila);
+int verifica(TFila* pFila);
 void percorre(TItem* pItem);
 void printaLinha();

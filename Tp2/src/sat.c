@@ -21,18 +21,7 @@ void truthTable(int n, int leng)
     printf("\n");
 }
 
-/* void geraclauses(TFila* pFila, int C, int N)
-{
-	int col1, col2, col3, pos1, pos2, pos3;
-	int i,j;
-
-	FFVazia(pFila);
-
-	
-}
-*/
-
-void verifica(TFila* pFila)
+int verifica(TFila* pFila)
 {
 	Apontador iter;
 	int flag;
