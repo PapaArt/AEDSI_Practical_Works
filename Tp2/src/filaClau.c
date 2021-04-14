@@ -1,12 +1,13 @@
 #include "filaClau.h"
 
-// void inicializaValor(TItem *item, int linha, int coluna, int valor)
-// {
-
-//     item->coluna = coluna;
-//     item->linha = linha;
-//     item->valor = valor;
-// }
+void inicializaValor(TItem *item, int linha, int coluna, int valor)
+{
+    item->coluna[0] = coluna;
+    item->coluna[1] = coluna;
+    item->coluna[2] = coluna;
+    item->linha = linha;
+    item->valor = valor;
+}
 
 void FFVazia(TFila *pFila)
 {
