@@ -21,7 +21,7 @@ void truthTable(int n, int leng)
     printf("\n");
 }
 
-void geraclauses(TFila* pFila, int C, int N)
+/* void geraclauses(TFila* pFila, int C, int N)
 {
 	int col1, col2, col3, pos1, pos2, pos3;
 	int i,j;
@@ -29,6 +29,26 @@ void geraclauses(TFila* pFila, int C, int N)
 	FFVazia(pFila);
 
 	
+}
+*/
+
+void verifica(TFila* pFila)
+{
+	Apontador iter;
+	int flag;
+
+	iter = pFila->pFrente;
+	flag = 0;
+
+	while (iter != pFila->pTras)
+	{
+		if (iter->item.valor == 2)
+		 		{
+					flag = 1;
+				}		
+		iter = iter->pProx;	
+	}
+	return flag;
 }
 
 void percorre(TItem* pItem)
