@@ -45,7 +45,7 @@ void valorRand(TFila *pFila, int N, int C, int coluna)
     {
         aux = aux->pFrente->pProx;
     }
-    if ((aux->pFrente->item.coluna) != coluna)
+    if ((aux->pFrente->item.coluna) == coluna)
     {
         valor = rand() % 3;
         if (valor == 0)
@@ -58,7 +58,7 @@ void valorRand(TFila *pFila, int N, int C, int coluna)
 //criar "percorrer" antes de adaptar a função abaixo
 void geraclauses(int (*mat)[50], int N)
 {
-
+    TFila* pFila;
     int C;
     int randomic1, randomic2, randomic3, test1, test2, test3;
     int i, j;
@@ -78,50 +78,23 @@ void geraclauses(int (*mat)[50], int N)
         int test3 = 0;
 
         randomic1 = rand() % N;
-        // test1 = rand() % 3;
-        // if (test1 == 0)
-        // {
-        //     test1++;
-        // }
-        mat[i][randomic1] = test1;
-
+        valorRand(pFila,N,C,randomic1);
+        
         randomic2 = rand() % N;
-
-        // test2 = rand() % 3;
-
-        // if (test2 == 0)
-        // {
-        //     test2++;
-        // }
         while (randomic2 == randomic1)
         {
             randomic2 = rand() % N;
         }
-
-        mat[i][randomic2] = test2;
+        valorRand(pFila,N,C,randomic2);
 
         randomic3 = rand() % N;
-
-        // test3 = rand() % 3;
-        // if (test3 == 0)
-        // {
-        //     test3++;
-        // }
-
         while (randomic3 == randomic2 || randomic3 == randomic1)
         {
             randomic3 = rand() % N;
         }
-        mat[i][randomic3] = test3;
-    }
-    //percorrer(mat, N, 2, N, C);
-    //printa tabela geral
-    // for(i=0; i<C; i++){
-    // 	for(j=0; j<N; j++){
-    // 		printf("%d",mat[i][j]);
+        valorRand(pFila,N,C,randomic1);
 
-    // 	}printf("\n");
-    // }
+    }
 }
 
 int fDesenfileira(TFila *pFila, TItem *pItem)
