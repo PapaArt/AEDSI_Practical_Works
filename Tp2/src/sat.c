@@ -32,7 +32,7 @@ void truthTable(int n, int leng)
 }
 */
 
-void verifica(TFila* pFila)
+int verifica(TFila* pFila)
 {
 	Apontador iter;
 	int flag;
