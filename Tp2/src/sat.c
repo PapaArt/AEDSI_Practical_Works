@@ -21,18 +21,7 @@ void truthTable(int n, int leng)
     printf("\n");
 }
 
-/* void geraclauses(TFila* pFila, int C, int N)
-{
-	int col1, col2, col3, pos1, pos2, pos3;
-	int i,j;
-
-	FFVazia(pFila);
-
-	
-}
-*/
-
-void verifica(TFila* pFila)
+int verifica(TFila* pFila)
 {
 	Apontador iter;
 	int flag;
@@ -43,15 +32,26 @@ void verifica(TFila* pFila)
 	while (iter != pFila->pTras)
 	{
 		if (iter->item.valor == 2)
-		 		{
-					flag = 1;
-				}		
+		{
+			flag = 1;
+		}		
 		iter = iter->pProx;	
 	}
 	return flag;
 }
 
-void percorre(TItem* pItem)
+void percorre(TCelula* pCell, int (*mat)[50], int C, int N)
 {
-
+	int i, j, aux = 0;
+	for (i = 0; i < C; i++)
+	{
+		for (j = 0; j < N; j++)
+		{
+			if (mat[i][j] != 0)
+			{
+				pCell->item.posicao[aux] = j;
+				aux++;
+			}			
+		}
+	}
 }

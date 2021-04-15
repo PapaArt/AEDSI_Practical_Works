@@ -1,9 +1,12 @@
 #include "filaClau.h"
+#ifndef SAT_H
+#define SAT_H
 
 void semPreconceito();
 void truthTable(int n, int leng);
-//void geraclauses(TFila* pFila, int C, int N);
 //void verifica(TItem* pItem);
-void verifica(TFila* pFila);
-void percorre(TItem* pItem);
+int verifica(TFila* pFila);
+void percorre(TCelula* pCell, int (*mat)[50], int C, int N);
 void printaLinha();
+
+#endif 

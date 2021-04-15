@@ -1,11 +1,16 @@
-#include "filaClau.h"
+#include "sat.h"
 
-void inicializaValor(TItem *item, int linha, int coluna, int valor)
+void inicializaValor(TItem *item, int linha, int coluna, int valor, int posicao)
 {
-
-    item->coluna = coluna;
+    item->coluna[0] = coluna;
+    item->coluna[1] = coluna;
+    item->coluna[2] = coluna;
     item->linha = linha;
     item->valor = valor;
+    for (int i = 0; i < 40; i++)
+    {
+        item->posicao[i] = posicao;
+    }
 }
 
 void FFVazia(TFila *pFila)
@@ -20,7 +25,7 @@ int FEhVazia(TFila *pFila)
     return (pFila->pFrente == pFila->pTras);
 } /* FEhVazia */
 
-int FEnfileira(TFila *pFila, TItem *pItem, int coluna)
+int FEnfileira(TFila *pFila, TItem *pItem)
 {
     Apontador pNovo;
     pNovo = (Apontador)malloc(sizeof(TCelula));
@@ -30,35 +35,14 @@ int FEnfileira(TFila *pFila, TItem *pItem, int coluna)
     pFila->pTras->pProx = pNovo;
     pFila->pTras = pNovo;
     pNovo->item = *pItem;
-    pNovo->item.coluna = coluna;
     pNovo->pProx = NULL;
     return 1;
 
 } /* FEnfileira */
 
-// void valorRand(TFila *pFila, int N, int C, int coluna)
-// {
-//     // TFila *aux;
-//     // aux = pFila->pFrente;
-//     // int valor;
-//     // while ((aux->pFrente->item.coluna) != coluna)
-//     // {
-//     //     aux = aux->pFrente->pProx;
-//     // }
-//     // if ((aux->pFrente->item.coluna) == coluna)
-//     // {
-//     //     valor = rand() % 3;
-//     //     if (valor == 0)
-//     //     {
-//     //         valor++;
-//     //     }
-//     //     aux->pFrente->item.valor = valor;
-//     // }
-// }
-
-void geraclauses(int (*mat)[50], int N)
+//criar "percorrer" antes de adaptar a função abaixo
+void geraclauses(TCelula* pCell, int (*mat)[50], int N)
 {
-    //TFila* pFila;
     int C;
     int randomic1, randomic2, randomic3;
     int i, j;
@@ -73,31 +57,56 @@ void geraclauses(int (*mat)[50], int N)
     srand(time(0));
     for (i = 0; i < C; i++)
     {
+        pCell->item.coluna[0] = 0;
+        pCell->item.coluna[1] = 0;
+        pCell->item.coluna[2] = 0;
 
         randomic1 = rand() % N;
-        printf("Randomic 1 : %d \n",randomic1);
-        //valorRand(pFila,N,C,randomic1);
-        
+        pCell->item.coluna[0] = rand() % 3;
+        if (pCell->item.coluna[0] == 0)
+        {
+            pCell->item.coluna[0]++;
+        }
+        mat[i][randomic1] = pCell->item.coluna[0];
+
         randomic2 = rand() % N;
+        pCell->item.coluna[1] = rand() % 3;
+        if (pCell->item.coluna[1] == 0)
+        {
+            pCell->item.coluna[1]++;
+        }
+
         while (randomic2 == randomic1)
         {
             randomic2 = rand() % N;
             printf("Randomic 2 : %d \n",randomic2);
         }
-        //valorRand(pFila,N,C,randomic2);
+        mat[i][randomic2] = pCell->item.coluna[1];
 
         randomic3 = rand() % N;
+        pCell->item.coluna[0] = rand() % 3;
+        if (pCell->item.coluna[2] == 0)
+        {
+            pCell->item.coluna[2]++;
+        }
+
         while (randomic3 == randomic2 || randomic3 == randomic1)
         {
             randomic3 = rand() % N;
             printf("Randomic 3 : %d \n",randomic3);
         }
-        //valorRand(pFila,N,C,randomic1);
-
+        mat[i][randomic3] = pCell->item.coluna[2];
+        // printf("%d %d %d\n", pCell->item.coluna[0], pCell->item.coluna[1], pCell->item.coluna[2]);
     }
+    for(i=0; i<C; i++){
+		for(j=0; j<N; j++){
+			printf("%d",mat[i][j]);
+		}printf("\n");
+    }
+    percorre(pCell, mat, C, N);
 }
 
-int fDesenfileira(TFila *pFila, TItem *pItem)
+int FDesenfileira(TFila *pFila, TItem *pItem)
 {
     Apontador pAux;
     if (FEhVazia(pFila))
