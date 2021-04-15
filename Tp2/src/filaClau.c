@@ -7,7 +7,7 @@ void inicializaValor(TItem *item, int linha, int coluna, int valor, int posicao)
     item->coluna[2] = coluna;
     item->linha = linha;
     item->valor = valor;
-    for (int i = 0; i < 40; i++)
+    for (int i = 0; i < 50; i++)
     {
         item->posicao[i] = posicao;
     }
