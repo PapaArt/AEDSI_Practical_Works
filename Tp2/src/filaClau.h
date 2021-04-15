@@ -34,9 +34,9 @@ typedef struct TFila
 void inicializaValor(TItem *item, int linha, int coluna, int valor, int posicao);
 void FFVazia(TFila *pFila);
 int FEhVazia(TFila *pFila);
-int FEnfileira(TFila *pFila, TItem *pItem, int coluna);
+int FEnfileira(TFila *pFila, TItem *pItem/*, int coluna*/);
 //void valorRand(TFila *pFila, int N, int C, int coluna);
-void geraclauses(int (*mat)[50], int N);
+void geraclauses(TCelula* pCell, int (*mat)[50], int N);
 int FDesenfileira(TFila *pFila, TItem *pItem);
 
 #endif
