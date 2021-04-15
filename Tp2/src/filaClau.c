@@ -1,12 +1,16 @@
-#include "filaClau.h"
+#include "sat.h"
 
-void inicializaValor(TItem *item, int linha, int coluna, int valor)
+void inicializaValor(TItem *item, int linha, int coluna, int valor, int posicao)
 {
     item->coluna[0] = coluna;
     item->coluna[1] = coluna;
     item->coluna[2] = coluna;
     item->linha = linha;
     item->valor = valor;
+    for (int i = 0; i < 40; i++)
+    {
+        item->posicao[i] = posicao;
+    }
 }
 
 void FFVazia(TFila *pFila)
@@ -89,13 +93,15 @@ void geraclauses(TCelula* pCell, int (*mat)[50], int N)
         {
             randomic3 = rand() % N;
         }
-        mat[i][randomic3] = pCell->item.coluna[2];        
+        mat[i][randomic3] = pCell->item.coluna[2];
+        // printf("%d %d %d\n", pCell->item.coluna[0], pCell->item.coluna[1], pCell->item.coluna[2]);
     }
     for(i=0; i<C; i++){
 		for(j=0; j<N; j++){
 			printf("%d",mat[i][j]);
 		}printf("\n");
     }
+    percorre(pCell, mat, C, N);
 }
 
 int FDesenfileira(TFila *pFila, TItem *pItem)

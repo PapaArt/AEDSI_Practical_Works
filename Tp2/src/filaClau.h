@@ -12,6 +12,7 @@ typedef struct TItem
     long long int linha;
     int coluna[3];
     int valor;
+    int posicao[50];
 }TItem; 
 // Item da lista, por exemplo: o item m[i][j] da matriz. Ou seja, deve conter o conteúdo.
 // No exemplo acima (mat[i][j]) o conteúdo seria : linha, coluna e o valor da posição.
@@ -30,11 +31,10 @@ typedef struct TFila
     Apontador pTras;
 } TFila;
 
-void inicializaValor(TItem *item, int linha, int coluna, int valor);
+void inicializaValor(TItem *item, int linha, int coluna, int valor, int posicao);
 void FFVazia(TFila *pFila);
 int FEhVazia(TFila *pFila);
 int FEnfileira(TFila *pFila, TItem *pItem);
-void valorRand(TFila *pFila, int N, int C, int coluna);
 void geraclauses(TCelula* pCell, int (*mat)[50], int N);
 int FDesenfileira(TFila *pFila, TItem *pItem);
 
