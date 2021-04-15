@@ -36,31 +36,31 @@ int FEnfileira(TFila *pFila, TItem *pItem, int coluna)
 
 } /* FEnfileira */
 
-void valorRand(TFila *pFila, int N, int C, int coluna)
-{
-    TFila *aux;
-    aux = pFila->pFrente;
-    int valor;
-    while ((aux->pFrente->item.coluna) != coluna)
-    {
-        aux = aux->pFrente->pProx;
-    }
-    if ((aux->pFrente->item.coluna) == coluna)
-    {
-        valor = rand() % 3;
-        if (valor == 0)
-        {
-            valor++;
-        }
-        aux->pFrente->item.valor = valor;
-    }
-}
+// void valorRand(TFila *pFila, int N, int C, int coluna)
+// {
+//     // TFila *aux;
+//     // aux = pFila->pFrente;
+//     // int valor;
+//     // while ((aux->pFrente->item.coluna) != coluna)
+//     // {
+//     //     aux = aux->pFrente->pProx;
+//     // }
+//     // if ((aux->pFrente->item.coluna) == coluna)
+//     // {
+//     //     valor = rand() % 3;
+//     //     if (valor == 0)
+//     //     {
+//     //         valor++;
+//     //     }
+//     //     aux->pFrente->item.valor = valor;
+//     // }
+// }
 
 void geraclauses(int (*mat)[50], int N)
 {
-    TFila* pFila;
+    //TFila* pFila;
     int C;
-    int randomic1, randomic2, randomic3, test1, test2, test3;
+    int randomic1, randomic2, randomic3;
     int i, j;
     C = (N / 3) * 2;
 
@@ -73,26 +73,26 @@ void geraclauses(int (*mat)[50], int N)
     srand(time(0));
     for (i = 0; i < C; i++)
     {
-        int test1 = 0;
-        int test2 = 0;
-        int test3 = 0;
 
         randomic1 = rand() % N;
-        valorRand(pFila,N,C,randomic1);
+        printf("Randomic 1 : %d \n",randomic1);
+        //valorRand(pFila,N,C,randomic1);
         
         randomic2 = rand() % N;
         while (randomic2 == randomic1)
         {
             randomic2 = rand() % N;
+            printf("Randomic 2 : %d \n",randomic2);
         }
-        valorRand(pFila,N,C,randomic2);
+        //valorRand(pFila,N,C,randomic2);
 
         randomic3 = rand() % N;
         while (randomic3 == randomic2 || randomic3 == randomic1)
         {
             randomic3 = rand() % N;
+            printf("Randomic 3 : %d \n",randomic3);
         }
-        valorRand(pFila,N,C,randomic1);
+        //valorRand(pFila,N,C,randomic1);
 
     }
 }
