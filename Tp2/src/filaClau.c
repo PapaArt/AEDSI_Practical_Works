@@ -7,7 +7,7 @@ void inicializaValor(TItem *item, int linha, int coluna, int valor, int posicao)
     item->coluna[2] = coluna;
     item->linha = linha;
     item->valor = valor;
-    for (int i = 0; i < 40; i++)
+    for (int i = 0; i < 50; i++)
     {
         item->posicao[i] = posicao;
     }
@@ -79,7 +79,6 @@ void geraclauses(TCelula* pCell, int (*mat)[50], int N)
         while (randomic2 == randomic1)
         {
             randomic2 = rand() % N;
-            printf("Randomic 2 : %d \n",randomic2);
         }
         mat[i][randomic2] = pCell->item.coluna[1];
 
@@ -93,7 +92,6 @@ void geraclauses(TCelula* pCell, int (*mat)[50], int N)
         while (randomic3 == randomic2 || randomic3 == randomic1)
         {
             randomic3 = rand() % N;
-            printf("Randomic 3 : %d \n",randomic3);
         }
         mat[i][randomic3] = pCell->item.coluna[2];
         // printf("%d %d %d\n", pCell->item.coluna[0], pCell->item.coluna[1], pCell->item.coluna[2]);
