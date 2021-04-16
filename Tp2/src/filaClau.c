@@ -40,9 +40,12 @@ int FEnfileira(TFila *pFila, TItem *pItem)
 
 } /* FEnfileira */
 
+
+
 //criar "percorrer" antes de adaptar a função abaixo
 void geraclauses(TCelula* pCell, int (*mat)[50], int N)
 {
+    printf("teste 1 \n");
     int C;
     int randomic1, randomic2, randomic3;
     int i, j;
@@ -53,14 +56,16 @@ void geraclauses(TCelula* pCell, int (*mat)[50], int N)
         for (j = 0; j < N; j++)
             mat[i][j] = 0;
     }
-
+    printf("teste 2 \n");
     srand(time(0));
+    
     for (i = 0; i < C; i++)
     {
+        printf("teste 3 \n");
         pCell->item.coluna[0] = 0;
-        pCell->item.coluna[1] = 0;
-        pCell->item.coluna[2] = 0;
-
+        // pCell->item.coluna[1] = 0;
+        // pCell->item.coluna[2] = 0;
+        printf("teste 4 \n");
         randomic1 = rand() % N;
         pCell->item.coluna[0] = rand() % 3;
         if (pCell->item.coluna[0] == 0)
