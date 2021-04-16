@@ -7,6 +7,7 @@ void verificaNaTabela(TItem* pItem, int N){
 }
 void imprimeItem(TItem* pItem, int N)
 {
+    printf("\nClausula: \n");
     //printf("%d %d %d\n", pItem->posicao1, pItem->posicao2, pItem->posicao3);
     printf("%d %d %d\n", pItem->valor1, pItem->valor2, pItem->valor3);
     verificaNaTabela(pItem, N);
