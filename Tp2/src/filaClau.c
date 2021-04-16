@@ -92,12 +92,6 @@ void geraclauses(TipoLista lista1, int (*mat)[50], int N)
         registro1.valor3 = test3;
         Insere(registro1, &lista1);
     }
-    // for(i=0; i<C; i++){
-	// 	for(j=0; j<N; j++){
-	// 		printf("%d",mat[i][j]);
-	// 	}printf("\n");
-    // }
     printf("Imprimindo a lista...\n");
-    // imprimeFila(pFila);
     Imprime(lista1);
 }
