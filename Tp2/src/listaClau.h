@@ -31,8 +31,9 @@ typedef struct {
 
 void FLVazia(TipoLista *plv);
 void Insere(TItem x, TipoLista *plv);
-void Imprime(TipoLista plv);
+void Imprime(TipoLista plv, int N);
 int Vazia(TipoLista plv);
 void geraclauses(TipoLista lista1, int (*mat)[50], int N);
-void imprimeItem(TItem* pItem);
+void imprimeItem(TItem* pItem, int N);
+void verificaNaTabela(TItem* pItem, int N);
 #endif
