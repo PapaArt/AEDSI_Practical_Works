@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-#ifndef FILACLAU_H
-#define FILACLAU_H
+#ifndef LISTACLAU_H
+#define LISTACLAU_H
 #include "sat.h"
 
 typedef struct TItem
