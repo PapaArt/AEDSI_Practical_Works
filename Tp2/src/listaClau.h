@@ -29,7 +29,6 @@ typedef struct {
   TipoApontador Primeiro,Ultimo;
 }TipoLista;
 
-//-----OPERAÇÕES BASICAS TXT DINÂMICO-----
 void FLVazia(TipoLista *plv);
 void Insere(TItem x, TipoLista *plv);
 void Imprime(TipoLista plv);
