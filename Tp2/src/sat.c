@@ -9,19 +9,23 @@ void semPreconceito()
 	#endif
 }
 
-void truthTable(int n, int leng,int posicao1, int posicao2, int posicao3)
+void truthTable(int n, int leng, TItem* pItem)
 {
-    int coluna[1001];
+    int coluna[40];
     int j=0;
     long long int bit = 1 << leng - 1;
     while (bit)
     {
-        
-        printf("%d", n & bit ? 1 : 0);
-        coluna[j] = bit;
+        coluna[j] = n & bit ? 1 : 0;
         j++;
         bit >>= 1;
     }
+    j = pItem->posicao1;
+    // if (pItem->valor1 == 1)
+    // {
+        
+    // }
+    
     printf("\n");
 }
 

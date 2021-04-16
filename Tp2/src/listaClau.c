@@ -8,7 +8,7 @@ void verificaNaTabela(TItem* pItem, int N){
  
     inicio=clock(); 
     for (i = 0; i < n; i++)
-        truthTable(i, N,pItem);
+        truthTable(i, N, pItem);
     fim=clock();
     tempo=((double)(fim-inicio))/CLOCKS_PER_SEC; 
     printf("Tempo Gasto = %lf segundos\n\n\n",tempo);
@@ -19,7 +19,7 @@ void imprimeItem(TItem* pItem, int N)
 {
     printf("%d %d %d\n", pItem->posicao1, pItem->posicao2, pItem->posicao3);
     printf("%d %d %d\n", pItem->valor1, pItem->valor2, pItem->valor3);
-    verificaNaTabela(pItem, N);
+    //verificaNaTabela(pItem, N);
 }
 
 void FLVazia(TipoLista *plv){ 
@@ -61,7 +61,7 @@ void geraclauses(TipoLista lista1, int (*mat)[50], int N)
         for (j = 0; j < N; j++)
             mat[i][j] = 0;
     }
-    printf("teste 2 \n");
+   
     srand(time(0));
     
     for (i = 0; i < C; i++)
