@@ -16,6 +16,6 @@ int main()
     // printf("Tempo Gasto = %lf segundos\n\n\n",tempo);
     TipoLista lista1;
     int mat[10][50];
-    geraclauses(lista1, mat, 4);
+    geraclauses(lista1, mat, 15);
     return 0;
 }

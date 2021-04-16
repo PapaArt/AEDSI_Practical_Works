@@ -19,7 +19,7 @@ void imprimeItem(TItem* pItem, int N)
 {
     printf("%d %d %d\n", pItem->posicao1, pItem->posicao2, pItem->posicao3);
     printf("%d %d %d\n", pItem->valor1, pItem->valor2, pItem->valor3);
-    //verificaNaTabela(pItem, N);
+    verificaNaTabela(pItem, N);
 }
 
 void FLVazia(TipoLista *plv){ 

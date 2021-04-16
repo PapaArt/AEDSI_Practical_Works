@@ -12,7 +12,7 @@ void semPreconceito()
 void truthTable(int n, int leng, TItem* pItem)
 {
     int coluna[40];
-    int j=0;
+    int j = 0, k = 0, z = 0;
     long long int bit = 1 << leng - 1;
     while (bit)
     {
@@ -21,10 +21,10 @@ void truthTable(int n, int leng, TItem* pItem)
         bit >>= 1;
     }
     j = pItem->posicao1;
-    // if (pItem->valor1 == 1)
-    // {
-        
-    // }
+    if (pItem->valor1 == 1)
+    {
+
+    }
     
     printf("\n");
 }
