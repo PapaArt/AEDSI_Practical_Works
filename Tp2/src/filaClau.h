@@ -4,39 +4,36 @@
 #include <time.h>
 #ifndef FILACLAU_H
 #define FILACLAU_H
+#include "sat.h"
 
-typedef int TChave;
 typedef struct TItem
 {
-    TChave chave;
-    long long int linha;
-    int coluna[3];
-    int valor;
-    int posicao[50];
+    int posicao1;
+    int posicao2;
+    int posicao3;
+    int valor1;
+    int valor2;
+    int valor3;
 }TItem; 
 // Item da lista, por exemplo: o item m[i][j] da matriz. Ou seja, deve conter o conteúdo.
 // No exemplo acima (mat[i][j]) o conteúdo seria : linha, coluna e o valor da posição.
 
-typedef struct Celula *Apontador;
-typedef struct Celula
-{
-    TItem item;
-    struct Celula* pProx;
-}TCelula;
-// Tem como principal função "encapsular" o item, e gerar o apontador pro proximo item.
 
-typedef struct TFila
-{
-    Apontador pFrente;
-    Apontador pTras;
-} TFila;
+typedef struct TipoCelula *TipoApontador;
+typedef struct TipoCelula {
+  TItem Item;
+  TipoApontador Prox;
+}TipoCelula;
 
-void inicializaValor(TItem *item, int linha, int coluna, int valor, int posicao);
-void FFVazia(TFila *pFila);
-int FEhVazia(TFila *pFila);
-int FEnfileira(TFila *pFila, TItem *pItem);
-//void valorRand(TFila *pFila, int N, int C, int coluna);
-void geraclauses(TCelula* pCell, int (*mat)[50], int N);
-int FDesenfileira(TFila *pFila, TItem *pItem);
+typedef struct {
+  TipoApontador Primeiro,Ultimo;
+}TipoLista;
 
+//-----OPERAÇÕES BASICAS TXT DINÂMICO-----
+void FLVazia(TipoLista *plv);
+void Insere(TItem x, TipoLista *plv);
+void Imprime(TipoLista plv);
+int Vazia(TipoLista plv);
+void geraclauses(TipoLista lista1, int (*mat)[50], int N);
+void imprimeItem(TItem* pItem);
 #endif

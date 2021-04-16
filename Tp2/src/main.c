@@ -14,8 +14,8 @@ int main()
     // fim=clock();
     // tempo=((double)(fim-inicio))/CLOCKS_PER_SEC; 
     // printf("Tempo Gasto = %lf segundos\n\n\n",tempo);
-    TCelula* Cell;
+    TipoLista lista1;
     int mat[10][50];
-    geraclauses(Cell,mat, 15);
+    geraclauses(lista1, mat, 15);
     return 0;
 }
