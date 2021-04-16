@@ -1,23 +1,14 @@
 #include "sat.h"
 
-void verificaNaTabela(TItem* pItem, int N){
-    double tempo;
-    clock_t fim,inicio;
-
+void verificaNaTabela(TItem* pItem, int N){  
     long long int n = 1 << N, i;
- 
-    inicio=clock(); 
     for (i = 0; i < n; i++)
         truthTable(i, N, pItem);
-    fim=clock();
-    tempo=((double)(fim-inicio))/CLOCKS_PER_SEC; 
-    printf("Tempo Gasto = %lf segundos\n\n\n",tempo);
-
-
 }
 void imprimeItem(TItem* pItem, int N)
 {
-    printf("%d %d %d\n", pItem->posicao1, pItem->posicao2, pItem->posicao3);
+    printf("\nClausula: \n");
+    //printf("%d %d %d\n", pItem->posicao1, pItem->posicao2, pItem->posicao3);
     printf("%d %d %d\n", pItem->valor1, pItem->valor2, pItem->valor3);
     verificaNaTabela(pItem, N);
 }
@@ -31,10 +22,19 @@ void FLVazia(TipoLista *plv){
 void Imprime(TipoLista plv, int N){ 
     TipoApontador Aux;
     Aux = plv.Primeiro -> Prox;
+    double tempo;
+    clock_t fim,inicio;
+    inicio=clock();
+
     while (Aux != NULL) { 
         imprimeItem(&Aux->Item, N);
         Aux = Aux->Prox;
     }
+    
+    fim=clock();
+    tempo=((double)(fim-inicio))/CLOCKS_PER_SEC; 
+    printf("\nTempo Gasto = %lf segundos\n\n\n",tempo);
+    
 }
 
 void Insere(TItem x, TipoLista *plv){ 
