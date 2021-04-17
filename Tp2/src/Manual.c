@@ -3,7 +3,7 @@
 void Preenche_Lista()
 {
     int N,C;
-    int i,j;
+    int i;
     char aux[50];
     TipoLista ListaManual;
     TipoApontador ListaAux;
