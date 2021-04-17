@@ -1,5 +1,4 @@
 #include "sat.h"
-#include <math.h>
 
 void verificaNaTabela(TItem *pItem, int N)
 {
