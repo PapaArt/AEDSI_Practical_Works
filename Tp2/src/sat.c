@@ -12,6 +12,8 @@ void semPreconceito()
 int truthTable(int n, int leng, TItem* pItem)
 {
     int coluna[40];
+    int pos = 0 ;
+    int colum = 0;
     int j = 0, k = 0, z = 0;
     long long int bit = 1 << leng - 1;
     while (bit)
@@ -27,6 +29,15 @@ int truthTable(int n, int leng, TItem* pItem)
     int kV = pItem->valor2;
     int lV= pItem->valor3;
 
+    pos = pItem->posicao3;
+    colum = (leng- 1) - pos;
+
+    int C = 0 ;
+
+
+    if(C == 0){
+        C+= (2^colum);
+    }
     if((jV == 2 && coluna[jP] == 1) || (kV == 2 && coluna[kP] == 1) || (lV == 2 && coluna[lP] == 1) ||
      (jV == 1 && coluna[jP] == 0) || (kV == 1 && coluna[kP] == 0) || (lV ==1 && coluna[lP] == 0)){
         if(coluna[jP] == 0){
