@@ -29,12 +29,29 @@ int truthTable(int n, int leng, TItem *pItem)
     int kV = pItem->valor2;
     int lV = pItem->valor3;
 
-    pos = pItem->posicao3;
-    colum = (leng - 1) - pos;
+    int expressao = 1 ;
+    int claus = 0;
+    if(jV == 2 && coluna[jP]==1){
+        claus = 1;
+    }if(jV == 1 && coluna[jP] == 0 ){
+        claus = 1;
+    }if(kV == 2 && coluna[kP]==1){
+        claus = 1;
+    }if(kV == 1 && coluna[kP] == 0 ){
+        claus = 1;
+    }if(lV == 2 && coluna[lP]==1){
+        claus = 1;
+    }if(lV == 1 && coluna[lP] == 0 ){
+        claus = 1;
+    }
 
-    
-    
-    
-    
-       
+    if(claus == 0){
+        expressao = 0;
+    }
+
+    if(expressao == 1){
+        for(int i=0; i<leng;i++){
+            printf("%d",coluna[i]);
+        }printf("\n");
+    }       
 }
