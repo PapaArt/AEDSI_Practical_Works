@@ -27,7 +27,8 @@ void truthTable(int n, int leng, TItem* pItem)
     int kV = pItem->valor2;
     int lV= pItem->valor3;
 
-    if((jV == 2 || kV == 2 || lV == 2) && (coluna[jP] == 1 || coluna[kP] == 1 || coluna[lP] == 1)){
+    if((jV == 2 && coluna[jP] == 1) || (kV == 2 && coluna[kP] == 1) || (lV == 2 && coluna[lP] == 1) ||
+     (jV == 1 && coluna[jP] == 0) || (kV == 1 && coluna[kP] == 0) || (lV ==1 && coluna[lP] == 0)){
         if(coluna[jP] == 0){
             printf("( %sx%d |",(jV == 2 ? "!" : ""),(jP));
         }if(coluna[jP]==1){
