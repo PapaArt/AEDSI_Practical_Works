@@ -36,4 +36,5 @@ int Vazia(TipoLista plv);
 void geraclauses(TipoLista lista1, int (*mat)[50], int N);
 void imprimeItem(TItem* pItem, int N);
 void verificaNaTabela(TItem* pItem, int N);
+void manual();
 #endif

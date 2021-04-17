@@ -8,7 +8,7 @@ void verificaNaTabela(TItem *pItem, int N)
     long long int n = 1 << N, i;
     long long int table[26][40];
     for (i = 0; i < n; i++)
-        truthTable(i, N, pItem);      
+        truthTable(i, N, pItem);
 }
 
 // É reponsável por imprimir a cláusula gerada e chamar a função de verificação
@@ -16,8 +16,8 @@ void imprimeItem(TItem *pItem, int N)
 {
     //getchar();
     printf("\nClausula: \n");
-    printf("( %sx%d | %sx%d | %sx%d )\n", (pItem->valor1 == 1? "!":""),pItem->posicao1, (pItem->valor2 == 1? "!":""),pItem->posicao2, (pItem->valor3 == 1? "!":""),pItem->posicao3);
-    printf("Pressione Enter para visualizar os valores booleanos que satisfazem a clausula.");
+    printf("( %sx%d | %sx%d | %sx%d )\n", (pItem->valor1 == 1 ? "!" : ""), pItem->posicao1, (pItem->valor2 == 1 ? "!" : ""), pItem->posicao2, (pItem->valor3 == 1 ? "!" : ""), pItem->posicao3);
+    //printf("Pressione Enter para visualizar os valores booleanos que satisfazem a clausula.");
     //getchar();
     verificaNaTabela(pItem, N);
     //printf("\nPressione Enter para visualizar a proxima clausula.");
@@ -145,4 +145,42 @@ void geraclauses(TipoLista lista1, int (*mat)[50], int N)
         Insere(registro1, &lista1);
     }
     Imprime(lista1, N);
+}
+
+void manual()
+{
+    int C = 0;
+    int N = 0;
+    printf("Insira o Numero C de cláusulas: ");
+    scanf("%d\n", C);
+    printf("Insira o Numero N de variáveis: ");
+    scanf("%d\n", N);
+
+    TipoLista lista2;
+    TItem registro2;
+    FLVazia(&lista2);
+    int variavel1, variavel2, variavel3;
+    int estado1, estado2, estado3;
+    for (int i = 0; i < C; i++)
+    {
+        printf("Digite a cláusula: {(a,b),(c,d)(e,f)}\n Sendo, a/c/e numero da variável, e b/d/f o estado dela.\n");
+        scanf("{(%d,%d),(%d,%d)(%d,%d)}", &variavel1, &estado1, &variavel1, &estado2, &variavel3, &estado3);
+        if ((variavel1 = (int)variavel1) && (estado1 = (int)estado1) && (variavel2 = (int)variavel2) && (estado2 = (int)estado2) && (variavel3 = (int)variavel3) && (estado3 = (int)estado3))
+        {
+            registro2.posicao1 = variavel1;
+            registro2.posicao2 = variavel2;
+            registro2.posicao3 = variavel3;
+
+            registro2.valor1 = estado1;
+            registro2.valor2 = estado2;
+            registro2.valor3 = estado3;
+
+            Insere(registro2, &lista2);
+            Imprime(lista2, N);
+        }
+        else
+        {
+            printf("Houve algum erro.");
+        }
+    }
 }
