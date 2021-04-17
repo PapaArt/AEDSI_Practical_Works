@@ -20,7 +20,7 @@ void Preenche_Lista()
     for(i = 0; i < C; i++ )
     {
         printf("Por favor insira a clausula %d",i);
-        gets(aux); //Como a entrada sempre vai ter o mesmo tamanho provavelmente seja uma boa ideia usar o fgets ao invés do gets;
+        scanf("%s", aux[i]); //Como a entrada sempre vai ter o mesmo tamanho provavelmente seja uma boa ideia usar o fgets ao invés do gets;
 
         ListaAux->Item.posicao1 = aux[3];
         ListaAux->Item.valor1 = aux[5];

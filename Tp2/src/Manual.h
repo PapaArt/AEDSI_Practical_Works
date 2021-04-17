@@ -1,9 +1,9 @@
-#include "listaclau.h"
-#include <conio.h>
-#define MANUAL_H
+#include <stdio.h>
 #ifndef MANUAL_H
+#define MANUAL_H
+#include "listaClau.h"
 
 void Preenche_Lista();
-void Verifica_Lista (TipoLista* Plista,int N);
+void Verifica_Lista(TipoLista* Plista,int N);
 
 #endif
