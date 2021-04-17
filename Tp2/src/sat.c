@@ -12,7 +12,7 @@ void semPreconceito()
 void truthTable(int n, int leng, TItem* pItem)
 {
     int coluna[40];
-    int j=0;
+    int j = 0, k = 0, z = 0;
     long long int bit = 1 << leng - 1;
     while (bit)
     {
@@ -48,24 +48,3 @@ void truthTable(int n, int leng, TItem* pItem)
     //     printf("%d", coluna[j]);
     
 }
-
-// int verifica(TFila* pFila)
-// {
-// 	Apontador iter;
-// 	int flag;
-
-// 	iter = pFila->pFrente;
-// 	flag = 0;
-
-// 	while (iter != pFila->pTras)
-// 	{
-// 		if (iter->item.valor == 2)
-// 		{
-// 			flag = 1;
-// 		}		
-// 		iter = iter->pProx;	
-// 	}
-// 	return flag;
-// }
-
-
