@@ -26,7 +26,7 @@ void menu()
     switch (escolha[2])
     {
     case 1:
-        N = 6;
+        N = 15;
         geraclauses(lista, mat, N);
         break;
     case 2:
