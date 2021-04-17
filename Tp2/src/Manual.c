@@ -19,23 +19,22 @@ void Preenche_Lista()
 
     for(i = 0; i < C; i++ )
     {
-        printf("Por favor insira a clausula %d",i);
-        scanf("%s", aux[i]); //Como a entrada sempre vai ter o mesmo tamanho provavelmente seja uma boa ideia usar o fgets ao invés do gets;
+        printf("\n Por favor insira a primeira variavel da clausula %d :",i);
+        scanf("%s",ListaAux->Item.posicao1); 
+        printf("\n Por favor insira o estado da variavel :");
+        scanf("%s",ListaAux->Item.valor1);
+        printf("\n Por favor insira a segunda variavel da clausula %d :",i);
+        scanf("%s",ListaAux->Item.posicao2);
+        printf("\n Por favor insira o estado da variavel :");
+        scanf("%s",ListaAux->Item.valor2);
+        printf("\n Por favor insira a terceira variavel da clausula %d :",i);
+        scanf("%s",ListaAux->Item.posicao3);
+        printf("\n Por favor insira o estado da variavel :");
+        scanf("%s",ListaAux->Item.valor3);
 
-        ListaAux->Item.posicao1 = aux[3];
-        ListaAux->Item.valor1 = aux[5];
-        
-        //Algum mecanismo precisa ser criado pra impedir algum engraçadinho de por como posição algum valor maior que N;
-
-        ListaAux->Item.posicao2 = aux[9];
-        ListaAux->Item.valor2 = aux[11];
-
-        ListaAux->Item.posicao3 = aux[15];
-        ListaAux->Item.valor3 = aux[17];
-
-        ListaAux = ListaAux->Prox;       
+        ListaAux = ListaAux->Prox;         
     }
-    // A Verifica_Lista vai ser chamada aqui, ela vai por os itens da nossa Lista na Verificanatabela
+    Verifica_Lista(&ListaManual,N);
 }
 
 
