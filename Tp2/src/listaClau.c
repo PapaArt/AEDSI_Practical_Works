@@ -134,5 +134,5 @@ void geraclauses(TipoLista lista1, int (*mat)[50], int N)
         Insere(registro1, &lista1);
     }
     printf("Imprimindo a lista...\n");
-    //Imprime(lista1, N);
+    Imprime(lista1, N);
 }
