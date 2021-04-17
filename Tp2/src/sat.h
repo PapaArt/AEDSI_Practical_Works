@@ -4,6 +4,5 @@
 
 void semPreconceito();
 void truthTable(int n, int leng, TItem* pItem);
-//int verifica(TFila* pFila);
 
 #endif 

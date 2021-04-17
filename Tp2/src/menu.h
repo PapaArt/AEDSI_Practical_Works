@@ -2,9 +2,10 @@
 #define MENU_h
 #include "sat.h"
 
-int menu();
+void menu();
 
-int print_menu1();
-int print_menu2();
+void print_menu1();
+void print_menu2();
+void print_menu3();
 
 #endif
