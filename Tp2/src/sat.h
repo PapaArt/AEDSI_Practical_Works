@@ -3,6 +3,6 @@
 #include "listaClau.h"
 
 void semPreconceito();
-void truthTable(int n, int leng, TItem* pItem);
+int truthTable(int n, int leng, TItem* pItem);
 
 #endif 
