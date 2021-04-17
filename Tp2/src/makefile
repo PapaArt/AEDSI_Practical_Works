@@ -1,5 +1,5 @@
 all:
-	gcc listaClau.c sat.c menu.c main.c -o main -lm 
+	gcc listaClau.c sat.c menu.c main.c -o main
 run:
 	./main
 clean:
