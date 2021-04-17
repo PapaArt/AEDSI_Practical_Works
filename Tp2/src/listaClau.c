@@ -6,7 +6,7 @@ void verificaNaTabela(TItem *pItem, int N)
     long long int n = 1 << N, i;
     long long int table[26][40];
     int C = 0;
-    for (i = 0; i < n; i+=pow(2, ((N-1) - pItem->posicao3)))
+    for (i = 0; i < n; i++)
         truthTable(i, N, pItem);        
 }
 void imprimeItem(TItem *pItem, int N)
