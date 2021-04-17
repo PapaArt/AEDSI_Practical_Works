@@ -44,4 +44,10 @@ void Verifica_Lista(TipoLista* Plista,int N)
     TipoApontador Aux; 
     
     Aux = Plista->Primeiro;
+
+    while(Aux->Prox != NULL)
+    {
+        verificaNaTabela(&Aux->Item,N);
+        Aux = Aux->Prox;
+    }
 }
