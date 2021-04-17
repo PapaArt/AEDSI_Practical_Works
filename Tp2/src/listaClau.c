@@ -1,5 +1,8 @@
 #include "sat.h"
 
+// A funçao abaixo realiza as comparações utilizando a tabela verdade
+// a cláusula é passada como parâmetro para verificação e para é testada em cada linha da tebela verdade
+// dentro da função truthTable
 void verificaNaTabela(TItem *pItem, int N)
 {
     long long int n = 1 << N, i;
@@ -7,14 +10,20 @@ void verificaNaTabela(TItem *pItem, int N)
     for (i = 0; i < n; i++)
         truthTable(i, N, pItem);      
 }
+
+// É reponsável por imprimir a cláusula gerada e chamar a função de verificação
 void imprimeItem(TItem *pItem, int N)
 {
+    //getchar();
     printf("\nClausula: \n");
-    //printf("%d %d %d\n", pItem->posicao1, pItem->posicao2, pItem->posicao3);
-    printf("%d %d %d\n", pItem->valor1, pItem->valor2, pItem->valor3);
+    printf("( %sx%d | %sx%d | %sx%d )\n", (pItem->valor1 == 1? "!":""),pItem->posicao1, (pItem->valor2 == 1? "!":""),pItem->posicao2, (pItem->valor3 == 1? "!":""),pItem->posicao3);
+    printf("Pressione Enter para visualizar os valores booleanos que satisfazem a clausula.");
+    //getchar();
     verificaNaTabela(pItem, N);
+    //printf("\nPressione Enter para visualizar a proxima clausula.");
 }
 
+// Gera Lista vazia
 void FLVazia(TipoLista *plv)
 {
     plv->Primeiro = (TipoApontador)malloc(sizeof(TipoCelula));
@@ -22,6 +31,7 @@ void FLVazia(TipoLista *plv)
     plv->Primeiro->Prox = NULL;
 }
 
+// Essa função é reponsável por medir o tempo de execução ao imprimir item por item da lista encadeada
 void Imprime(TipoLista plv, int N)
 {
     TipoApontador Aux;
@@ -41,6 +51,7 @@ void Imprime(TipoLista plv, int N)
     printf("\nTempo Gasto = %lf segundos\n\n\n", tempo);
 }
 
+// Função responsável por inserir os itens na lista encadeada
 void Insere(TItem x, TipoLista *plv)
 {
     plv->Ultimo->Prox = (TipoApontador)malloc(sizeof(TipoCelula));
@@ -49,7 +60,8 @@ void Insere(TItem x, TipoLista *plv)
     plv->Ultimo->Prox = NULL;
 }
 
-//criar "percorrer" antes de adaptar a função abaixo
+// Principal função do tp, reponsável por gerar a lista encadeada vazia, gerar randomicamente as colunas para geração
+// das cláusulas, inserílas na lista e chamar a função imprime
 void geraclauses(TipoLista lista1, int (*mat)[50], int N)
 {
     TItem registro1;
@@ -123,7 +135,6 @@ void geraclauses(TipoLista lista1, int (*mat)[50], int N)
             randomic2 = randomic3;
             randomic3 = aux;
         }
-        printf("Posicao ordenada: %d %d %d\n", randomic1, randomic2, randomic3);
 
         registro1.posicao1 = randomic1;
         registro1.posicao2 = randomic2;
@@ -133,6 +144,5 @@ void geraclauses(TipoLista lista1, int (*mat)[50], int N)
         registro1.valor3 = test3;
         Insere(registro1, &lista1);
     }
-    printf("Imprimindo a lista...\n");
     Imprime(lista1, N);
 }

@@ -15,10 +15,12 @@ void menu()
     case 1:
         print_menu3();
         scanf("%d", &escolha[1]);
+        semPreconceito();
         break;
     case 2:
         print_menu2();
         scanf("%d", &escolha[2]);
+        semPreconceito();
     default:
         break;
     }
@@ -26,7 +28,7 @@ void menu()
     switch (escolha[2])
     {
     case 1:
-        N = 6;
+        N = 15;
         geraclauses(lista, mat, N);
         break;
     case 2:

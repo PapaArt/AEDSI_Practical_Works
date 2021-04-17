@@ -1,5 +1,7 @@
 #include "sat.h"
 
+// Função reponsável por identificar qual o sistema operacional o usuário está utilizando, e adaptar o código para
+// melhor utilização deste
 void semPreconceito()
 {
 	#ifdef _WIN32
@@ -9,9 +11,10 @@ void semPreconceito()
 	#endif
 }
 
+// Função responsável por gerar a tabela verdade bit a bit e realizar as verificações
 int truthTable(int n, int leng, TItem* pItem)
 {
-    int coluna[40];
+    long long int coluna[40];
     int pos = 0 ;
     int colum = 0;
     int j = 0, k = 0, z = 0;
@@ -51,31 +54,9 @@ int truthTable(int n, int leng, TItem* pItem)
 
     if(expressao == 1){
         for(int i=0; i<leng;i++){
-            printf("%d",coluna[i]);
+            printf("%lld",coluna[i]);
         }printf("\n");
     }
-    if((jV == 2 && coluna[jP] == 1) || (kV == 2 && coluna[kP] == 1) || (lV == 2 && coluna[lP] == 1) ||
-     (jV == 1 && coluna[jP] == 0) || (kV == 1 && coluna[kP] == 0) || (lV ==1 && coluna[lP] == 0)){
-        if(coluna[jP] == 0){
-            printf("( %sx%d |",(jV == 2 ? "" : "!"),(jP));
-        }if(coluna[jP]==1){
-            printf("( %sx%d |",(jV == 1 ? "" : "!"),(jP));
-        }if(coluna[kP] == 0){
-            printf(" %sx%d |",(kV == 2 ? "" : "!"),(kP));
-        }if(coluna[kP]==1){
-            printf(" %sx%d |",(kV == 1 ? "" : "!"),(kP));
-        }if(coluna[lP] == 0){
-            printf(" %sx%d ) & ",(lV == 2 ? "" : "!"),(lP));
-        }if(coluna[lP]==1){
-            printf(" %sx%d ) & ",(lV == 1 ? "" : "!"),(lP));
-        } 
-    }
-    printf("Valor na tabela verdade e coluna: %d %d\n", coluna[jP], jP);
-    printf("Valor na tabela verdade e coluna: %d %d\n", coluna[kP], kP);
-    printf("Valor na tabela verdade e coluna: %d %d\n", coluna[lP], lP);
-    printf("Valor da clausula: %d\n", jV);
-    printf("Valor da clausula: %d\n", kV);
-    printf("Valor da clausula: %d\n", lV);
     
 }
 
