@@ -15,7 +15,7 @@ void menu()
     case 1:
         print_menu3();
         manual();
-        semPreconceito();
+        //semPreconceito();
         break;
     case 2:
         print_menu2();

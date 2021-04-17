@@ -150,32 +150,56 @@ void geraclauses(TipoLista lista1, int (*mat)[50], int N)
 void manual()
 {
     int C, N;
-    printf("Insira o Numero C de cláusulas: ");
+    printf("Insira o Numero C de clausulas: ");
     scanf("%d", &C);
-    printf("Insira o Numero N de variáveis: ");
+    printf("Insira o Numero N de variaveis: ");
     scanf("%d", &N);
 
     TipoLista lista2;
     TItem registro2;
     FLVazia(&lista2);
+
+    printf("C : %d\n", C);
+    printf("N : %d\n", N);
     int variavel1, variavel2, variavel3;
     int estado1, estado2, estado3;
+    int aux1, aux2, aux3, aux4, aux5, aux6;
+
+    LOOP:
     for (int i = 0; i < C; i++)
     {
-        printf("Digite a cláusula: {(a,b),(c,d)(e,f)}\n Sendo, a/c/e numero da variável, e b/d/f o estado dela.\n");
-        scanf("{(%d,%d),(%d,%d)(%d,%d)}", &variavel1, &estado1, &variavel1, &estado2, &variavel3, &estado3);
-        if ((variavel1 = (int)variavel1) && (estado1 = (int)estado1) && (variavel2 = (int)variavel2) && (estado2 = (int)estado2) && (variavel3 = (int)variavel3) && (estado3 = (int)estado3))
+        printf("Digite a clausula: a,b c,d e,f Sendo, a/c/e numero da variavel, e b/d/f o estado dela.\n");
+        scanf("%d,%d %d,%d %d,%d", &variavel1, &estado1, &variavel2, &estado2, &variavel3, &estado3);
+        aux1 = variavel1;
+        aux2 = estado1;
+        aux3 = variavel2;
+        aux4 = estado2;
+        aux5 = variavel3;
+        aux6 = estado3;
+
+        if (variavel1 >= N || variavel2 >= N || variavel3 >= N){
+            printf("Digite uma variavel com um valor entre 0 e %d.\n", N);
+            
+            goto LOOP;
+            break;
+            
+        }
+
+        if ((variavel1 = aux1) && (estado1 = aux2) && (variavel2 = aux3) && (estado2 = aux4) && (variavel3 = aux5) && (estado3 = aux6))
         {
-            registro2.posicao1 = variavel1;
-            registro2.posicao2 = variavel2;
-            registro2.posicao3 = variavel3;
+            if (variavel1 != variavel2 || variavel1 != variavel3 || variavel2 != variavel3)
+            {
+                registro2.posicao1 = variavel1;
+                registro2.posicao2 = variavel2;
+                registro2.posicao3 = variavel3;
 
-            registro2.valor1 = estado1;
-            registro2.valor2 = estado2;
-            registro2.valor3 = estado3;
+                registro2.valor1 = estado1;
+                registro2.valor2 = estado2;
+                registro2.valor3 = estado3;
 
-            Insere(registro2, &lista2);
-            Imprime(lista2, N);
+                Insere(registro2, &lista2);
+                Imprime(lista2, N);
+            }
         }
         else
         {

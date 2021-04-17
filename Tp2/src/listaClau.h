@@ -8,33 +8,34 @@
 
 typedef struct TItem
 {
-    int posicao1;
-    int posicao2;
-    int posicao3;
-    int valor1;
-    int valor2;
-    int valor3;
-}TItem; 
+  int posicao1;
+  int posicao2;
+  int posicao3;
+  int valor1;
+  int valor2;
+  int valor3;
+} TItem;
 // Item da lista, por exemplo: o item m[i][j] da matriz. Ou seja, deve conter o conteúdo.
 // No exemplo acima (mat[i][j]) o conteúdo seria : linha, coluna e o valor da posição.
 
-
 typedef struct TipoCelula *TipoApontador;
-typedef struct TipoCelula {
+typedef struct TipoCelula
+{
   TItem Item;
   TipoApontador Prox;
-}TipoCelula;
+} TipoCelula;
 
-typedef struct {
-  TipoApontador Primeiro,Ultimo;
-}TipoLista;
+typedef struct
+{
+  TipoApontador Primeiro, Ultimo;
+} TipoLista;
 
 void FLVazia(TipoLista *plv);
 void Insere(TItem x, TipoLista *plv);
 void Imprime(TipoLista plv, int N);
 int Vazia(TipoLista plv);
 void geraclauses(TipoLista lista1, int (*mat)[50], int N);
-void imprimeItem(TItem* pItem, int N);
-void verificaNaTabela(TItem* pItem, int N);
+void imprimeItem(TItem *pItem, int N);
+void verificaNaTabela(TItem *pItem, int N);
 void manual();
 #endif
