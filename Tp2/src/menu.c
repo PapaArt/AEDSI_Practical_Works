@@ -14,7 +14,7 @@ void menu()
     {
     case 1:
         print_menu3();
-        scanf("%d", &escolha[1]);
+        manual();
         semPreconceito();
         break;
     case 2:
@@ -207,9 +207,9 @@ void print_menu3()
     {
         fputs(" ", stdout);
     }
-    printf("|\n|                                              ");
-    printf("Digite a equação booleana:");
-    for (i = 0; i < 41; i++)
+    printf("|\n|                                                     ");
+    printf("MODO MANUAL");
+    for (i = 0; i < 49; i++)
     {
         fputs(" ", stdout);
     }

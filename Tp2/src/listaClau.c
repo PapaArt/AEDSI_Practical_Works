@@ -149,12 +149,11 @@ void geraclauses(TipoLista lista1, int (*mat)[50], int N)
 
 void manual()
 {
-    int C = 0;
-    int N = 0;
+    int C, N;
     printf("Insira o Numero C de cláusulas: ");
-    scanf("%d\n", C);
+    scanf("%d", &C);
     printf("Insira o Numero N de variáveis: ");
-    scanf("%d\n", N);
+    scanf("%d", &N);
 
     TipoLista lista2;
     TItem registro2;
