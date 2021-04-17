@@ -43,7 +43,5 @@ void truthTable(int n, int leng, TItem* pItem)
         }
         
     }
-    // for(j=0; j<leng; j++)
-    //     printf("%d", coluna[j]);
     
 }
