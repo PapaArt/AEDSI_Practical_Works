@@ -147,6 +147,8 @@ void geraclauses(TipoLista lista1, int (*mat)[50], int N)
     Imprime(lista1, N);
 }
 
+// Realiza toda a operação manual, atribuindo os valores para as células e gerando as combinações que satisfazem as
+// cláusulas
 void manual()
 {
     int C, N;
