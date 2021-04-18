@@ -177,6 +177,8 @@ void manual()
         aux5 = variavel3;
         aux6 = estado3;
 
+        printf("valor 1: %d\n",variavel1);
+        printf("aux 1: %d\n",aux1);
         if (variavel1 >= N || variavel2 >= N || variavel3 >= N){
             printf("Digite uma variavel com um valor entre 0 e %d.\n", N);
             
@@ -185,7 +187,7 @@ void manual()
             
         }
 
-        if ((variavel1 = aux1) && (estado1 = aux2) && (variavel2 = aux3) && (estado2 = aux4) && (variavel3 = aux5) && (estado3 = aux6))
+        if ((variavel1 == aux1) && (estado1 == aux2) && (variavel2 == aux3) && (estado2 == aux4) && (variavel3 == aux5) && (estado3 == aux6))
         {
             if (variavel1 != variavel2 || variavel1 != variavel3 || variavel2 != variavel3)
             {
@@ -199,11 +201,15 @@ void manual()
 
                 Insere(registro2, &lista2);
                 Imprime(lista2, N);
+            }else{
+                printf("Alguma coluna foi repetida, tente novamente\n");
+                goto LOOP;
             }
         }
         else
         {
-            printf("Houve algum erro.");
+            printf("Houve algum erro.\n");
+            goto LOOP;
         }
     }
 }
