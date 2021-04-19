@@ -13,7 +13,8 @@ void semPreconceito()
 
 int truthTable(int n, int leng, TItem *pItem)
 {
-    long long int coluna[40];
+    long long int* coluna;
+    coluna = (long long int*)malloc(sizeof(long long int)*leng);
     int pos = 0;
     int colum = 0;
     int i, j = 0, k = 0, z = 0;
@@ -71,4 +72,5 @@ int truthTable(int n, int leng, TItem *pItem)
         }
         printf("\n");
     }
+    free(coluna);
 }

@@ -161,8 +161,6 @@ void manual()
     TItem registro2;
     FLVazia(&lista2);
 
-    printf("C : %d\n", C);
-    printf("N : %d\n", N);
     int variavel1, variavel2, variavel3;
     int estado1, estado2, estado3;
     int aux1, aux2, aux3, aux4, aux5, aux6;
