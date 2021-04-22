@@ -7,7 +7,7 @@ void swap(int* xp, int* yp)
     *yp = temp;
 }
 
-void bubbleSort(int arr[], int n)
+int bubbleSort(int arr[], int n)
 {
     int i,j;
     for (i = 0; i < n-1; i++)
@@ -23,7 +23,7 @@ void bubbleSort(int arr[], int n)
     }
 }
 
-void selectionSort(int arr[], int n)
+int selectionSort(int arr[], int n)
 {
     int i, j, min_index;
 
@@ -39,5 +39,69 @@ void selectionSort(int arr[], int n)
         }
         // Swap the found minimum element with the first element
         swap(&arr[min_index], &arr[i]);
+    }
+}
+
+int shellSort(int arr[], int n)
+{
+    int i, j, gap;
+    int temp;
+
+    // Start with a big gap, then reduce the gap
+    for (gap = n/2; gap > 0; gap /= 2)
+    {
+        // Do a gapped insertion sort for this gap size.
+        // The first gap elements a[0..gap-1] are already in gapped order
+        // keep adding one more element until the entire array is
+        // gap sorted
+        for (i = gap; i < n; i++)
+        {
+            // add a[i] to the elements that have been gap sorted
+            // save a[i] in temp and make a hole at position i
+            int temp = arr[i];
+
+            // shift earlier gap-sorted elements up until the correct 
+            // location for a[i] is found
+            for (j = i; j >= gap && arr[j-gap] > temp; j -= gap)
+            {
+                arr[j] = arr[j-gap];
+            }
+            // put temp (the original a[i]) in its correct location
+            arr[j] = temp;
+        }     
+    }
+    return 0;
+}
+
+int partition(int arr[], int low, int high)
+{
+    int pivot = arr[high]; // pivot
+    int i = (low - 1); //Index of smaller element and indicates the right position of pivot found so far
+    int j;
+
+    for (j = low; j <= high - 1; j++)
+    {
+        if (arr[j] < pivot)
+        {
+            i++; // increment index of smaller element
+            swap(&arr[i], &arr[j]);
+        }
+    }
+    swap(&arr[i+1], &arr[high]);
+    return (i+1);    
+}
+
+int quickSort(int arr[], int low, int high)
+{
+    if (low < high)
+    {
+        /* pi is partitioning index, arr[p] is now
+        at right place */
+        int pi = partition(arr, low, high);
+
+        // Separately sort elements before
+        // partition and after partition
+        quickSort(arr, low, pi - 1);
+        quickSort(arr, pi + 1, high);
     }
 }
