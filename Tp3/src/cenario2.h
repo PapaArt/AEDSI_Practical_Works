@@ -1,7 +1,7 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
-
+#include "sorting.h"
 #ifndef CENARIO2_H
 #define CENARIO2_H
 
@@ -20,13 +20,16 @@ typedef struct Celula{
     Registro registro;
     Apontador pProx;
 
-}TCelula;
+}TipoCelula;
 
 typedef struct{
 
     Apontador pPrimeiro;
     Apontador pUltimo;
 
-}TLista;
+}TipoLista;
+
+void FLVazia(TipoLista *plv);
+void Insere(Registro x, TipoLista *plv);
 
 #endif
