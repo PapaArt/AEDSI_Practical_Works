@@ -7,7 +7,7 @@ void swap(int* xp, int* yp)
     *yp = temp;
 }
 
-int bubbleSort(int arr[], int n)
+int bubbleSort(int* arr, int n)
 {
     int i,j;
     for (i = 0; i < n-1; i++)
@@ -23,7 +23,7 @@ int bubbleSort(int arr[], int n)
     }
 }
 
-int selectionSort(int arr[], int n)
+int selectionSort(int* arr, int n)
 {
     int i, j, min_index;
 
@@ -42,7 +42,7 @@ int selectionSort(int arr[], int n)
     }
 }
 
-int shellSort(int arr[], int n)
+int shellSort(int* arr, int n)
 {
     int i, j, gap;
     int temp;
@@ -73,7 +73,7 @@ int shellSort(int arr[], int n)
     return 0;
 }
 
-int partition(int arr[], int low, int high)
+int partition(int* arr, int low, int high)
 {
     int pivot = arr[high]; // pivot
     int i = (low - 1); //Index of smaller element and indicates the right position of pivot found so far
@@ -91,7 +91,7 @@ int partition(int arr[], int low, int high)
     return (i+1);    
 }
 
-int quickSort(int arr[], int low, int high)
+int quickSort(int* arr, int low, int high)
 {
     if (low < high)
     {
@@ -106,7 +106,7 @@ int quickSort(int arr[], int low, int high)
     }
 }
 
-void heapify(int arr[], int n, int i)
+void heapify(int* arr, int n, int i)
 {
     int largest = i; // Initialize largest as root
     int l = (2 * i) + 1; // left = 2*i+1
@@ -130,7 +130,7 @@ void heapify(int arr[], int n, int i)
     }
 }
 
-int heapSort(int arr[], int n)
+int heapSort(int* arr, int n)
 {
     int i;
 
@@ -149,7 +149,7 @@ int heapSort(int arr[], int n)
     }
 }
 
-void  printArray(int arr[], int n)
+void  printArray(int* arr, int n)
 {
     for (int i = 0; i < n; i++)
         printf("%d ", arr[i]);
