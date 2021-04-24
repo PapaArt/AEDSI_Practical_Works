@@ -1,6 +1,3 @@
-#include <string.h>
-#include <stdio.h>
-#include <stdlib.h>
 #include "sorting.h"
 #ifndef CENARIO2_H
 #define CENARIO2_H
