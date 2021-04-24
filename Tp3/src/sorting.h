@@ -21,6 +21,6 @@ void countSort(int arr[], int n, int exp);
 int radixSort(int arr[], int n);
 
 // Funcao para imprimir um vetor de tamanho n
-void printArray(int arr[], int n);
+void printArray(int* arr, int n);
 
 #endif
