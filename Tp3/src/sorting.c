@@ -123,7 +123,7 @@ void heapify(int* arr, int n, int i)
     // If largest is not root
     if (largest != i)
     {
-        swap(arr[i], arr[largest]);
+        swap(&arr[i], &arr[largest]);
 
         // Recursively heapify the affected sub-tree
         heapify(arr, n, largest);
@@ -142,14 +142,14 @@ int heapSort(int* arr, int n)
     for (i = n-1; i > 0; i--)
     {
         // Move current root to end
-        swap(arr[0], arr[i]);
+        swap(&arr[0], &arr[i]);
 
         // Call max heapify on the reduced heap
         heapify(arr, i, 0);
     }
 }
 
-void merge(int arr[], int l, int m, int r)
+void merge(int* arr, int l, int m, int r)
 {
     int i, j, k;
     int n1 = m - l + 1;
@@ -197,7 +197,7 @@ void merge(int arr[], int l, int m, int r)
     }
 }
 
-int mergeSort(int arr[], int l, int r)
+int mergeSort(int* arr, int l, int r)
 {
     if (l < r)
     {
@@ -212,7 +212,7 @@ int mergeSort(int arr[], int l, int r)
     }
 }
 
-int getMax(int arr[], int n)
+int getMax(int* arr, int n)
 {
     int mx = arr[0];
     for (int i = 1; i < n; i++)
@@ -223,7 +223,7 @@ int getMax(int arr[], int n)
     return mx;
 }
 
-void countSort(int arr[], int n, int exp)
+void countSort(int* arr, int n, int exp)
 {
     int output[n];
     int i, count[10] = {0};
@@ -248,7 +248,7 @@ void countSort(int arr[], int n, int exp)
         arr[i] = output[i];
 }
 
-int radixSort(int arr[], int n)
+int radixSort(int* arr, int n)
 {
     // Find the maximum number to know number of digits
     int m = getMax(arr, n);
@@ -260,7 +260,7 @@ int radixSort(int arr[], int n)
         countSort(arr, n, exp);
 }
 
-void  printArray(int arr[], int n)
+void  printArray(int* arr, int n)
 {
     for (int i = 0; i < n; i++)
         printf("%d ", arr[i]);
