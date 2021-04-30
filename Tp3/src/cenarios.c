@@ -1,4 +1,4 @@
-#include "cenario2.h"
+#include "cenarios.h"
 
 void FLVazia(TipoLista* plv)
 {
@@ -13,4 +13,9 @@ void Insere(Registro x, TipoLista* plv)
     plv->pUltimo = plv->pUltimo->pProx;
     plv->pUltimo->registro = x;
     plv->pUltimo->pProx = NULL;
+}
+
+void random_array(int resposta)
+{
+    
 }

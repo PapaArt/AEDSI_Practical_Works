@@ -5,5 +5,6 @@
 void menu();
 void print_menu1();
 void print_menu2();
+void print_menu3();
 
 #endif

@@ -1,6 +1,6 @@
 #include "sorting.h"
-#ifndef CENARIO2_H
-#define CENARIO2_H
+#ifndef CENARIOS_H
+#define CENARIOS_H
 
 typedef struct Registro{
     
@@ -27,5 +27,6 @@ typedef struct{
 
 void FLVazia(TipoLista *plv);
 void Insere(Registro x, TipoLista *plv);
+void random_array(int resposta);
 
 #endif
