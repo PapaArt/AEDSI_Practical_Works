@@ -112,7 +112,7 @@ void merge(int* arr, int l, int m, int r,double *comp,double mov,int flag) {
     int n2 =  r - m; 
 
     // cria vetores temporários /
-    int L[n1], R[n2]; 
+    int L[1001], R[1001]; 
 
     // copia os dados para os vetores  L[] and R[] /
     for (i = 0; i < n1; i++) 
@@ -189,7 +189,7 @@ int getMax(int* arr, int n)
 
 void countSort(int* arr, int n, int exp)
 {
-    int output[n];
+    int output[1001];
     int i, count[10] = {0};
 
     // Store count of occurrences in count[]
