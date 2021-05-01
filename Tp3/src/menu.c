@@ -10,25 +10,32 @@ void menu()
     {
     case 1:
         resposta = 1000;
-        
+        srand(time(0));
+        random_array(resposta);
     case 2:
         resposta = 5000;
-        
+        srand(time(0));
+        random_array(resposta);
     case 3:
         resposta = 10000;
-        
+        srand(time(0));
+        random_array(resposta);
     case 4:
         resposta = 50000;
-        
+        srand(time(0));
+        random_array(resposta);
     case 5:
         resposta = 100000;
-        
+        srand(time(0));
+        random_array(resposta);
     case 6:
         resposta = 500000;
-        
+        srand(time(0));
+        random_array(resposta);
     case 7:
         resposta = 1000000;
-        
+        srand(time(0));
+        random_array(resposta);
     default:
 
         break;

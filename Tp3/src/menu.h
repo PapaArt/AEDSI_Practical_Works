@@ -1,6 +1,7 @@
 #ifndef MENU_H
 #define MENU_H
 #include "sorting.h"
+#include "cenarios.h"
 
 void menu();
 void print_menu1();

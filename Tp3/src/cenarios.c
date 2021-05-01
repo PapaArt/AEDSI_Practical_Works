@@ -17,5 +17,9 @@ void Insere(Registro x, TipoLista* plv)
 
 void random_array(int resposta)
 {
-    
+    int i;
+    for (i = 0; i < resposta; i++)
+    {
+        printf("%d ", rand()%100);
+    }
 }

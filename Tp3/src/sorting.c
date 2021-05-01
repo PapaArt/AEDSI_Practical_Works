@@ -106,67 +106,74 @@ int quickSort(int* arr, int low, int high)
     }
 }
 
-void merge(int* arr, int l, int m, int r)
-{
-    int i, j, k;
-    int n1 = m - l + 1;
-    int n2 = r - m;
+void merge(int* arr, int l, int m, int r,double *comp,double mov,int flag) { 
+    int i, j, k; 
+    int n1 = m - l + 1; 
+    int n2 =  r - m; 
 
-    // creat temp arrays
-    int L[n1], R[n2];
+    // cria vetores temporários /
+    int L[n1], R[n2]; 
 
-    // Copy data to temp arrays L[] and R[]
-    for (i = 0; i < n1; i++)
-        L[i] = arr[l+i];
-    for (j = 0; j < n2; j++)    
-        R[j] = arr[m+1+j];
-    
-    // Merge the temp arrays back into arr[l...r]
-    i = 0; // Initial index of first subarray
-    j = 0; // Initial index of second subarray
-    k = l; // Initial index of merged subarray
-    while (i < n1 && j < n2)
-    {
-        if (L[i] <= R[j])
-        {
-            arr[k] = L[i];
-            i++;
-        }else{
-            arr[k] = R[j];
-            j++;
-        }k++;
+    // copia os dados para os vetores  L[] and R[] /
+    for (i = 0; i < n1; i++) 
+        L[i] = arr[l + i]; 
+    for (j = 0; j < n2; j++) 
+        R[j] = arr[m + 1+ j]; 
+
+    // Mesclar as matrizes temporárias novamente te[l..r]/
+    i = 0; // index inicial do primeiro subvetor 
+    j = 0; // index inicial do segundo subvetor 
+    k = l; // index inicial do terceiro subvetor 
+    while (i < n1 && j < n2) {
+        (comp)++; 
+        if (L[i]<= R[j]) { 
+            (mov)++;
+            arr[k] = L[i]; 
+            i++; 
+        } 
+        else{ 
+            (mov)++;
+            arr[k] = R[j]; 
+            j++; 
+        }k++; 
+    } 
+
+    // Copia os elementos restantes de L [],se houver algum/
+    while (i < n1) { 
+        (mov)++;
+        arr[k] = L[i]; 
+        i++; 
+        k++; 
+    } 
+
+    // Copia os elementos restantes de R [],se houver algum/
+    while (j < n2) {
+        (mov)++; 
+        arr[k] = R[j]; 
+        j++; 
+        k++; 
+    } 
+} 
+
+/* l é para o índice esquerdo e r é o índice direito do subvetor de te[] a ser classificado*/
+void mergeSort(int* arr, int l, int r,int flag) { 
+    double comp=0,mov=0;
+    if (l < r) { 
+        // Igual a (l + r) / 2, mas evita o excesso de
+        // amplia l e h 
+        int m = l+(r-l)/2; 
+
+        // Classificar primeira e segunda metades
+        mergeSort(arr, l, m,0); 
+        mergeSort(arr, m+1, r,0); 
+
+        merge(arr, l, m, r,&comp,mov,0); 
+    } 
+    if(flag){
+        printf("Comparações iguais a = %lf\n",comp);
+        printf("Movimentações iguais a = %lf\n",mov);
     }
-    
-    // Copy the remaining elements of L[], if there are any
-    while (i < n1)
-    {
-        arr[k] = L[i];
-        i++;
-        k++;
-    }
-    
-    // Copy the remaining elements of R[], if there are any
-    while (j < n2)
-    {
-        arr[k] = R[j];
-        j++;
-        k++;
-    }
-}
 
-int mergeSort(int* arr, int l, int r)
-{
-    if (l < r)
-    {
-        // Same as (l+r)/2, but avoids overflow for large l and h
-        int m = l + (r - 1) / 2;
-
-        // Sort first and second halves
-        mergeSort(arr, l, m);
-        mergeSort(arr, m+1, r);
-
-        merge(arr, l, m, r);
-    }
 }
 
 int getMax(int* arr, int n)
