@@ -1,13 +1,13 @@
 #include "sorting.h"
 
-void swap(int* xp, int* yp)
+void swap(long long int* xp, long long int* yp)
 {
-    int temp = *xp;
+    long long int temp = *xp;
     *xp = *yp;
     *yp = temp;
 }
 
-int bubbleSort(int* arr, int n)
+int bubbleSort(long long int* arr, int n)
 {
     int i,j;
     for (i = 0; i < n-1; i++)
@@ -23,7 +23,7 @@ int bubbleSort(int* arr, int n)
     }
 }
 
-int selectionSort(int* arr, int n)
+int selectionSort(long long int* arr, int n)
 {
     int i, j, min_index;
 
@@ -42,7 +42,7 @@ int selectionSort(int* arr, int n)
     }
 }
 
-int shellSort(int* arr, int n)
+int shellSort(long long int* arr, int n)
 {
     int i, j, gap;
     int temp;
@@ -73,7 +73,7 @@ int shellSort(int* arr, int n)
     return 0;
 }
 
-int partition(int* arr, int low, int high)
+int partition(long long int* arr, int low, int high)
 {
     int pivot = arr[high]; // pivot
     int i = (low - 1); //Index of smaller element and indicates the right position of pivot found so far
@@ -91,7 +91,7 @@ int partition(int* arr, int low, int high)
     return (i+1);    
 }
 
-int quickSort(int* arr, int low, int high)
+int quickSort(long long int* arr, int low, int high)
 {
     if (low < high)
     {
@@ -106,7 +106,7 @@ int quickSort(int* arr, int low, int high)
     }
 }
 
-void merge(int* arr, int l, int m, int r,double *comp,double mov,int flag) { 
+void merge(long long int* arr, int l, int m, int r,double *comp,double mov,int flag) { 
     int i, j, k; 
     int n1 = m - l + 1; 
     int n2 =  r - m; 
@@ -156,7 +156,7 @@ void merge(int* arr, int l, int m, int r,double *comp,double mov,int flag) {
 } 
 
 /* l é para o índice esquerdo e r é o índice direito do subvetor de te[] a ser classificado*/
-void mergeSort(int* arr, int l, int r,int flag) { 
+void mergeSort(long long int* arr, int l, int r,int flag) { 
     double comp=0,mov=0;
     if (l < r) { 
         // Igual a (l + r) / 2, mas evita o excesso de
@@ -176,7 +176,7 @@ void mergeSort(int* arr, int l, int r,int flag) {
 
 }
 
-int getMax(int* arr, int n)
+int getMax(long long int* arr, int n)
 {
     int mx = arr[0];
     for (int i = 1; i < n; i++)
@@ -187,7 +187,7 @@ int getMax(int* arr, int n)
     return mx;
 }
 
-void countSort(int* arr, int n, int exp)
+void countSort(long long int* arr, int n, int exp)
 {
     int output[1001];
     int i, count[10] = {0};
@@ -212,7 +212,7 @@ void countSort(int* arr, int n, int exp)
         arr[i] = output[i];
 }
 
-int radixSort(int* arr, int n)
+int radixSort(long long int* arr, int n)
 {
     // Find the maximum number to know number of digits
     int m = getMax(arr, n);
@@ -224,9 +224,9 @@ int radixSort(int* arr, int n)
         countSort(arr, n, exp);
 }
 
-void  printArray(int* arr, int n)
+void  printArray(long long int* arr, int n)
 {
     for (int i = 0; i < n; i++)
-        printf("%d ", arr[i]);
+        printf("%lld ", arr[i]);
     printf("\n");
 }
