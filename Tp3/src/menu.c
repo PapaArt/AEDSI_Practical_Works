@@ -2,44 +2,35 @@
 
 void menu()
 {    
-    int escolha[3];
+    int escolha;
     int resposta;
+    Registro item;
     print_menu1();
-    scanf("%d", &escolha[0]);
-    switch (escolha[0])
-    {
-    case 1:
-        resposta = 1000;
-        srand(time(0));
-        random_array(resposta);
-    case 2:
-        resposta = 5000;
-        srand(time(0));
-        random_array(resposta);
-    case 3:
-        resposta = 10000;
-        srand(time(0));
-        random_array(resposta);
-    case 4:
-        resposta = 50000;
-        srand(time(0));
-        random_array(resposta);
-    case 5:
-        resposta = 100000;
-        srand(time(0));
-        random_array(resposta);
-    case 6:
-        resposta = 500000;
-        srand(time(0));
-        random_array(resposta);
-    case 7:
-        resposta = 1000000;
-        srand(time(0));
-        random_array(resposta);
-    default:
+    scanf("%d", &escolha);
 
-        break;
+    if (escolha == 1)
+    {
+       resposta = 1000;
+    } else if(escolha == 2){
+        resposta = 5000;
+    } else if(escolha == 3){
+        resposta = 10000;
+    } else if(escolha == 4){
+        resposta = 50000;
+    } else if(escolha == 5){
+        resposta = 100000;
+    } else if(escolha == 6){
+        resposta = 500000;
+    } else if(escolha == 7){
+        resposta = 1000000;
     }
+    
+    long long int arr[resposta];
+    random_array(arr, resposta);
+    bubbleSort(arr, resposta);
+    printf("Sorted array: \n");
+    printArray(arr, resposta);
+
 }
 
 
