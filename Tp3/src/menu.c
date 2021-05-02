@@ -4,7 +4,6 @@ void menu()
 {    
     int escolha[3];
     int resposta;
-    Registro item;
     print_menu1();
     scanf("%d", &escolha[0]);
     do
@@ -19,7 +18,7 @@ void menu()
 
             if (escolha[2] == 1)
             {
-            resposta = 1000;
+                resposta = 1000;
             } else if(escolha[2] == 2){
                 resposta = 5000;
             } else if(escolha[2] == 3){
@@ -35,8 +34,33 @@ void menu()
             }
         }else if(escolha[0] == 2){
             // Cenario 2 -> ordenar registros
+            TipoLista* lista;
+            Registro* item;
             print_menu2();
             scanf("%d", &escolha[1]);
+            if (escolha[1] == 1)
+            {
+                printf("dasdsaa\n");
+                resposta = 1000;
+                //FLVazia(lista);
+                for(int i = 0; i<resposta; i++){
+                    printf("dsda\n");
+                    geraReg(item);
+                    //Insere(item, lista);
+                }
+            } else if(escolha[1] == 2){
+                resposta = 5000;
+            } else if(escolha[1] == 3){
+                resposta = 10000;
+            } else if(escolha[1] == 4){
+                resposta = 50000;
+            } else if(escolha[1] == 5){
+                resposta = 100000;
+            } else if(escolha[1] == 6){
+                resposta = 500000;
+            } else if(escolha[1] == 7){
+                resposta = 1000000;
+            }
         }
         
     } while (escolha[0] != 0);
