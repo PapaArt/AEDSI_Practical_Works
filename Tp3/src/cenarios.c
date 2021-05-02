@@ -23,6 +23,11 @@ void random_array(long long int *arr, int resposta)
     {
         arr[i] = rand() % 101;
     }
+    // for (i = 0; i < resposta; i++)
+    // {
+    //     printf("%lld ", arr[i]);
+    // }printf("\n");
+    
 }
 
 void random_id(Registro *item)
