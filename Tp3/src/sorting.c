@@ -244,6 +244,7 @@ int radixSort(long long int* arr, int n)
         countSort(arr, n, exp);
 }
 
+// Modificar essa funcao para gerar a saida em .txt
 void  printArray(long long int* arr, int n)
 {
     for (int i = 0; i < n; i++)

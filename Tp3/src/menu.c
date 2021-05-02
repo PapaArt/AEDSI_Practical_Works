@@ -1,6 +1,6 @@
 #include "menu.h"
 
-void menu()
+int menu()
 {    
     int escolha[3];
     int resposta;
@@ -19,7 +19,7 @@ void menu()
 
             if (escolha[2] == 1)
             {
-            resposta = 1000;
+                resposta = 1000;
             } else if(escolha[2] == 2){
                 resposta = 5000;
             } else if(escolha[2] == 3){
@@ -33,6 +33,31 @@ void menu()
             } else if(escolha[2] == 7){
                 resposta = 1000000;
             }
+
+            long long int arr[resposta];
+            random_array(arr, resposta);
+
+            // O vetor ordenado deve ter sua saida no arquivo .txt
+            if (escolha[1] == 1)
+            {
+                bubbleSort(arr, resposta);
+            } else if(escolha[1] == 2){
+                selectionSort(arr, resposta);
+            } else if(escolha[1] == 3){
+                insertionSort(arr, resposta);
+            } else if(escolha[1] == 4){
+                shellSort(arr, resposta);
+            } else if(escolha[1] == 5){
+                quickSort(arr, 0, resposta - 1);
+            } else if(escolha[1] == 6){
+                mergeSort(arr, 0, resposta - 1, 1);
+            } else if(escolha[1] == 7){
+                radixSort(arr, resposta);
+            }
+
+
+            print_menu1();
+            scanf("%d", &escolha[0]);
         }else if(escolha[0] == 2){
             // Cenario 2 -> ordenar registros
             print_menu2();
@@ -40,6 +65,7 @@ void menu()
         }
         
     } while (escolha[0] != 0);
+    printf("Programa encerrado!!!\n");
 }
 
 
