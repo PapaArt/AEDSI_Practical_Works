@@ -54,6 +54,7 @@ int menu()
                 radixSort(arr, resposta);
             }
 
+            printArray(arr, resposta);
 
             print_menu1();
             scanf("%d", &escolha[0]);
@@ -88,7 +89,7 @@ int menu()
             }
         }
         
-    } while (escolha[0] != 0);
+    } while (escolha[0] == 1 || escolha[0] == 2);
     printf("Programa encerrado!!!\n");
 }
 

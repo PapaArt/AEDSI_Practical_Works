@@ -247,7 +247,11 @@ int radixSort(long long int* arr, int n)
 // Modificar essa funcao para gerar a saida em .txt
 void  printArray(long long int* arr, int n)
 {
+    FILE* pFile;
+    pFile = fopen("Cenario1.txt", "w+");
     for (int i = 0; i < n; i++)
-        printf("%lld ", arr[i]);
-    printf("\n");
+        fprintf(pFile, "%lld ", arr[i]);
+    fputs("\n", pFile);
+    fclose(pFile);
+    printf("Arquivo gerado com sucesso!!!\n");
 }
