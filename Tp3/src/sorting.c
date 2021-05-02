@@ -7,9 +7,21 @@ void swap(long long int* xp, long long int* yp)
     *yp = temp;
 }
 
-int bubbleSort(long long int* arr, int n)
+int * bubbleSort(long long int* arr, int n)
 {
     int i,j;
+
+    int *contador;
+    contador = malloc(sizeof(2));
+
+    if (contador == NULL) {
+        printf("Memoria nao alocada\n");
+        exit(0);
+    }
+
+    contador[0] = 0;
+    contador[1] = 0;
+
     for (i = 0; i < n-1; i++)
     {
         // Last i elements are already in place
@@ -18,14 +30,28 @@ int bubbleSort(long long int* arr, int n)
             if (arr[j] > arr[j+1])
             {
                 swap(&arr[j], &arr[j+1]);
+                contador[1]++;
             }
+            contador[0]++;
         }
     }
+    return contador;
 }
 
-int selectionSort(long long int* arr, int n)
+int * selectionSort(long long int* arr, int n)
 {
     int i, j, min_index;
+
+    int *contador;
+    contador = malloc(sizeof(2));
+
+    if (contador == NULL) {
+        printf("Memoria nao alocada\n");
+        exit(0);
+    }
+
+    contador[0] = 0;
+    contador[1] = 0;
 
     // One by one move boundary of unsorted subarray
     for (i = 0; i < n-1; i++)
@@ -35,24 +61,32 @@ int selectionSort(long long int* arr, int n)
         for (j = i+1; j < n; j++)
         {
             if(arr[j] < arr[min_index])
+            {
                 min_index = j;
+                contador[1]++;
+            }
+            contador[0] ++;
         }
         // Swap the found minimum element with the first element
         swap(&arr[min_index], &arr[i]);
     }
+    return contador;
 }
 
-int insertionSort(long long int* arr, int n)
+/*
+int * insertionSort(long long int* arr, int n)
 {
     int i, key, j;
+
     for (i = 1; i < n; i++)
     {
         key = arr[i];
         j = i - 1;
 
-        /* Move elements of arr[0...i-1], that are
-            greater than key, to one position ahead
-            of their current position */
+        // Move elements of arr[0...i-1], that are
+        //    greater than key, to one position ahead
+        //    of their current position
+
         while (j >= 0 && arr[j] > key)
         {
             arr[j+1] = arr[j];
@@ -61,11 +95,49 @@ int insertionSort(long long int* arr, int n)
         arr[j+1] = key;
     }
 }
+*/
 
-int shellSort(long long int* arr, int n)
+int * insertionSort(long long int* arr, int n)
+{
+    int i, j;
+    int temp;
+
+    int *contador;
+    contador = malloc(sizeof(2));
+
+    contador[0] = 0;
+    contador[1] = 0;
+
+    for (i = 1; i < n; i++)
+    {
+        j = i;
+        contador[0]++;
+        while ((j > 0) && (arr[j - 1] > arr[j]))
+        {
+            if(arr[j-1]>arr[j])
+            {
+                contador[0]++;
+            }
+            temp = arr[j - 1];
+            arr[j - 1] = arr[j];
+            arr[j] = temp;
+            j--;
+            contador[1]++;
+        }
+    }
+    return contador;
+}
+
+int * shellSort(long long int* arr, int n)
 {
     int i, j, gap;
     int temp;
+
+    int *contador;
+    contador = malloc(sizeof(2));
+
+    contador[0] = 0;
+    contador[1] = 0;
 
     // Start with a big gap, then reduce the gap
     for (gap = n/2; gap > 0; gap /= 2)
@@ -79,18 +151,20 @@ int shellSort(long long int* arr, int n)
             // add a[i] to the elements that have been gap sorted
             // save a[i] in temp and make a hole at position i
             int temp = arr[i];
-
-            // shift earlier gap-sorted elements up until the correct 
+            // shift earlier gap-sorted elements up until the correct
             // location for a[i] is found
             for (j = i; j >= gap && arr[j-gap] > temp; j -= gap)
             {
                 arr[j] = arr[j-gap];
+                contador[0]++;
+                contador[1]++;
             }
             // put temp (the original a[i]) in its correct location
             arr[j] = temp;
-        }     
+            contador[0]++;
+        }
     }
-    return 0;
+    return contador;
 }
 
 int partition(long long int* arr, int low, int high)
