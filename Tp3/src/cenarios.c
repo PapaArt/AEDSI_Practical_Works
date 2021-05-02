@@ -43,7 +43,6 @@ void random_char(Registro *item)
 
 void random_realvalue(Registro *item)
 {
-
     for (int i = 0; i < 4; i++)
     {
         
