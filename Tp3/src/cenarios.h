@@ -28,5 +28,8 @@ typedef struct{
 void FLVazia(TipoLista *item);
 void Insere(Registro x, TipoLista *item);
 void random_array(long long int* arr, int resposta);
+void random_id(Registro* item);
+void random_char(Registro* item);
+void random_realvalue(Registro* item);
 
 #endif
