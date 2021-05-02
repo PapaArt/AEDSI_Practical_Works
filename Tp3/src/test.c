@@ -3,7 +3,7 @@
 int main()
 {
     int i, j, n = 500;
-    int arr[n];
+    int arr[500];
     srand(time(0));
     for (i = 0; i < n; i++)
     {

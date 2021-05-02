@@ -45,6 +45,6 @@ void random_realvalue(Registro *item)
 {
     for (int i = 0; i < 4; i++)
     {
-        
+        item->real_value[i] = (float)(rand() % 101);
     }
 }
