@@ -7,7 +7,7 @@ void swap(long long int* xp, long long int* yp)
     *yp = temp;
 }
 
-int * bubbleSort(long long int* arr, int n)
+int bubbleSort(long long int* arr, int n)
 {
     int i,j;
 

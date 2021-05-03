@@ -16,6 +16,15 @@ void Insere(Registro* x, TipoLista *item)
     item->pUltimo->pProx = NULL;
 }
 
+void Imprime(TipoLista item){ 
+    Apontador Aux;
+    Aux = item.pPrimeiro->pProx;
+    while (Aux != NULL) { 
+        printf("%d ", Aux->registro.chave);
+        Aux = Aux->pProx;
+    }printf("\n");
+}
+
 void random_array(long long int *arr, int resposta)
 {
     int i;
@@ -23,18 +32,6 @@ void random_array(long long int *arr, int resposta)
     {
         arr[i] = rand() % 101;
     }
-    // for (i = 0; i < resposta; i++)
-    // {
-    //     printf("%lld ", arr[i]);
-    // }printf("\n");
-    
-}
-
-void random_id(Registro *item)
-{
-    int a = 0;
-    a = rand()%101;
-    item->chave = a;
 }
 
 void random_char(Registro *item)

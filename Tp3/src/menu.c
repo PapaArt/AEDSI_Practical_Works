@@ -33,7 +33,7 @@ int menu()
                 resposta = 1000000;
             }
 
-            long long int arr[100001];
+             long long int arr[1000000001];
             random_array(arr, resposta);
 
             // O vetor ordenado deve ter sua saida no arquivo .txt
@@ -61,31 +61,89 @@ int menu()
         }else if(escolha[0] == 2){
             // Cenario 2 -> ordenar registros
             TipoLista lista;
+            Registro item;
             print_menu2();
             scanf("%d", &escolha[1]);
-            if (escolha[1] == 1)
+            print_menu3();
+            scanf("%d", &escolha[2]);
+            FLVazia(&lista);
+            if (escolha[2] == 1)
             {
                 resposta = 1000;
-                FLVazia(&lista);
                 srand((unsigned)time(NULL));
                 for(int i = 0; i<resposta; i++){
                     Registro item;
                     geraReg(&item);
                     Insere(&item, &lista);
                 }
-            } else if(escolha[1] == 2){
+            } else if(escolha[2] == 2){
                 resposta = 5000;
-            } else if(escolha[1] == 3){
+                srand((unsigned)time(NULL));
+                for(int i = 0; i<resposta; i++){
+                    Registro item;
+                    geraReg(&item);
+                    Insere(&item, &lista);
+                }
+            } else if(escolha[2] == 3){
                 resposta = 10000;
-            } else if(escolha[1] == 4){
+                srand((unsigned)time(NULL));
+                for(int i = 0; i<resposta; i++){
+                    Registro item;
+                    geraReg(&item);
+                    Insere(&item, &lista);
+                }
+            } else if(escolha[2] == 4){
                 resposta = 50000;
-            } else if(escolha[1] == 5){
+                srand((unsigned)time(NULL));
+                for(int i = 0; i<resposta; i++){
+                    Registro item;
+                    geraReg(&item);
+                    Insere(&item, &lista);
+                }
+            } else if(escolha[2] == 5){
                 resposta = 100000;
-            } else if(escolha[1] == 6){
+                srand((unsigned)time(NULL));
+                for(int i = 0; i<resposta; i++){
+                    Registro item;
+                    geraReg(&item);
+                    Insere(&item, &lista);
+                }
+            } else if(escolha[2] == 6){
                 resposta = 500000;
-            } else if(escolha[1] == 7){
+                srand((unsigned)time(NULL));
+                for(int i = 0; i<resposta; i++){
+                    Registro item;
+                    geraReg(&item);
+                    Insere(&item, &lista);
+                }
+            } else if(escolha[2] == 7){
                 resposta = 1000000;
+                srand((unsigned)time(NULL));
+                for(int i = 0; i<resposta; i++){
+                    Registro item;
+                    geraReg(&item);
+                    Insere(&item, &lista);
+                }
             }
+
+            // if (escolha[1] == 1)
+            // {
+            //     bubbleSort(arr, resposta);
+            // } else if(escolha[1] == 2){
+            //     selectionSort(arr, resposta);
+            // } else if(escolha[1] == 3){
+            //     insertionSort(arr, resposta);
+            // } else if(escolha[1] == 4){
+            //     shellSort(arr, resposta);
+            // } else if(escolha[1] == 5){
+            //     quickSort(arr, 0, resposta - 1);
+            // } else if(escolha[1] == 6){
+            //     mergeSort(arr, 0, resposta - 1, 1);
+            // } else if(escolha[1] == 7){
+            //     radixSort(arr, resposta);
+            // }
+
+            // printArray(arr, resposta);
         }
         
     } while (escolha[0] == 1 || escolha[0] == 2);
