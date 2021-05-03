@@ -60,8 +60,26 @@ void random_realvalue(Registro *item)
 }
 
 void geraReg(Registro* item){
-    random_id(item);
+    // random_id(item);
+    // printf("id: %d\n", item->chave);
+    // random_char(item);
+    // random_realvalue(item);
+    item->chave = rand()%101;
     printf("id: %d\n", item->chave);
-    random_char(item);
-    random_realvalue(item);
+    int i, j;
+    for (i = 0; i < 10; i++)
+    {
+        for (j = 0; j < 200; j++)
+        {
+            item->string[i][j] = 'a' + (char)(rand() % 26);
+            printf("%c", item->string[i][j]);
+        }
+    }printf("\n");
+
+    for (int i = 0; i < 4; i++)
+    {
+        item->real_value[i] =(float) rand()/101;
+        printf("real value: %f\n", item->real_value[i]);
+    }
+
 }
