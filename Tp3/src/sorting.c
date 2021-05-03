@@ -322,7 +322,7 @@ int radixSort(long long int* arr, int n)
 void  printArray(long long int* arr, int n)
 {
     FILE* pFile;
-    pFile = fopen("Cenario1.txt", "w+");
+    pFile = fopen("../out/Cenario1.txt", "w+");
     for (int i = 0; i < n; i++)
         fprintf(pFile, "%lld ", arr[i]);
     fputs("\n", pFile);
