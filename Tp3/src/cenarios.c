@@ -32,13 +32,11 @@ void random_array(long long int *arr, int resposta)
 
 void random_id(Registro *item)
 {
-    srand((unsigned)time(NULL));
-    printf("dsadsasda321213\n");
     int a = 0;
-    a = rand()/101;
+    a = rand()%101;
     //item->chave = a;
     printf("%d \n",a);
-    printf("dsadsasda33164634646346341213\n");
+
 }
 
 void random_char(Registro *item)
