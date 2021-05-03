@@ -61,18 +61,19 @@ int menu()
         }else if(escolha[0] == 2){
             // Cenario 2 -> ordenar registros
             TipoLista lista;
+            Registro item;
             print_menu2();
             scanf("%d", &escolha[1]);
+            FLVazia(&lista);
             if (escolha[1] == 1)
             {
-                resposta = 1000;
-                FLVazia(&lista);
+                resposta = 10;
+                srand(time(0));
                 for(int i = 0; i<resposta; i++){
-                    //srand((unsigned)time(NULL));
-                    Registro item;
-                    geraReg(&item);
+                    item.chave = rand()%101;
                     Insere(&item, &lista);
                 }
+                Imprime(lista);
             } else if(escolha[1] == 2){
                 resposta = 5000;
             } else if(escolha[1] == 3){
