@@ -33,7 +33,7 @@ int menu()
                 resposta = 1000000;
             }
 
-            long long int arr[resposta];
+            long long int arr[100001];
             random_array(arr, resposta);
 
             // O vetor ordenado deve ter sua saida no arquivo .txt
@@ -66,7 +66,9 @@ int menu()
             if (escolha[1] == 1)
             {
                 resposta = 1000;
+                FLVazia(&lista);
                 for(int i = 0; i<resposta; i++){
+                    //srand((unsigned)time(NULL));
                     Registro item;
                     geraReg(&item);
                     Insere(&item, &lista);
