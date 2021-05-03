@@ -324,8 +324,7 @@ void  printArray(long long int* arr, int n)
     FILE* pFile;
     pFile = fopen("../out/Cenario1.txt", "w+");
     for (int i = 0; i < n; i++)
-        fprintf(pFile, "%lld ", arr[i]);
-    fputs("\n", pFile);
+        fprintf(pFile, "%lld \n", arr[i]);
     fclose(pFile);
     printf("Arquivo gerado com sucesso!!!\n");
 }

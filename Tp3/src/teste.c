@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#define RAND_MAX 101
+//#define RAND_MAX 101
 
 
 
@@ -15,7 +15,6 @@ typedef struct Registro{
 
 void random_realvalue(Registro *item)
 {
-    srand((unsigned)time(NULL));
     for (int i = 0; i < 4; i++)
     {
         item->real_value[i] = (float)rand()/101;
