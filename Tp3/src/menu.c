@@ -68,6 +68,7 @@ int menu()
                 resposta = 1000;
                 FLVazia(&lista);
                 for(int i = 0; i<resposta; i++){
+                    //srand((unsigned)time(NULL));
                     Registro item;
                     geraReg(&item);
                     Insere(&item, &lista);

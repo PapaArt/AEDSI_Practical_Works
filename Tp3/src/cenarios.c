@@ -32,7 +32,6 @@ void random_array(long long int *arr, int resposta)
 
 void random_id(Registro *item)
 {
-    srand(time(NULL));
     int a = 0;
     a = rand()%101;
     item->chave = a;
@@ -46,8 +45,9 @@ void random_char(Registro *item)
         for (j = 0; j < 200; j++)
         {
             item->string[i][j] = 'a' + (char)(rand() % 26);
+            printf("%c", item->string[i][j]);
         }
-    }
+    }printf("\n");
 }
 
 void random_realvalue(Registro *item)
