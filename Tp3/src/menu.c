@@ -33,7 +33,7 @@ int menu()
                 resposta = 1000000;
             }
 
-            long long int arr[resposta];
+            long long int arr[100001];
             random_array(arr, resposta);
 
             // O vetor ordenado deve ter sua saida no arquivo .txt
@@ -60,19 +60,17 @@ int menu()
             scanf("%d", &escolha[0]);
         }else if(escolha[0] == 2){
             // Cenario 2 -> ordenar registros
-            TipoLista* lista;
-            Registro* item;
+            TipoLista lista;
             print_menu2();
             scanf("%d", &escolha[1]);
             if (escolha[1] == 1)
             {
-                printf("dasdsaa\n");
                 resposta = 1000;
-                //FLVazia(lista);
+                FLVazia(&lista);
                 for(int i = 0; i<resposta; i++){
-                    printf("dsda\n");
-                    geraReg(item);
-                    //Insere(item, lista);
+                    Registro item;
+                    geraReg(&item);
+                    Insere(&item, &lista);
                 }
             } else if(escolha[1] == 2){
                 resposta = 5000;
