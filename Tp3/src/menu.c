@@ -33,7 +33,7 @@ int menu()
                 resposta = 1000000;
             }
 
-            long long int arr[100001];
+            long long int arr[1000000001];
             random_array(arr, resposta);
 
             // O vetor ordenado deve ter sua saida no arquivo .txt
