@@ -67,10 +67,12 @@ int menu()
             FLVazia(&lista);
             if (escolha[1] == 1)
             {
-                resposta = 10;
-                srand(time(0));
+                resposta = 1000;
+                FLVazia(&lista);
+                srand((unsigned)time(NULL));
                 for(int i = 0; i<resposta; i++){
-                    item.chave = rand()%101;
+                    Registro item;
+                    geraReg(item);
                     Insere(&item, &lista);
                 }
                 Imprime(lista);
