@@ -78,5 +78,13 @@ void geraReg(Registro* item){
         item->real_value[i] =(float) rand()/101;
         printf("real value: %f\n", item->real_value[i]);
     }
+}
 
+// Funcao para coletar os dados
+void arquivoX(int* contador, double tempo)
+{
+    FILE* pFile;
+    pFile = fopen("../out/Cenario1.txt", "w+");
+    fprintf(pFile, "Numero de comparacoes: %d\nNumero de movimentacoes: %d\nTempo de execucao: %lf\n", contador[0], contador[1], tempo);
+    fclose(pFile);
 }

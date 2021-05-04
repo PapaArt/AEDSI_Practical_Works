@@ -1,5 +1,6 @@
 #include "sorting.h"
 
+
 void swap(long long int* xp, long long int* yp)
 {
     long long int temp = *xp;
@@ -7,10 +8,10 @@ void swap(long long int* xp, long long int* yp)
     *yp = temp;
 }
 
-int bubbleSort(long long int* arr, int n)
+int* bubbleSort(long long int* arr, int n)
 {
     int i,j;
-
+    double tempo;
     int *contador;
     contador = malloc(sizeof(2));
 
@@ -35,13 +36,13 @@ int bubbleSort(long long int* arr, int n)
             contador[0]++;
         }
     }
-    return contador;
+    arquivoX(contador, tempo);
 }
 
-int * selectionSort(long long int* arr, int n)
+int* selectionSort(long long int* arr, int n)
 {
     int i, j, min_index;
-
+    double tempo;
     int *contador;
     contador = malloc(sizeof(2));
 
@@ -70,7 +71,7 @@ int * selectionSort(long long int* arr, int n)
         // Swap the found minimum element with the first element
         swap(&arr[min_index], &arr[i]);
     }
-    return contador;
+    arquivoX(contador, tempo);
 }
 
 /*
@@ -97,11 +98,11 @@ int * insertionSort(long long int* arr, int n)
 }
 */
 
-int * insertionSort(long long int* arr, int n)
+int* insertionSort(long long int* arr, int n)
 {
     int i, j;
     int temp;
-
+    double tempo;
     int *contador;
     contador = malloc(sizeof(2));
 
@@ -125,14 +126,14 @@ int * insertionSort(long long int* arr, int n)
             contador[1]++;
         }
     }
-    return contador;
+    arquivoX(contador, tempo);
 }
 
-int * shellSort(long long int* arr, int n)
+int* shellSort(long long int* arr, int n)
 {
     int i, j, gap;
     int temp;
-
+    double tempo;
     int *contador;
     contador = malloc(sizeof(2));
 
@@ -164,7 +165,7 @@ int * shellSort(long long int* arr, int n)
             contador[0]++;
         }
     }
-    return contador;
+    arquivoX(contador, tempo);
 }
 
 int partition(long long int* arr, int low, int high)
@@ -321,10 +322,7 @@ int radixSort(long long int* arr, int n)
 // Modificar essa funcao para gerar a saida em .txt
 void  printArray(long long int* arr, int n)
 {
-    FILE* pFile;
-    pFile = fopen("../out/Cenario1.txt", "w+");
     for (int i = 0; i < n; i++)
-        fprintf(pFile, "%lld \n", arr[i]);
-    fclose(pFile);
-    printf("Arquivo gerado com sucesso!!!\n");
+        printf("%lld ", arr[i]);
+    printf("\n");
 }
