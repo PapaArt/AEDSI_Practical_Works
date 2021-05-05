@@ -20,7 +20,7 @@ void swap(long long int* xp, long long int* yp)
 void bubbleSort(long long int* arr, int n, int flag)
 {
     int i,j;
-
+    double tempo;
     int bubble_comp = 0;
     int bubble_swap = 0;
 
@@ -39,15 +39,14 @@ void bubbleSort(long long int* arr, int n, int flag)
     }
     if (flag)
     {
-        printf("\nNumero de comparacoes: %d \n",bubble_comp);
-        printf("Numero de trocas: %d \n",bubble_swap);
+        arquivoX(bubble_comp, bubble_swap, tempo);
     }
 }
 
 void selectionSort(long long int* arr, int n,int flag)
 {
     int i, j, min_index;
-
+    double tempo;
     int selection_comp = 0;
     int selection_swap = 0;
     // One by one move boundary of unsorted subarray
@@ -70,8 +69,7 @@ void selectionSort(long long int* arr, int n,int flag)
     }
     if (flag)
     {
-        printf("\nNumero de comparacoes: %d \n",selection_comp);
-        printf("Numero de trocas: %d \n",selection_swap);
+        arquivoX(selection_comp, selection_swap, tempo);
     }
 }
 
@@ -103,7 +101,7 @@ void insertionSort(long long int* arr, int n,int flag)
 {
     int i, j;
     int temp;
-
+    double tempo;
     int insertion_comp = 0;
     int insertion_swap = 0;
 
@@ -126,8 +124,7 @@ void insertionSort(long long int* arr, int n,int flag)
     }
 if (flag)
     {
-        printf("\nNumero de comparacoes: %d \n",insertion_comp);
-        printf("Numero de trocas: %d \n",insertion_swap);
+        arquivoX(insertion_comp, insertion_swap, tempo);
     }
 }
 
@@ -135,7 +132,7 @@ void shellSort(long long int* arr, int n,int flag)
 {
     int i, j, gap;
     int temp;
-
+    double tempo;
     int shell_comp = 0;
     int shell_swap = 0;
     // Start with a big gap, then reduce the gap
@@ -165,8 +162,7 @@ void shellSort(long long int* arr, int n,int flag)
     }
     if (flag)
     {
-        printf("\nNumero de comparacoes: %d \n",shell_comp);
-        printf("Numero de trocas: %d \n",shell_swap);
+        arquivoX(shell_comp, shell_swap, tempo);
     }
 }
 
@@ -194,6 +190,7 @@ int partition(long long int* arr, int low, int high)
 
 void quickSort(long long int* arr, int low, int high,int flag)
 {
+    double tempo;
     if (low < high)
     {
         /* pi is partitioning index, arr[p] is now
@@ -207,8 +204,7 @@ void quickSort(long long int* arr, int low, int high,int flag)
     }
     if (flag)
     {
-        printf("\nNumero de comparacoes: %d \n",quick_comp);
-        printf("Numero de trocas: %d \n",quick_swap);
+        arquivoX(quick_comp, quick_swap, tempo);
     }
 }
 
@@ -264,7 +260,7 @@ void merge(long long int* arr, int l, int m, int r,double *comp,double mov, int 
 
 /* l é para o índice esquerdo e r é o índice direito do subvetor de te[] a ser classificado*/
 void mergeSort(long long int* arr, int l, int r,int flag) {
-    double comp=0,mov=0;
+    double comp=0,mov=0, tempo;
     if (l < r) {
         // Igual a (l + r) / 2, mas evita o excesso de
         // amplia l e h
@@ -277,8 +273,7 @@ void mergeSort(long long int* arr, int l, int r,int flag) {
         merge(arr, l, m, r,&comp,mov,0);
     }
     if(flag){
-        printf("Comparações iguais a = %lf\n",comp);
-        printf("Movimentações iguais a = %lf\n",mov);
+        arquivoX(comp, mov, tempo);
     }
 }
 
@@ -338,7 +333,7 @@ void radixSort(long long int* arr, int n,int flag)
 {
     // Find the maximum number to know number of digits
     int m = getMax(arr, n);
-
+    double tempo;
     // Do counting sort for every digit. Note that instead
     // of passing digit number, exp is passed. exp is 10^i
     // wgere i is current digit number
@@ -349,8 +344,7 @@ void radixSort(long long int* arr, int n,int flag)
     }
     if (flag)
     {
-        printf("\nNumero de comparacoes: %d \n",radix_comp);
-        printf("Numero de trocas: %d \n",radix_swap);
+        arquivoX(radix_comp, radix_swap, tempo);
     }
 }
 

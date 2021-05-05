@@ -81,10 +81,10 @@ void geraReg(Registro* item){
 }
 
 // Funcao para coletar os dados
-void arquivoX(int* contador, double tempo)
+void arquivoX(int comparacoes, int movimentacoes, double tempo)
 {
     FILE* pFile;
     pFile = fopen("../out/Cenario1.txt", "w+");
-    fprintf(pFile, "Numero de comparacoes: %d\nNumero de movimentacoes: %d\nTempo de execucao: %lf\n", contador[0], contador[1], tempo);
+    fprintf(pFile, "Numero de comparacoes: %d\nNumero de movimentacoes: %d\nTempo de execucao: %lf\n", comparacoes, movimentacoes, tempo);
     fclose(pFile);
 }

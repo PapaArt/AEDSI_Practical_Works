@@ -1,3 +1,3 @@
-Numero de comparacoes: 499500
-Numero de movimentacoes: 4073
+Numero de comparacoes: 50343955
+Numero de movimentacoes: 588762
 Tempo de execucao: 0.000000
