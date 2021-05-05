@@ -39,25 +39,25 @@ int menu()
             // O vetor ordenado deve ter sua saida no arquivo .txt
             if (escolha[1] == 1)
             {
-                bubbleSort(arr, resposta);
+                bubbleSort(arr, resposta, 1);
                 printf("\nArquivo gerado com sucesso!!!\n");
             } else if(escolha[1] == 2){
-                selectionSort(arr, resposta);
+                selectionSort(arr, resposta, 1);
                 printf("\nArquivo gerado com sucesso!!!\n");
             } else if(escolha[1] == 3){
-                insertionSort(arr, resposta);
+                insertionSort(arr, resposta, 1);
                 printf("\nArquivo gerado com sucesso!!!\n");
             } else if(escolha[1] == 4){
-                shellSort(arr, resposta);
+                shellSort(arr, resposta, 1);
                 printf("\nArquivo gerado com sucesso!!!\n");
             } else if(escolha[1] == 5){
-                quickSort(arr, 0, resposta - 1);
+                quickSort(arr, 0, resposta - 1, 1);
                 printf("\nArquivo gerado com sucesso!!!\n");
             } else if(escolha[1] == 6){
                 mergeSort(arr, 0, resposta - 1, 1);
                 printf("\nArquivo gerado com sucesso!!!\n");
             } else if(escolha[1] == 7){
-                radixSort(arr, resposta);
+                radixSort(arr, resposta, 1);
                 printf("\nArquivo gerado com sucesso!!!\n");
             }
 
