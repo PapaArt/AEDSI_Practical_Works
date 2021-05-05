@@ -1,7 +1,7 @@
 #include "menu.h"
 
 int menu()
-{    
+{
     int escolha[3];
     int resposta;
     print_menu1();
@@ -19,17 +19,29 @@ int menu()
             if (escolha[2] == 1)
             {
                 resposta = 1000;
-            } else if(escolha[2] == 2){
+            }
+            else if (escolha[2] == 2)
+            {
                 resposta = 5000;
-            } else if(escolha[2] == 3){
+            }
+            else if (escolha[2] == 3)
+            {
                 resposta = 10000;
-            } else if(escolha[2] == 4){
+            }
+            else if (escolha[2] == 4)
+            {
                 resposta = 50000;
-            } else if(escolha[2] == 5){
+            }
+            else if (escolha[2] == 5)
+            {
                 resposta = 100000;
-            } else if(escolha[2] == 6){
+            }
+            else if (escolha[2] == 6)
+            {
                 resposta = 500000;
-            } else if(escolha[2] == 7){
+            }
+            else if (escolha[2] == 7)
+            {
                 resposta = 1000000;
             }
 
@@ -40,17 +52,29 @@ int menu()
             if (escolha[1] == 1)
             {
                 bubbleSort(arr, resposta, 1);
-            } else if(escolha[1] == 2){
+            }
+            else if (escolha[1] == 2)
+            {
                 selectionSort(arr, resposta, 1);
-            } else if(escolha[1] == 3){
+            }
+            else if (escolha[1] == 3)
+            {
                 insertionSort(arr, resposta, 1);
-            } else if(escolha[1] == 4){
+            }
+            else if (escolha[1] == 4)
+            {
                 shellSort(arr, resposta, 1);
-            } else if(escolha[1] == 5){
+            }
+            else if (escolha[1] == 5)
+            {
                 quickSort(arr, 0, resposta - 1, 1);
-            } else if(escolha[1] == 6){
+            }
+            else if (escolha[1] == 6)
+            {
                 mergeSort(arr, 0, resposta - 1, 1);
-            } else if(escolha[1] == 7){
+            }
+            else if (escolha[1] == 7)
+            {
                 radixSort(arr, resposta, 1);
             }
 
@@ -59,10 +83,13 @@ int menu()
 
             print_menu1();
             scanf("%d", &escolha[0]);
-        }else if(escolha[0] == 2){
+        }
+        else if (escolha[0] == 2)
+        {
             // Cenario 2 -> ordenar registros
             TipoLista lista;
             Registro item;
+            long long int arr[1000];
             print_menu2();
             scanf("%d", &escolha[1]);
             print_menu3();
@@ -72,57 +99,77 @@ int menu()
             {
                 resposta = 1000;
                 srand((unsigned)time(NULL));
-                for(int i = 0; i<resposta; i++){
+                for (int i = 0; i < resposta; i++)
+                {
                     Registro item;
-                    geraReg(&item);
+                    geraReg(&item, arr);
                     Insere(&item, &lista);
+                    printf("arr: %lld \n",arr[i]);
                 }
-            } else if(escolha[2] == 2){
+            }
+            else if (escolha[2] == 2)
+            {
                 resposta = 5000;
                 srand((unsigned)time(NULL));
-                for(int i = 0; i<resposta; i++){
+                for (int i = 0; i < resposta; i++)
+                {
                     Registro item;
-                    geraReg(&item);
+                    geraReg(&item, arr);
                     Insere(&item, &lista);
                 }
-            } else if(escolha[2] == 3){
+            }
+            else if (escolha[2] == 3)
+            {
                 resposta = 10000;
                 srand((unsigned)time(NULL));
-                for(int i = 0; i<resposta; i++){
+                for (int i = 0; i < resposta; i++)
+                {
                     Registro item;
-                    geraReg(&item);
+                    geraReg(&item, arr);
                     Insere(&item, &lista);
                 }
-            } else if(escolha[2] == 4){
+            }
+            else if (escolha[2] == 4)
+            {
                 resposta = 50000;
                 srand((unsigned)time(NULL));
-                for(int i = 0; i<resposta; i++){
+                for (int i = 0; i < resposta; i++)
+                {
                     Registro item;
-                    geraReg(&item);
+                    geraReg(&item, arr);
                     Insere(&item, &lista);
                 }
-            } else if(escolha[2] == 5){
+            }
+            else if (escolha[2] == 5)
+            {
                 resposta = 100000;
                 srand((unsigned)time(NULL));
-                for(int i = 0; i<resposta; i++){
+                for (int i = 0; i < resposta; i++)
+                {
                     Registro item;
-                    geraReg(&item);
+                    geraReg(&item, arr);
                     Insere(&item, &lista);
                 }
-            } else if(escolha[2] == 6){
+            }
+            else if (escolha[2] == 6)
+            {
                 resposta = 500000;
                 srand((unsigned)time(NULL));
-                for(int i = 0; i<resposta; i++){
+                for (int i = 0; i < resposta; i++)
+                {
                     Registro item;
-                    geraReg(&item);
+                    geraReg(&item, arr);
                     Insere(&item, &lista);
                 }
-            } else if(escolha[2] == 7){
+            }
+            else if (escolha[2] == 7)
+            {
                 resposta = 1000000;
                 srand((unsigned)time(NULL));
-                for(int i = 0; i<resposta; i++){
+                for (int i = 0; i < resposta; i++)
+                {
                     Registro item;
-                    geraReg(&item);
+                    geraReg(&item, arr);
                     Insere(&item, &lista);
                 }
             }
@@ -146,12 +193,10 @@ int menu()
 
             // printArray(arr, resposta);
         }
-        
+
     } while (escolha[0] == 1 || escolha[0] == 2);
     printf("Programa encerrado!!!\n");
 }
-
-
 
 void print_menu3()
 {
@@ -292,7 +337,7 @@ void print_menu1()
     for (i = 0; i < 113; i++)
     {
         fputs("_", stdout);
-       }
+    }
     printf("\n|");
     for (i = 0; i < 113; i++)
     {

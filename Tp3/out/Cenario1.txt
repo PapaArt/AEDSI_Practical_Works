@@ -1,4 +1,4 @@
-Radix Sort -> Cenario 1
-Numero de comparacoes: 999
-Numero de movimentacoes: 5865
+Shell Sort -> Cenario 1
+Numero de comparacoes: 2550388
+Numero de movimentacoes: 1050382
 Tempo de execucao: 0.000000
