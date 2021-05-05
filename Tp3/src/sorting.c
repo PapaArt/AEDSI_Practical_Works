@@ -39,7 +39,7 @@ void bubbleSort(long long int* arr, int n, int flag)
     }
     if (flag)
     {
-        arquivoX(bubble_comp, bubble_swap, tempo);
+        arquivoX(bubble_comp, bubble_swap, tempo, 1);
     }
 }
 
@@ -69,7 +69,7 @@ void selectionSort(long long int* arr, int n,int flag)
     }
     if (flag)
     {
-        arquivoX(selection_comp, selection_swap, tempo);
+        arquivoX(selection_comp, selection_swap, tempo, 2);
     }
 }
 
@@ -124,7 +124,7 @@ void insertionSort(long long int* arr, int n,int flag)
     }
 if (flag)
     {
-        arquivoX(insertion_comp, insertion_swap, tempo);
+        arquivoX(insertion_comp, insertion_swap, tempo, 3);
     }
 }
 
@@ -162,7 +162,7 @@ void shellSort(long long int* arr, int n,int flag)
     }
     if (flag)
     {
-        arquivoX(shell_comp, shell_swap, tempo);
+        arquivoX(shell_comp, shell_swap, tempo,4);
     }
 }
 
@@ -204,7 +204,7 @@ void quickSort(long long int* arr, int low, int high,int flag)
     }
     if (flag)
     {
-        arquivoX(quick_comp, quick_swap, tempo);
+        arquivoX(quick_comp, quick_swap, tempo, 5);
     }
 }
 
@@ -273,7 +273,7 @@ void mergeSort(long long int* arr, int l, int r,int flag) {
         merge(arr, l, m, r,&comp,mov,0);
     }
     if(flag){
-        arquivoX(comp, mov, tempo);
+        arquivoX(comp, mov, tempo, 6);
     }
 }
 
@@ -322,11 +322,6 @@ void countSort(long long int* arr, int n, int exp,int flag)
     // Copy the output array to arr[], so that arr[] now contains sorted numbers according to current digit
     for (i = 0; i < n; i++)
         arr[i] = output[i];
-    if (flag)
-    {
-        printf("\nNao ha comparacoes no count sort \n");
-        printf("Numero de trocas: %d \n",count_swap);
-    }
 }
 
 void radixSort(long long int* arr, int n,int flag)
@@ -344,7 +339,7 @@ void radixSort(long long int* arr, int n,int flag)
     }
     if (flag)
     {
-        arquivoX(radix_comp, radix_swap, tempo);
+        arquivoX(radix_comp, radix_swap, tempo, 7);
     }
 }
 

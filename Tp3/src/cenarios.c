@@ -81,10 +81,54 @@ void geraReg(Registro* item){
 }
 
 // Funcao para coletar os dados
-void arquivoX(int comparacoes, int movimentacoes, double tempo)
+void arquivoX(int comparacoes, int movimentacoes, double tempo, int valor)
 {
     FILE* pFile;
-    pFile = fopen("../out/Cenario1.txt", "w+");
-    fprintf(pFile, "Numero de comparacoes: %d\nNumero de movimentacoes: %d\nTempo de execucao: %lf\n", comparacoes, movimentacoes, tempo);
-    fclose(pFile);
+    switch (valor)
+    {
+    case 1:
+        pFile = fopen("../out/Cenario1.txt", "w+");
+        fprintf(pFile, "Bubble Sort -> Cenario 1\n");
+        fprintf(pFile, "Numero de comparacoes: %d\nNumero de movimentacoes: %d\nTempo de execucao: %lf\n", comparacoes, movimentacoes, tempo);
+        fclose(pFile);
+        break;
+    case 2:
+        pFile = fopen("../out/Cenario1.txt", "w+");
+        fprintf(pFile, "Selection Sort -> Cenario 1\n");
+        fprintf(pFile, "Numero de comparacoes: %d\nNumero de movimentacoes: %d\nTempo de execucao: %lf\n", comparacoes, movimentacoes, tempo);
+        fclose(pFile);
+        break;
+    case 3:
+        pFile = fopen("../out/Cenario1.txt", "w+");
+        fprintf(pFile, "Insertion Sort -> Cenario 1\n");
+        fprintf(pFile, "Numero de comparacoes: %d\nNumero de movimentacoes: %d\nTempo de execucao: %lf\n", comparacoes, movimentacoes, tempo);
+        fclose(pFile);
+        break;
+    case 4:
+        pFile = fopen("../out/Cenario1.txt", "w+");
+        fprintf(pFile, "Shell Sort -> Cenario 1\n");
+        fprintf(pFile, "Numero de comparacoes: %d\nNumero de movimentacoes: %d\nTempo de execucao: %lf\n", comparacoes, movimentacoes, tempo);
+        fclose(pFile);
+        break;
+    case 5:
+        pFile = fopen("../out/Cenario1.txt", "w+");
+        fprintf(pFile, "Quick Sort -> Cenario 1\n");
+        fprintf(pFile, "Numero de comparacoes: %d\nNumero de movimentacoes: %d\nTempo de execucao: %lf\n", comparacoes, movimentacoes, tempo);
+        fclose(pFile);
+        break;
+    case 6:
+        pFile = fopen("../out/Cenario1.txt", "w+");
+        fprintf(pFile, "Merge Sort -> Cenario 1\n");
+        fprintf(pFile, "Numero de comparacoes: %d\nNumero de movimentacoes: %d\nTempo de execucao: %lf\n", comparacoes, movimentacoes, tempo);
+        fclose(pFile);
+        break;
+    case 7:
+        pFile = fopen("../out/Cenario1.txt", "w+");
+        fprintf(pFile, "Radix Sort -> Cenario 1\n");
+        fprintf(pFile, "Numero de comparacoes: %d\nNumero de movimentacoes: %d\nTempo de execucao: %lf\n", comparacoes, movimentacoes, tempo);
+        fclose(pFile);
+        break;
+    default:
+        break;
+    }
 }
