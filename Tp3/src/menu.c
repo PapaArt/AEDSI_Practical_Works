@@ -89,7 +89,6 @@ int menu()
             // Cenario 2 -> ordenar registros
             TipoLista lista;
             Registro item;
-            long long int arr[1000];
             print_menu2();
             scanf("%d", &escolha[1]);
             print_menu3();
@@ -98,81 +97,44 @@ int menu()
             if (escolha[2] == 1)
             {
                 resposta = 1000;
-                srand((unsigned)time(NULL));
-                for (int i = 0; i < resposta; i++)
-                {
-                    Registro item;
-                    geraReg(&item, arr);
-                    Insere(&item, &lista);
-                    printf("arr: %lld \n",arr[i]);
-                }
             }
             else if (escolha[2] == 2)
             {
                 resposta = 5000;
-                srand((unsigned)time(NULL));
-                for (int i = 0; i < resposta; i++)
-                {
-                    Registro item;
-                    geraReg(&item, arr);
-                    Insere(&item, &lista);
-                }
             }
             else if (escolha[2] == 3)
             {
                 resposta = 10000;
-                srand((unsigned)time(NULL));
-                for (int i = 0; i < resposta; i++)
-                {
-                    Registro item;
-                    geraReg(&item, arr);
-                    Insere(&item, &lista);
-                }
             }
             else if (escolha[2] == 4)
             {
                 resposta = 50000;
-                srand((unsigned)time(NULL));
-                for (int i = 0; i < resposta; i++)
-                {
-                    Registro item;
-                    geraReg(&item, arr);
-                    Insere(&item, &lista);
-                }
             }
             else if (escolha[2] == 5)
             {
                 resposta = 100000;
-                srand((unsigned)time(NULL));
-                for (int i = 0; i < resposta; i++)
-                {
-                    Registro item;
-                    geraReg(&item, arr);
-                    Insere(&item, &lista);
-                }
             }
             else if (escolha[2] == 6)
             {
                 resposta = 500000;
-                srand((unsigned)time(NULL));
-                for (int i = 0; i < resposta; i++)
-                {
-                    Registro item;
-                    geraReg(&item, arr);
-                    Insere(&item, &lista);
-                }
             }
             else if (escolha[2] == 7)
             {
                 resposta = 1000000;
-                srand((unsigned)time(NULL));
-                for (int i = 0; i < resposta; i++)
-                {
-                    Registro item;
-                    geraReg(&item, arr);
-                    Insere(&item, &lista);
-                }
             }
+
+            long long int array[resposta];
+            int pos = 0;
+            //srand((unsigned)time(NULL));
+            for (int i = 0; i < resposta; i++)
+            {
+                Registro item;
+                geraReg(&item, array, pos);
+                pos++;
+                //Insere(&item, &lista);
+                printf("arr: %lld \n",array[i]);
+            }
+            
 
             // if (escolha[1] == 1)
             // {

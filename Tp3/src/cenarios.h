@@ -32,7 +32,7 @@ void random_array(long long int* arr, int resposta);
 void random_id(Registro item);
 void random_char(Registro* item);
 void random_realvalue(Registro* item);
-long long int* geraReg(Registro* item, long long int* arr);
+int geraReg(Registro* item, long long int* arr, int pos);
 void arquivoX(int comparacoes, int movimentacoes, double tempo, int valor);
 
 #endif

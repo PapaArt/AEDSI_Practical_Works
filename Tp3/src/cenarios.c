@@ -56,12 +56,10 @@ void random_realvalue(Registro *item)
     }
 }
 
-long long int* geraReg(Registro* item, long long int* arr){
-    int pos = 0;
+int geraReg(Registro* item, long long int* arr, int pos){
     item->chave = rand()%101;
     arr[pos] = item->chave;
     printf("%lld\n", arr[pos]);
-    pos++;
     printf("id: %d\n", item->chave);
     int i, j;
     for (i = 0; i < 10; i++)
@@ -78,7 +76,6 @@ long long int* geraReg(Registro* item, long long int* arr){
         item->real_value[i] =(float) rand()/101;
         //printf("real value: %f\n", item->real_value[i]);
     }
-    return arr[pos];
 }
 
 // Funcao para coletar os dados
