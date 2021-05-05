@@ -125,35 +125,34 @@ int menu()
 
             long long int array[resposta];
             int pos = 0;
-            //srand((unsigned)time(NULL));
+            srand((unsigned)time(NULL));
             for (int i = 0; i < resposta; i++)
             {
                 Registro item;
                 geraReg(&item, array, pos);
                 pos++;
-                //Insere(&item, &lista);
-                printf("arr: %lld \n",array[i]);
+                Insere(&item, &lista);
             }
             
 
-            // if (escolha[1] == 1)
-            // {
-            //     bubbleSort(arr, resposta);
-            // } else if(escolha[1] == 2){
-            //     selectionSort(arr, resposta);
-            // } else if(escolha[1] == 3){
-            //     insertionSort(arr, resposta);
-            // } else if(escolha[1] == 4){
-            //     shellSort(arr, resposta);
-            // } else if(escolha[1] == 5){
-            //     quickSort(arr, 0, resposta - 1);
-            // } else if(escolha[1] == 6){
-            //     mergeSort(arr, 0, resposta - 1, 1);
-            // } else if(escolha[1] == 7){
-            //     radixSort(arr, resposta);
-            // }
+            if (escolha[1] == 1)
+            {
+                bubbleSort(array, resposta,1);
+            } else if(escolha[1] == 2){
+                selectionSort(array, resposta,1);
+            } else if(escolha[1] == 3){
+                insertionSort(array, resposta,1);
+            } else if(escolha[1] == 4){
+                shellSort(array, resposta,1);
+            } else if(escolha[1] == 5){
+                quickSort(array, 0, resposta - 1,1);
+            } else if(escolha[1] == 6){
+                mergeSort(array, 0, resposta - 1, 1);
+            } else if(escolha[1] == 7){
+                radixSort(array, resposta,1);
+            }
 
-            // printArray(arr, resposta);
+            printArray(array, resposta);
         }
 
     } while (escolha[0] == 1 || escolha[0] == 2);
