@@ -275,7 +275,7 @@ void mergeSort(long long int* arr, int l, int r,int flag) {
 
 int getMax(long long int* arr, int n)
 {
-    int mx = arr[0];
+    long long int mx = arr[0];
     for (int i = 1; i < n; i++)
     {
         radix_comp++;
@@ -287,9 +287,8 @@ int getMax(long long int* arr, int n)
 
 void countSort(long long int* arr, int n, int exp,int flag)
 {
-    int output[1001];
+    int output[n];
     int i, count[10] = {0};
-
     // Store count of occurrences in count[]
     for (i = 0; i < n; i++)
         count[(arr[i]/exp)%10]++;
@@ -322,13 +321,13 @@ void countSort(long long int* arr, int n, int exp,int flag)
 void radixSort(long long int* arr, int n,int flag)
 {
     // Find the maximum number to know number of digits
-    int m = getMax(arr, n);
+    long long int m = getMax(arr, n);
     // Do counting sort for every digit. Note that instead
     // of passing digit number, exp is passed. exp is 10^i
     // wgere i is current digit number
     for (int exp = 1; m/exp > 0; exp *= 10)
     {
-        countSort(arr, n, exp,0);
+        countSort(arr, n, exp, 1);
         radix_swap = radix_swap + count_swap;
     }
     if (flag)
