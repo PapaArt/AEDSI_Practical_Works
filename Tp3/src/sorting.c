@@ -210,7 +210,7 @@ void merge(long long int* arr, int l, int m, int r,double *comp,double mov, int 
     int n2 =  r - m;
 
     // cria vetores temporários /
-    int L[1001], R[1001];
+    int L[n1], R[n2];
 
     // copia os dados para os vetores  L[] and R[] /
     for (i = 0; i < n1; i++)
