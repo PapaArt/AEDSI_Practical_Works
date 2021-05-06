@@ -20,7 +20,6 @@ void swap(long long int* xp, long long int* yp)
 void bubbleSort(long long int* arr, int n, int flag)
 {
     int i,j;
-    double tempo;
     int bubble_comp = 0;
     int bubble_swap = 0;
 
@@ -39,14 +38,13 @@ void bubbleSort(long long int* arr, int n, int flag)
     }
     if (flag)
     {
-        arquivoX(bubble_comp, bubble_swap, tempo, 1);
+        arquivoX(bubble_comp, bubble_swap, 1);
     }
 }
 
 void selectionSort(long long int* arr, int n,int flag)
 {
     int i, j, min_index;
-    double tempo;
     int selection_comp = 0;
     int selection_swap = 0;
     // One by one move boundary of unsorted subarray
@@ -69,7 +67,7 @@ void selectionSort(long long int* arr, int n,int flag)
     }
     if (flag)
     {
-        arquivoX(selection_comp, selection_swap, tempo, 2);
+        arquivoX(selection_comp, selection_swap, 2);
     }
 }
 
@@ -101,7 +99,6 @@ void insertionSort(long long int* arr, int n,int flag)
 {
     int i, j;
     int temp;
-    double tempo;
     int insertion_comp = 0;
     int insertion_swap = 0;
 
@@ -124,7 +121,7 @@ void insertionSort(long long int* arr, int n,int flag)
     }
 if (flag)
     {
-        arquivoX(insertion_comp, insertion_swap, tempo, 3);
+        arquivoX(insertion_comp, insertion_swap, 3);
     }
 }
 
@@ -132,7 +129,6 @@ void shellSort(long long int* arr, int n,int flag)
 {
     int i, j, gap;
     int temp;
-    double tempo;
     int shell_comp = 0;
     int shell_swap = 0;
     // Start with a big gap, then reduce the gap
@@ -162,7 +158,7 @@ void shellSort(long long int* arr, int n,int flag)
     }
     if (flag)
     {
-        arquivoX(shell_comp, shell_swap, tempo,4);
+        arquivoX(shell_comp, shell_swap, 4);
     }
 }
 
@@ -190,7 +186,6 @@ int partition(long long int* arr, int low, int high)
 
 void quickSort(long long int* arr, int low, int high,int flag)
 {
-    double tempo;
     if (low < high)
     {
         /* pi is partitioning index, arr[p] is now
@@ -204,7 +199,7 @@ void quickSort(long long int* arr, int low, int high,int flag)
     }
     if (flag)
     {
-        arquivoX(quick_comp, quick_swap, tempo, 5);
+        arquivoX(quick_comp, quick_swap, 5);
     }
 }
 
@@ -260,7 +255,7 @@ void merge(long long int* arr, int l, int m, int r,double *comp,double mov, int 
 
 /* l é para o índice esquerdo e r é o índice direito do subvetor de te[] a ser classificado*/
 void mergeSort(long long int* arr, int l, int r,int flag) {
-    double comp=0,mov=0, tempo;
+    double comp=0,mov=0;
     if (l < r) {
         // Igual a (l + r) / 2, mas evita o excesso de
         // amplia l e h
@@ -273,7 +268,7 @@ void mergeSort(long long int* arr, int l, int r,int flag) {
         merge(arr, l, m, r,&comp,mov,0);
     }
     if(flag){
-        arquivoX(comp, mov, tempo, 6);
+        arquivoX(comp, mov, 6);
     }
 }
 
@@ -328,7 +323,6 @@ void radixSort(long long int* arr, int n,int flag)
 {
     // Find the maximum number to know number of digits
     int m = getMax(arr, n);
-    double tempo;
     // Do counting sort for every digit. Note that instead
     // of passing digit number, exp is passed. exp is 10^i
     // wgere i is current digit number
@@ -339,7 +333,7 @@ void radixSort(long long int* arr, int n,int flag)
     }
     if (flag)
     {
-        arquivoX(radix_comp, radix_swap, tempo, 7);
+        arquivoX(radix_comp, radix_swap, 7);
     }
 }
 
