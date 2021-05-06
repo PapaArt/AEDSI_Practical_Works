@@ -4,6 +4,8 @@ int menu()
 {
     int escolha[3];
     int resposta;
+    double tempo;
+    clock_t fim, inicio;
     print_menu1();
     scanf("%d", &escolha[0]);
     do
@@ -51,35 +53,57 @@ int menu()
             // O vetor ordenado deve ter sua saida no arquivo .txt
             if (escolha[1] == 1)
             {
+                inicio = clock();
                 bubbleSort(arr, resposta, 1);
+                fim = clock();
+                tempo = ((double)(fim-inicio))/CLOCKS_PER_SEC;
             }
             else if (escolha[1] == 2)
             {
+                inicio = clock();
                 selectionSort(arr, resposta, 1);
+                fim = clock();
+                tempo = ((double)(fim-inicio))/CLOCKS_PER_SEC;
             }
             else if (escolha[1] == 3)
             {
+                inicio = clock();
                 insertionSort(arr, resposta, 1);
+                fim = clock();
+                tempo = ((double)(fim-inicio))/CLOCKS_PER_SEC;
             }
             else if (escolha[1] == 4)
             {
+                inicio = clock();
                 shellSort(arr, resposta, 1);
+                fim = clock();
+                tempo = ((double)(fim-inicio))/CLOCKS_PER_SEC;
             }
             else if (escolha[1] == 5)
             {
+                inicio = clock();
                 quickSort(arr, 0, resposta - 1, 1);
+                fim = clock();
+                tempo = ((double)(fim-inicio))/CLOCKS_PER_SEC;
             }
             else if (escolha[1] == 6)
             {
+                inicio = clock();
                 mergeSort(arr, 0, resposta - 1, 1);
+                fim = clock();
+                tempo = ((double)(fim-inicio))/CLOCKS_PER_SEC;
             }
             else if (escolha[1] == 7)
             {
+                inicio = clock();
                 radixSort(arr, resposta, 1);
+                fim = clock();
+                tempo = ((double)(fim-inicio))/CLOCKS_PER_SEC;
             }
 
             printArray(arr, resposta);
-            printf("Arquivo gerado com sucesso!!!\n");
+            printf("Arquivo gerado com sucesso!!!\n\n");
+            printf("Tempo gasto: %lf segundos\n", tempo);
 
             print_menu1();
             scanf("%d", &escolha[0]);
@@ -137,22 +161,48 @@ int menu()
 
             if (escolha[1] == 1)
             {
+                inicio = clock();
                 bubbleSort(array, resposta,1);
+                fim = clock();
+                tempo = ((double)(fim-inicio))/CLOCKS_PER_SEC;
             } else if(escolha[1] == 2){
+                inicio = clock();
                 selectionSort(array, resposta,1);
+                fim = clock();
+                tempo = ((double)(fim-inicio))/CLOCKS_PER_SEC;
             } else if(escolha[1] == 3){
+                inicio = clock();
                 insertionSort(array, resposta,1);
+                fim = clock();
+                tempo = ((double)(fim-inicio))/CLOCKS_PER_SEC;
             } else if(escolha[1] == 4){
+                inicio = clock();
                 shellSort(array, resposta,1);
+                fim = clock();
+                tempo = ((double)(fim-inicio))/CLOCKS_PER_SEC;
             } else if(escolha[1] == 5){
+                inicio = clock();
                 quickSort(array, 0, resposta - 1,1);
+                fim = clock();
+                tempo = ((double)(fim-inicio))/CLOCKS_PER_SEC;
             } else if(escolha[1] == 6){
+                inicio = clock();
                 mergeSort(array, 0, resposta - 1, 1);
+                fim = clock();
+                tempo = ((double)(fim-inicio))/CLOCKS_PER_SEC;
             } else if(escolha[1] == 7){
+                inicio = clock();
                 radixSort(array, resposta,1);
+                fim = clock();
+                tempo = ((double)(fim-inicio))/CLOCKS_PER_SEC;
             }
 
             printArray(array, resposta);
+            printf("Arquivo gerado com sucesso!!!\n\n");
+            printf("Tempo gasto: %lf segundos\n", tempo);
+
+            print_menu1();
+            scanf("%d", &escolha[0]);
         }
 
     } while (escolha[0] == 1 || escolha[0] == 2);
