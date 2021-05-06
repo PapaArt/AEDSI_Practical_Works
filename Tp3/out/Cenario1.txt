@@ -1,4 +1,4 @@
 Bubble Sort -> Cenario 1
 Numero de comparacoes: 1249975000
-Numero de movimentacoes: 618232888
+Numero de movimentacoes: 622557691
 Tempo de execucao: 0.000000
