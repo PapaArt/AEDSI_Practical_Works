@@ -47,7 +47,8 @@ int menu()
                 resposta = 1000000;
             }
 
-            long long int arr[resposta];
+            long long int* arr;
+            arr = (long long int*)malloc(sizeof(long long int)*resposta);
             random_array(arr, resposta);
 
             // O vetor ordenado deve ter sua saida no arquivo .txt
@@ -107,6 +108,7 @@ int menu()
 
             print_menu1();
             scanf("%d", &escolha[0]);
+            free(arr);
         }
         else if (escolha[0] == 2)
         {
@@ -147,7 +149,8 @@ int menu()
                 resposta = 1000000;
             }
 
-            long long int array[resposta];
+            long long int* array;
+            array = (long long int*)malloc(sizeof(long long int)*resposta);
             int pos = 0;
             srand((unsigned)time(NULL));
             for (int i = 0; i < resposta; i++)
@@ -203,6 +206,7 @@ int menu()
 
             print_menu1();
             scanf("%d", &escolha[0]);
+            free(array);
         }
 
     } while (escolha[0] == 1 || escolha[0] == 2);
