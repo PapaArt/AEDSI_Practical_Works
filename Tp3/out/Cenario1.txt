@@ -1,4 +1,4 @@
-Shell Sort -> Cenario 1
-Numero de comparacoes: 2550388
-Numero de movimentacoes: 1050382
+Bubble Sort -> Cenario 1
+Numero de comparacoes: 1249975000
+Numero de movimentacoes: 618232888
 Tempo de execucao: 0.000000
