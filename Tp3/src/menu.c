@@ -125,13 +125,13 @@ int menu()
 
             long long int array[resposta];
             int pos = 0;
-            //srand((unsigned)time(NULL));
+            srand((unsigned)time(NULL));
             for (int i = 0; i < resposta; i++)
             {
                 Registro item;
                 geraReg(&item, array, pos);
                 pos++;
-                //Insere(&item, &lista);
+                Insere(&item, &lista);
                 printf("arr: %lld \n",array[i]);
             }
             
