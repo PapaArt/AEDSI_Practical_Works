@@ -10,42 +10,44 @@ int radix_swap = 0;
 int radix_comp = 0;
 //Array contador vai ter duas casas, casa 0 e o numero de comparacoes, casa 1 e o numero de trocas;
 
-void swap(long long int* xp, long long int* yp)
+void swap(long long int *xp, long long int *yp)
 {
     long long int temp = *xp;
     *xp = *yp;
     *yp = temp;
 }
 
-void bubbleSort(long long int* arr, int n, int flag,int* comparacoes, int* movimentacoes, int cenario)
+void bubbleSort(long long int *arr, int n, int flag, int *comparacoes, int *movimentacoes, int cenario)
 {
-    int i,j;
+    int i, j;
     int bubble_comp = 0;
     int bubble_swap = 0;
-    for (i = 0; i < n-1; i++)
+    for (i = 0; i < n - 1; i++)
     {
         // Last i elements are already in place
-        for (j = 0; j < n-i-1; j++)
+        for (j = 0; j < n - i - 1; j++)
         {
             bubble_comp++;
-            if (arr[j] > arr[j+1])
+            if (arr[j] > arr[j + 1])
             {
-                swap(&arr[j], &arr[j+1]);
+                swap(&arr[j], &arr[j + 1]);
                 bubble_swap++;
             }
         }
     }
-    if(cenario == 1)
+    if (cenario == 1)
     {
         comparacoes[0] = bubble_comp;
         movimentacoes[0] = bubble_swap;
-        printf("comp: %d",comparacoes[0]);
+        printf("comp: %d", comparacoes[0]);
         printf("movi: %d", movimentacoes[0]);
     }
-    if(cenario == 2)
+    else if (cenario == 2)
     {
         comparacoes[7] = bubble_comp;
         movimentacoes[7] = bubble_swap;
+        printf("comp: %d", comparacoes[7]);
+        printf("movi: %d", movimentacoes[7]);
     }
     // if (flag)
     // {
@@ -53,20 +55,20 @@ void bubbleSort(long long int* arr, int n, int flag,int* comparacoes, int* movim
     // }
 }
 
-void selectionSort(long long int* arr, int n,int flag)
+void selectionSort(long long int *arr, int n, int flag, int *comparacoes, int *movimentacoes, int cenario)
 {
     int i, j, min_index;
     int selection_comp = 0;
     int selection_swap = 0;
     // One by one move boundary of unsorted subarray
-    for (i = 0; i < n-1; i++)
+    for (i = 0; i < n - 1; i++)
     {
         // Find the minimum element in unsorted array
         min_index = i;
-        for (j = i+1; j < n; j++)
+        for (j = i + 1; j < n; j++)
         {
             selection_comp++;
-            if(arr[j] < arr[min_index])
+            if (arr[j] < arr[min_index])
             {
                 min_index = j;
                 selection_swap++;
@@ -76,34 +78,23 @@ void selectionSort(long long int* arr, int n,int flag)
         swap(&arr[min_index], &arr[i]);
         selection_swap++;
     }
-    if (flag)
+    if (cenario == 1)
     {
-       //arquivoX(selection_comp, selection_swap, 2,2);
+        comparacoes[1] = selection_comp;
+        movimentacoes[1] = selection_swap;
     }
+    else if (cenario == 2)
+    {
+        comparacoes[8] = selection_comp;
+        movimentacoes[8] = selection_swap;
+    }
+    // if (flag)
+    // {
+    //    //arquivoX(selection_comp, selection_swap, 2,2);
+    // }
 }
 
-/*
-int * insertionSort(long long int* arr, int n)
-{
-    int i, key, j;
-    for (i = 1; i < n; i++)
-    {
-        key = arr[i];
-        j = i - 1;
-        // Move elements of arr[0...i-1], that are
-        //    greater than key, to one position ahead
-        //    of their current position
-        while (j >= 0 && arr[j] > key)
-        {
-            arr[j+1] = arr[j];
-            j = j - 1;
-        }
-        arr[j+1] = key;
-    }
-}
-*/
-
-void insertionSort(long long int* arr, int n,int flag)
+void insertionSort(long long int *arr, int n, int flag, int *comparacoes, int *movimentacoes, int cenario)
 {
     int i, j;
     int temp;
@@ -116,7 +107,7 @@ void insertionSort(long long int* arr, int n,int flag)
         insertion_comp++;
         while ((j > 0) && (arr[j - 1] > arr[j]))
         {
-            if(arr[j-1]>arr[j])
+            if (arr[j - 1] > arr[j])
             {
                 insertion_comp++;
             }
@@ -127,20 +118,30 @@ void insertionSort(long long int* arr, int n,int flag)
             insertion_swap++;
         }
     }
-if (flag)
+    if(cenario == 1)
     {
-        //arquivoX(insertion_comp, insertion_swap, 3,3);
+        comparacoes[2] = insertion_comp;
+        movimentacoes[2] = insertion_swap;
     }
+    else if(cenario == 2)
+    {
+        comparacoes[9] = insertion_comp;
+        movimentacoes[9] = insertion_swap;
+    }
+    // if (flag)
+    // {
+    //     //arquivoX(insertion_comp, insertion_swap, 3,3);
+    // }
 }
 
-void shellSort(long long int* arr, int n,int flag)
+void shellSort(long long int *arr, int n, int flag, int *comparacoes, int *movimentacoes, int cenario)
 {
     int i, j, gap;
     int temp;
     int shell_comp = 0;
     int shell_swap = 0;
     // Start with a big gap, then reduce the gap
-    for (gap = n/2; gap > 0; gap /= 2)
+    for (gap = n / 2; gap > 0; gap /= 2)
     {
         // Do a gapped insertion sort for this gap size.
         // The first gap elements a[0..gap-1] are already in gapped order
@@ -153,9 +154,9 @@ void shellSort(long long int* arr, int n,int flag)
             temp = arr[i];
             // shift earlier gap-sorted elements up until the correct
             // location for a[i] is found
-            for (j = i; j >= gap && arr[j-gap] > temp; j -= gap)
+            for (j = i; j >= gap && arr[j - gap] > temp; j -= gap)
             {
-                arr[j] = arr[j-gap];
+                arr[j] = arr[j - gap];
                 shell_comp++;
                 shell_swap++;
             }
@@ -164,16 +165,26 @@ void shellSort(long long int* arr, int n,int flag)
             shell_comp++;
         }
     }
-    if (flag)
+    if(cenario == 1)
     {
-        //arquivoX(shell_comp, shell_swap, 4,4);
+        comparacoes[3] = shell_comp;
+        movimentacoes[3] = shell_swap;
     }
+    else if(cenario == 2)
+    {
+        comparacoes[10] = shell_comp;
+        movimentacoes[10] = shell_swap;
+    }
+    // if (flag)
+    // {
+    //     //arquivoX(shell_comp, shell_swap, 4,4);
+    // }
 }
 
-int partition(long long int* arr, int low, int high)
+int partition(long long int *arr, int low, int high)
 {
     int pivot = arr[high]; // pivot
-    int i = (low - 1); //Index of smaller element and indicates the right position of pivot found so far
+    int i = (low - 1);     //Index of smaller element and indicates the right position of pivot found so far
     int j;
 
     for (j = low; j <= high - 1; j++)
@@ -186,13 +197,12 @@ int partition(long long int* arr, int low, int high)
             quick_swap++;
         }
     }
-    swap(&arr[i+1], &arr[high]);
+    swap(&arr[i + 1], &arr[high]);
     quick_swap++;
-    return (i+1);
+    return (i + 1);
 }
 
-
-void quickSort(long long int* arr, int low, int high,int flag)
+void quickSort(long long int *arr, int low, int high, int flag, int* comparacoes, int* movimentacoes, int cenario)
 {
     if (low < high)
     {
@@ -202,8 +212,18 @@ void quickSort(long long int* arr, int low, int high,int flag)
 
         // Separately sort elements before
         // partition and after partition
-        quickSort(arr, low, pi - 1,0);
-        quickSort(arr, pi + 1, high,0);
+        quickSort(arr, low, pi - 1, 0, comparacoes, movimentacoes, cenario);
+        quickSort(arr, pi + 1, high, 0, comparacoes, movimentacoes, cenario);
+    }
+    if(cenario == 1)
+    {
+        comparacoes[4] = quick_comp;
+        movimentacoes[4] = quick_swap;
+    }
+    else if(cenario == 2)
+    {
+        comparacoes[11] = quick_comp;
+        movimentacoes[11] = quick_swap;
     }
     if (flag)
     {
@@ -211,44 +231,49 @@ void quickSort(long long int* arr, int low, int high,int flag)
     }
 }
 
-void merge(long long int* arr, int l, int m, int r,int *comp,int mov, int flag)
- {
+void merge(long long int *arr, int l, int m, int r, int *comp, int mov, int flag)
+{
     int i, j, k;
     int n1 = m - l + 1;
-    int n2 =  r - m;
+    int n2 = r - m;
 
     // cria vetores temporários /
-    int* L;
-    L = (int*)malloc(sizeof(long long int)*n1);
-    int* R;
-    R = (int*)malloc(sizeof(long long int)*n2);
+    int *L;
+    L = (int *)malloc(sizeof(long long int) * n1);
+    int *R;
+    R = (int *)malloc(sizeof(long long int) * n2);
 
     // copia os dados para os vetores  L[] and R[] /
     for (i = 0; i < n1; i++)
         L[i] = arr[l + i];
     for (j = 0; j < n2; j++)
-        R[j] = arr[m + 1+ j];
+        R[j] = arr[m + 1 + j];
 
     // Mesclar as matrizes temporárias novamente te[l..r]/
     i = 0; // index inicial do primeiro subvetor
     j = 0; // index inicial do segundo subvetor
     k = l; // index inicial do terceiro subvetor
-    while (i < n1 && j < n2) {
+    while (i < n1 && j < n2)
+    {
         (comp)++;
-        if (L[i]<= R[j]) {
+        if (L[i] <= R[j])
+        {
             (mov)++;
             arr[k] = L[i];
             i++;
         }
-        else{
+        else
+        {
             (mov)++;
             arr[k] = R[j];
             j++;
-        }k++;
+        }
+        k++;
     }
 
     // Copia os elementos restantes de L [],se houver algum/
-    while (i < n1) {
+    while (i < n1)
+    {
         (mov)++;
         arr[k] = L[i];
         i++;
@@ -256,7 +281,8 @@ void merge(long long int* arr, int l, int m, int r,int *comp,int mov, int flag)
     }
 
     // Copia os elementos restantes de R [],se houver algum/
-    while (j < n2) {
+    while (j < n2)
+    {
         (mov)++;
         arr[k] = R[j];
         j++;
@@ -265,26 +291,28 @@ void merge(long long int* arr, int l, int m, int r,int *comp,int mov, int flag)
 }
 
 /* l é para o índice esquerdo e r é o índice direito do subvetor de te[] a ser classificado*/
-void mergeSort(long long int* arr, int l, int r,int flag) {
-    int comp=0,mov=0;
-    if (l < r) {
+void mergeSort(long long int *arr, int l, int r, int flag)
+{
+    int comp = 0, mov = 0;
+    if (l < r)
+    {
         // Igual a (l + r) / 2, mas evita o excesso de
         // amplia l e h
-        int m = l+(r-l)/2;
+        int m = l + (r - l) / 2;
 
         // Classificar primeira e segunda metades
-        mergeSort(arr, l, m,0);
-        mergeSort(arr, m+1, r,0);
+        mergeSort(arr, l, m, 0);
+        mergeSort(arr, m + 1, r, 0);
 
-        merge(arr, l, m, r,&comp,mov,0);
+        merge(arr, l, m, r, &comp, mov, 0);
     }
-    if(flag){
+    if (flag)
+    {
         //arquivoX(comp, mov, 6,6);
     }
 }
 
-
-int getMax(long long int* arr, int n)
+int getMax(long long int *arr, int n)
 {
     long long int mx = arr[0];
     for (int i = 1; i < n; i++)
@@ -296,24 +324,24 @@ int getMax(long long int* arr, int n)
     return mx;
 }
 
-void countSort(long long int* arr, int n, int exp,int flag)
+void countSort(long long int *arr, int n, int exp, int flag)
 {
-    int* output;
-    output = (int*)malloc(sizeof(long long int)*n);
+    int *output;
+    output = (int *)malloc(sizeof(long long int) * n);
     int i, count[10] = {0};
     // Store count of occurrences in count[]
     for (i = 0; i < n; i++)
-        count[(arr[i]/exp)%10]++;
+        count[(arr[i] / exp) % 10]++;
 
     // Change count[i] so that count[i] now contains actual position of this digit in output[]
     for (i = 1; i < 10; i++)
-        count[i] += count[i-1];
+        count[i] += count[i - 1];
 
     // Build the output array
-    for (i = n-1; i >= 0; i--)
+    for (i = n - 1; i >= 0; i--)
     {
-        output[count[(arr[i]/exp)%10] - 1] = arr[i];
-        count[(arr[i]/exp)%10]--;
+        output[count[(arr[i] / exp) % 10] - 1] = arr[i];
+        count[(arr[i] / exp) % 10]--;
     }
 
     //Contando o numero de movimentacoes
@@ -330,26 +358,37 @@ void countSort(long long int* arr, int n, int exp,int flag)
         arr[i] = output[i];
 }
 
-void radixSort(long long int* arr, int n,int flag)
+void radixSort(long long int *arr, int n, int flag, int* comparacoes, int* movimentacoes, int cenario)
 {
     // Find the maximum number to know number of digits
     long long int m = getMax(arr, n);
     // Do counting sort for every digit. Note that instead
     // of passing digit number, exp is passed. exp is 10^i
     // wgere i is current digit number
-    for (int exp = 1; m/exp > 0; exp *= 10)
+    for (int exp = 1; m / exp > 0; exp *= 10)
     {
         countSort(arr, n, exp, 1);
         radix_swap = radix_swap + count_swap;
     }
-    if (flag)
+
+    if(cenario == 1)
     {
-        //arquivoX(radix_comp, radix_swap, 7,7);
+        comparacoes[6] = radix_comp;
+        movimentacoes[6] = radix_swap;
     }
+    else if(cenario == 2)
+    {
+        comparacoes[13] = radix_comp;
+        movimentacoes[13] = radix_swap;
+    }
+    // if (flag)
+    // {
+    //     //arquivoX(radix_comp, radix_swap, 7,7);
+    // }
 }
 
 // Modificar essa funcao para gerar a saida em .txt
-void  printArray(long long int* arr, int n)
+void printArray(long long int *arr, int n)
 {
     for (int i = 0; i < n; i++)
         printf("%lld ", arr[i]);
