@@ -81,6 +81,7 @@ int menu()
                 fim = clock();
                 tempo = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
                 exec1[1] += 1;
+                printf("exec: %d\n", exec1[1]);
             }
             else if (escolha[1] == 3)
             {
@@ -89,6 +90,7 @@ int menu()
                 fim = clock();
                 tempo = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
                 exec1[2] += 1;
+                printf("exec: %d\n", exec1[2]);
             }
             else if (escolha[1] == 4)
             {
@@ -97,6 +99,7 @@ int menu()
                 fim = clock();
                 tempo = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
                 exec1[3] += 1;
+                printf("exec: %d\n", exec1[3]);
             }
             else if (escolha[1] == 5)
             {
@@ -105,6 +108,7 @@ int menu()
                 fim = clock();
                 tempo = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
                 exec1[4] += 1;
+                printf("exec: %d\n", exec1[4]);
             }
             else if (escolha[1] == 6)
             {
@@ -113,6 +117,7 @@ int menu()
                 fim = clock();
                 tempo = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
                 exec1[5] += 1;
+                printf("exec: %d\n", exec1[5]);
             }
             else if (escolha[1] == 7)
             {
@@ -121,6 +126,7 @@ int menu()
                 fim = clock();
                 tempo = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
                 exec1[6] += 1;
+                printf("exec: %d\n", exec1[6]);
             }
 
             printArray(arr, resposta);
@@ -190,6 +196,7 @@ int menu()
                 fim = clock();
                 tempo = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
                 exec1[7] += 1;
+                printf("exec: %d\n", exec1[7]);
                 printf("\n");
             }
             else if (escolha[1] == 2)
@@ -199,6 +206,7 @@ int menu()
                 fim = clock();
                 tempo = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
                 exec1[8] += 1;
+                printf("exec: %d\n", exec1[8]);
                 printf("\n");
             }
             else if (escolha[1] == 3)
@@ -207,7 +215,8 @@ int menu()
                 insertionSort(array, resposta, 1, comparacoes, movimentacoes, cenario);
                 fim = clock();
                 tempo = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
-                exec1[8] += 1;
+                exec1[9] += 1;
+                printf("exec: %d\n", exec1[9]);
                 printf("\n");
             }
             else if (escolha[1] == 4)
@@ -217,6 +226,8 @@ int menu()
                 fim = clock();
                 tempo = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
                 exec1[10] += 1;
+                printf("exec: %d\n", exec1[10]);
+                printf("\n");
             }
             else if (escolha[1] == 5)
             {
@@ -225,6 +236,7 @@ int menu()
                 fim = clock();
                 tempo = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
                 exec1[11] += 1;
+                printf("exec: %d\n", exec1[11]);
                 printf("\n");
             }
             else if (escolha[1] == 6)
@@ -234,6 +246,7 @@ int menu()
                 fim = clock();
                 tempo = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
                 exec1[12] += 1;
+                printf("exec: %d\n", exec1[12]);
                 printf("\n");
             }
             else if (escolha[1] == 7)
@@ -243,6 +256,7 @@ int menu()
                 fim = clock();
                 tempo = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
                 exec1[13] += 1;
+                printf("exec: %d\n", exec1[13]);
                 printf("\n");
             }
 
