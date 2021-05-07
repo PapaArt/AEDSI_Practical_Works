@@ -210,7 +210,10 @@ void merge(long long int* arr, int l, int m, int r,double *comp,double mov, int 
     int n2 =  r - m;
 
     // cria vetores temporários /
-    int L[n1], R[n2];
+    int* L;
+    L = (int*)malloc(sizeof(long long int)*n1);
+    int* R;
+    R = (int*)malloc(sizeof(long long int)*n2);
 
     // copia os dados para os vetores  L[] and R[] /
     for (i = 0; i < n1; i++)
@@ -287,7 +290,8 @@ int getMax(long long int* arr, int n)
 
 void countSort(long long int* arr, int n, int exp,int flag)
 {
-    int output[n];
+    int* output;
+    output = (int*)malloc(sizeof(long long int)*n);
     int i, count[10] = {0};
     // Store count of occurrences in count[]
     for (i = 0; i < n; i++)

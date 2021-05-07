@@ -60,9 +60,8 @@ void random_realvalue(Registro *item)
     }
 }
 
-int geraReg(Registro *item, long long int *arr, int pos)
-{
-    item->chave = rand() % 101;
+int geraReg(Registro* item, long long int* arr, int pos){
+    item->chave = rand()%10001;
     arr[pos] = item->chave;
     //printf("id: %d\n", item->chave);
     int i, j;
@@ -77,7 +76,7 @@ int geraReg(Registro *item, long long int *arr, int pos)
 
     for (int i = 0; i < 4; i++)
     {
-        item->real_value[i] = (float)rand() / 101;
+        item->real_value[i] =(float) rand()/10001;
         //printf("real value: %f\n", item->real_value[i]);
     }
 }
