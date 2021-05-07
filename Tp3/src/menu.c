@@ -137,7 +137,6 @@ int menu()
             }
 
             printArray(arr, resposta);
-            printf("Arquivo gerado com sucesso!!!\n\n");
 
             print_menu1();
             scanf("%d", &escolha[0]);
@@ -268,7 +267,6 @@ int menu()
             }
 
             printArray(array, resposta);
-            printf("Arquivo gerado com sucesso!!!\n\n");
 
             print_menu1();
             scanf("%d", &escolha[0]);
