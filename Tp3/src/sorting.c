@@ -53,14 +53,12 @@ void bubbleSort(long long int *arr, int n, int flag, int *comparacoes, int *movi
 
     if (flag && cenario == 1 && exec1[0] == 5)
     {
-        printf("Arquivo gerado!\n");
         comparacoes[0] = (comparacoes[0] / 5);
         movimentacoes[0] = (movimentacoes[0] / 5);
         arquivoX(comparacoes, movimentacoes, 1);
     }
     else if (flag && cenario == 2 && exec1[7] == 5)
     {
-        printf("Arquivo gerado!\n");
         comparacoes[7] = (comparacoes[7] / 5);
         movimentacoes[7] = (movimentacoes[7] / 5);
         arquivoX(comparacoes, movimentacoes, 8);
@@ -115,14 +113,12 @@ void selectionSort(long long int *arr, int n, int flag, int *comparacoes, int *m
 
     if (flag && cenario == 1 && exec1[1] == 5)
     {
-        printf("Arquivo gerado!\n");
         comparacoes[1] = (comparacoes[1] / 5);
         movimentacoes[1] = (movimentacoes[1] / 5);
         arquivoX(comparacoes, movimentacoes, 2);
     }
     else if (flag && cenario == 2 && exec1[8] == 5)
     {
-        printf("Arquivo gerado!\n");
         comparacoes[8] = (comparacoes[8] / 5);
         movimentacoes[8] = (movimentacoes[8] / 5);
         arquivoX(comparacoes, movimentacoes, 9);
@@ -178,14 +174,12 @@ void insertionSort(long long int *arr, int n, int flag, int *comparacoes, int *m
 
     if (flag && cenario == 1 && exec1[2] == 5)
     {
-        printf("Arquivo gerado!\n");
         comparacoes[2] = (comparacoes[2] / 5);
         movimentacoes[2] = (movimentacoes[2] / 5);
         arquivoX(comparacoes, movimentacoes, 3);
     }
     else if (flag && cenario == 2 && exec1[9] == 5)
     {
-        printf("Arquivo gerado!\n");
         comparacoes[9] = (comparacoes[9] / 5);
         movimentacoes[9] = (movimentacoes[9] / 5);
         arquivoX(comparacoes, movimentacoes, 10);
@@ -248,14 +242,12 @@ void shellSort(long long int *arr, int n, int flag, int *comparacoes, int *movim
 
     if (flag && cenario == 1 && exec1[3] == 5)
     {
-        printf("Arquivo gerado!\n");
         comparacoes[3] = (comparacoes[3] / 5);
         movimentacoes[3] = (movimentacoes[3] / 5);
         arquivoX(comparacoes, movimentacoes, 4);
     }
     else if (flag && cenario == 2 && exec1[10] == 5)
     {
-        printf("Arquivo gerado!\n");
         comparacoes[10] = (comparacoes[10] / 5);
         movimentacoes[10] = (movimentacoes[10] / 5);
         arquivoX(comparacoes, movimentacoes, 11);
@@ -319,14 +311,12 @@ void quickSort(long long int *arr, int low, int high, int flag, int *comparacoes
 
     if (flag && cenario == 1 && exec1[4] == 5)
     {
-        printf("Arquivo gerado!\n");
         comparacoes[4] = (comparacoes[4] / 5);
         movimentacoes[4] = (movimentacoes[4] / 5);
         arquivoX(comparacoes, movimentacoes, 5);
     }
     else if (flag && cenario == 2 && exec1[11] == 5)
     {
-        printf("Arquivo gerado!\n");
         comparacoes[11] = (comparacoes[11] / 5);
         movimentacoes[11] = (movimentacoes[11] / 5);
         arquivoX(comparacoes, movimentacoes, 12);
@@ -435,7 +425,6 @@ void mergeSort(long long int *arr, int l, int r, int flag, int *comparacoes, int
 
     if (flag && cenario == 1 && exec1[5] == 5)
     {
-        printf("Arquivo gerado!\n");
         comparacoes[5] = (comparacoes[5] / 5);
         movimentacoes[5] = (movimentacoes[5] / 5);
         tempo[5] += ((double)(fim-inicio))/CLOCKS_PER_SEC;
@@ -443,7 +432,6 @@ void mergeSort(long long int *arr, int l, int r, int flag, int *comparacoes, int
     }
     else if (flag && cenario == 2 && exec1[12] == 5)
     {
-        printf("Arquivo gerado!\n");
         comparacoes[12] = (comparacoes[12] / 5);
         movimentacoes[12] = (movimentacoes[12] / 5);
         tempo[12] += ((double)(fim-inicio))/CLOCKS_PER_SEC;
@@ -535,14 +523,12 @@ void radixSort(long long int *arr, int n, int flag, int *comparacoes, int *movim
 
     if (flag && cenario == 1 && exec1[6] == 5)
     {
-        printf("Arquivo gerado!\n");
         comparacoes[6] = (comparacoes[6] / 5);
         movimentacoes[6] = (movimentacoes[6] / 5);
         arquivoX(comparacoes, movimentacoes, 7);
     }
     else if (flag && cenario == 2 && exec1[13] == 5)
     {
-        printf("Arquivo gerado!\n");
         comparacoes[13] = (comparacoes[13] / 5);
         movimentacoes[13] = (movimentacoes[13] / 5);
         arquivoX(comparacoes, movimentacoes, 14);
