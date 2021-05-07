@@ -82,7 +82,7 @@ int geraReg(Registro* item, long long int* arr, int pos){
 }
 
 // Funcao para coletar os dados
-void arquivoX(int comparacoes[14], int movimentacoes[14], double tempo[14], int valor)
+void arquivoX(int* comparacoes, int* movimentacoes, int valor)
 {
     FILE *pFile;
     switch (valor)
@@ -90,85 +90,85 @@ void arquivoX(int comparacoes[14], int movimentacoes[14], double tempo[14], int 
     case 1:
         pFile = fopen("../out/BubbleSort_Cenario1.txt", "w+");
         fprintf(pFile, "Bubble Sort -> Cenario 1\n");
-        fprintf(pFile, "Media das comparacoes: %d\nMedia das movimentacoes: %d\nMedia do tempo: %lf\n", comparacoes[0], movimentacoes[0], tempo[0]);
+        fprintf(pFile, "Media das comparacoes: %d\nMedia das movimentacoes: %d\n", comparacoes[0], movimentacoes[0]);
         fclose(pFile);
         break;
     case 2:
         pFile = fopen("../out/SelectionSort_Cenario1.txt", "w+");
         fprintf(pFile, "Selection Sort -> Cenario 1\n");
-        fprintf(pFile, "Media das comparacoes: %d\nMedia das movimentacoes: %d\nMedia do tempo: %lf\n", comparacoes[1], movimentacoes[1], tempo[1]);
+        fprintf(pFile, "Media das comparacoes: %d\nMedia das movimentacoes: %d\n", comparacoes[1], movimentacoes[1]);
         fclose(pFile);
         break;
     case 3:
         pFile = fopen("../out/InsertionSort_Cenario1.txt", "w+");
         fprintf(pFile, "Insertion Sort -> Cenario 1\n");
-        fprintf(pFile, "Media das comparacoes: %d\nMedia das movimentacoes: %d\nMedia do tempo: %lf\n", comparacoes[2], movimentacoes[2], tempo[2]);
+        fprintf(pFile, "Media das comparacoes: %d\nMedia das movimentacoes: %d\n", comparacoes[2], movimentacoes[2]);
         fclose(pFile);
         break;
     case 4:
         pFile = fopen("../out/ShellSort_Cenario1.txt", "w+");
         fprintf(pFile, "Shell Sort -> Cenario 1\n");
-        fprintf(pFile, "Media das comparacoes: %d\nMedia das movimentacoes: %d\nMedia do tempo: %lf\n", comparacoes[3], movimentacoes[3], tempo[3]);
+        fprintf(pFile, "Media das comparacoes: %d\nMedia das movimentacoes: %d\n", comparacoes[3], movimentacoes[3]);
         fclose(pFile);
         break;
     case 5:
         pFile = fopen("../out/QuickSort_Cenario1.txt", "w+");
         fprintf(pFile, "Quick Sort -> Cenario 1\n");
-        fprintf(pFile, "Media das comparacoes: %d\nMedia das movimentacoes: %d\nMedia do tempo: %lf\n", comparacoes[4], movimentacoes[4], tempo[4]);
+        fprintf(pFile, "Media das comparacoes: %d\nMedia das movimentacoes: %d\n", comparacoes[4], movimentacoes[4]);
         fclose(pFile);
         break;
     case 6:
         pFile = fopen("../out/MergeSort_Cenario1.txt", "w+");
         fprintf(pFile, "Merge Sort -> Cenario 1\n");
-        fprintf(pFile, "Media das comparacoes: %d\nMedia das movimentacoes: %d\nMedia do tempo: %lf\n", comparacoes[5], movimentacoes[5], tempo[5]);
+        fprintf(pFile, "Media das comparacoes: %d\nMedia das movimentacoes: %d\n", comparacoes[5], movimentacoes[5]);
         fclose(pFile);
         break;
     case 7:
         pFile = fopen("../out/RadixSort_Cenario1.txt", "w+");
         fprintf(pFile, "Radix Sort -> Cenario 1\n");
-        fprintf(pFile, "Media das comparacoes: %d\nMedia das movimentacoes: %d\nMedia do tempo: %lf\n", comparacoes[6], movimentacoes[6], tempo[6]);
+        fprintf(pFile, "Media das comparacoes: %d\nMedia das movimentacoes: %d\n", comparacoes[6], movimentacoes[6]);
         fclose(pFile);
         break;
     case 8:
         pFile = fopen("../out/BubbleSort_Cenario2.txt", "w+");
         fprintf(pFile, "Bubble Sort -> Cenario 2\n");
-        fprintf(pFile, "Media das comparacoes: %d\nMedia das movimentacoes: %d\nMedia do tempo: %lf\n", comparacoes[7], movimentacoes[7], tempo[7]);
+        fprintf(pFile, "Media das comparacoes: %d\nMedia das movimentacoes: %d\n", comparacoes[7], movimentacoes[7]);
         fclose(pFile);
         break;
     case 9:
         pFile = fopen("../out/SelectionSort_Cenario2.txt", "w+");
         fprintf(pFile, "Selection Sort -> Cenario 2\n");
-        fprintf(pFile, "Media das comparacoes: %d\nMedia das movimentacoes: %d\nMedia do tempo: %lf\n", comparacoes[8], movimentacoes[8], tempo[8]);
+        fprintf(pFile, "Media das comparacoes: %d\nMedia das movimentacoes: %d\n", comparacoes[8], movimentacoes[8]);
         fclose(pFile);
         break;
     case 10:
         pFile = fopen("../out/InsertionSort_Cenario2.txt", "w+");
         fprintf(pFile, "Insertion Sort -> Cenario 2\n");
-        fprintf(pFile, "Media das comparacoes: %d\nMedia das movimentacoes: %d\nMedia do tempo: %lf\n", comparacoes[9], movimentacoes[9], tempo[9]);
+        fprintf(pFile, "Media das comparacoes: %d\nMedia das movimentacoes: %d\n", comparacoes[9], movimentacoes[9]);
         fclose(pFile);
         break;
     case 11:
         pFile = fopen("../out/ShellSort_Cenario2.txt", "w+");
         fprintf(pFile, "Shell Sort -> Cenario 2\n");
-        fprintf(pFile, "Media das comparacoes: %d\nMedia das movimentacoes: %d\nMedia do tempo: %lf\n", comparacoes[10], movimentacoes[10], tempo[10]);
+        fprintf(pFile, "Media das comparacoes: %d\nMedia das movimentacoes: %d\n", comparacoes[10], movimentacoes[10]);
         fclose(pFile);
         break;
     case 12:
         pFile = fopen("../out/QuickSort_Cenario2.txt", "w+");
         fprintf(pFile, "Quick Sort -> Cenario 2\n");
-        fprintf(pFile, "Media das comparacoes: %d\nMedia das movimentacoes: %d\nMedia do tempo: %lf\n", comparacoes[11], movimentacoes[11], tempo[11]);
+        fprintf(pFile, "Media das comparacoes: %d\nMedia das movimentacoes: %d\n", comparacoes[11], movimentacoes[11]);
         fclose(pFile);
         break;
     case 13:
         pFile = fopen("../out/MergeSort_Cenario2.txt", "w+");
         fprintf(pFile, "Merge Sort -> Cenario 2\n");
-        fprintf(pFile, "Media das comparacoes: %d\nMedia das movimentacoes: %d\nMedia do tempo: %lf\n", comparacoes[12], movimentacoes[12], tempo[12]);
+        fprintf(pFile, "Media das comparacoes: %d\nMedia das movimentacoes: %d\n", comparacoes[12], movimentacoes[12]);
         fclose(pFile);
         break;
     case 14:
         pFile = fopen("../out/RadixSort_Cenario2.txt", "w+");
         fprintf(pFile, "Radix Sort -> Cenario 2\n");
-        fprintf(pFile, "Media das comparacoes: %d\nMedia das movimentacoes: %d\nMedia do tempo: %lf\n", comparacoes[13], movimentacoes[13], tempo[13]);
+        fprintf(pFile, "Media das comparacoes: %d\nMedia das movimentacoes: %d\n", comparacoes[13], movimentacoes[13]);
         fclose(pFile);
         break;
     }
