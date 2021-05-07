@@ -54,7 +54,9 @@ void bubbleSort(long long int *arr, int n, int flag, int *comparacoes, int *movi
     if (flag && cenario == 1)
     {
         arquivoX(comparacoes, movimentacoes, 1);
-    }else if (flag && cenario == 2){
+    }
+    else if (flag && cenario == 2)
+    {
         arquivoX(comparacoes, movimentacoes, 8);
     }
 }
@@ -99,12 +101,12 @@ void selectionSort(long long int *arr, int n, int flag, int *comparacoes, int *m
 
     if (flag && cenario == 1)
     {
-       arquivoX(comparacoes, movimentacoes, 2);
-    }else if (flag && cenario == 2)
+        arquivoX(comparacoes, movimentacoes, 2);
+    }
+    else if (flag && cenario == 2)
     {
         arquivoX(comparacoes, movimentacoes, 9);
     }
-    
 }
 
 void insertionSort(long long int *arr, int n, int flag, int *comparacoes, int *movimentacoes, double* tempo, int cenario)
@@ -149,11 +151,11 @@ void insertionSort(long long int *arr, int n, int flag, int *comparacoes, int *m
     if (flag && cenario == 1)
     {
         arquivoX(comparacoes, movimentacoes, 3);
-    }else if (flag && cenario == 2)
+    }
+    else if (flag && cenario == 2)
     {
         arquivoX(comparacoes, movimentacoes, 10);
     }
-    
 }
 
 void shellSort(long long int *arr, int n, int flag, int *comparacoes, int *movimentacoes, double* tempo, int cenario)
@@ -205,10 +207,11 @@ void shellSort(long long int *arr, int n, int flag, int *comparacoes, int *movim
     if (flag && cenario == 1)
     {
         arquivoX(comparacoes, movimentacoes, 4);
-    }else if (flag && cenario == 2){
+    }
+    else if (flag && cenario == 2)
+    {
         arquivoX(comparacoes, movimentacoes, 11);
     }
-    
 }
 
 int partition(long long int *arr, int low, int high, int *comparacoes, int *movimentacoes, int cenario)
@@ -261,11 +264,11 @@ void quickSort(long long int *arr, int low, int high, int flag, int *comparacoes
     if (flag && cenario == 1)
     {
         arquivoX(comparacoes, movimentacoes, 5);
-    }else if (flag && cenario == 2)
+    }
+    else if (flag && cenario == 2)
     {
         arquivoX(comparacoes, movimentacoes, 12);
     }
-    
 }
 
 void merge(long long int *arr, int l, int m, int r, int comp, int mov, int flag, int *comparacoes, int *movimentacoes, int cenario)
@@ -333,7 +336,9 @@ void merge(long long int *arr, int l, int m, int r, int comp, int mov, int flag,
     {
         comparacoes[5] += (comp);
         movimentacoes[5] += mov;
-    }else if (cenario == 2){
+    }
+    else if (cenario == 2)
+    {
         comparacoes[12] += (comp);
         movimentacoes[12] += mov;
     }
@@ -362,12 +367,12 @@ void mergeSort(long long int *arr, int l, int r, int flag, int *comparacoes, int
     {
         tempo[5] += ((double)(fim-inicio))/CLOCKS_PER_SEC;
         arquivoX(comparacoes, movimentacoes, 6);
-    }else if (flag && cenario == 2)
+    }
+    else if (flag && cenario == 2)
     {
         tempo[12] += ((double)(fim-inicio))/CLOCKS_PER_SEC;
         arquivoX(comparacoes, movimentacoes, 13);
     }
-    
 }
 
 int getMax(long long int *arr, int n)
@@ -447,11 +452,11 @@ void radixSort(long long int *arr, int n, int flag, int *comparacoes, int *movim
     if (flag && cenario == 1)
     {
         arquivoX(comparacoes, movimentacoes, 7);
-    }else if (flag && cenario == 2)
+    }
+    else if (flag && cenario == 2)
     {
         arquivoX(comparacoes, movimentacoes, 14);
     }
-    
 }
 
 // Modificar essa funcao para gerar a saida em .txt

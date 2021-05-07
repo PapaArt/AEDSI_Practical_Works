@@ -6,7 +6,7 @@
 #define SORTING_H
 #include "cenarios.h"
 
-void swap(long long int* xp, long long int* yp);
+void swap(long long int *xp, long long int *yp);
 //As funcoes precisam ser int para retornar o contador
 void bubbleSort(long long int* arr, int n,int flag, int* comparacoes,int* movimentacoes, double* tempo, int cenario);
 void selectionSort(long long int* arr, int n,int flag, int* comparacoes, int* movimentacoes, double* tempo, int cenario);
@@ -21,6 +21,6 @@ void countSort(long long int* arr, int n, int exp,int flag);
 void radixSort(long long int* arr, int n,int flag, int* comparacoes, int* movimentacoes, double* tempo, int cenario);
 
 // Funcao para imprimir um vetor de tamanho n
-void printArray(long long int* arr, int n);
+void printArray(long long int *arr, int n);
 
 #endif
