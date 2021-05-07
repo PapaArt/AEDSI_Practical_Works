@@ -17,7 +17,7 @@ void swap(long long int *xp, long long int *yp)
     *yp = temp;
 }
 
-void bubbleSort(long long int *arr, int n, int flag, int *comparacoes, int *movimentacoes, int cenario)
+void bubbleSort(long long int *arr, int n, int flag, int *comparacoes, int *movimentacoes, int cenario, int *exec1)
 {
     int i, j;
     int bubble_comp = 0;
@@ -46,17 +46,31 @@ void bubbleSort(long long int *arr, int n, int flag, int *comparacoes, int *movi
         movimentacoes[7] += bubble_swap;
     }
 
-    if (flag && cenario == 1)
+    if (flag && cenario == 1 && exec1[0] == 5)
     {
+        printf("Arquivo gerado!\n");
+        comparacoes[0] = (comparacoes[0] / 5);
+        movimentacoes[0] = (movimentacoes[0] / 5);
         arquivoX(comparacoes, movimentacoes, 1);
     }
-    else if (flag && cenario == 2)
+    else if (flag && cenario == 2 && exec1[7] == 5)
     {
+        printf("Arquivo gerado!\n");
+        comparacoes[7] = (comparacoes[7] / 5);
+        movimentacoes[7] = (movimentacoes[7] / 5);
         arquivoX(comparacoes, movimentacoes, 8);
+    }
+    if (flag && cenario == 1 && exec1[0] < 5)
+    {
+        printf("Execute o algoritmo mais %d vezes para obter o arquivo de medias!\n", (5 - exec1[0]));
+    }
+    else if (flag && cenario == 2 && exec1[7] < 5)
+    {
+        printf("Execute o algoritmo mais %d vezes para obter o arquivo de medias!\n", (5 - exec1[7]));
     }
 }
 
-void selectionSort(long long int *arr, int n, int flag, int *comparacoes, int *movimentacoes, int cenario)
+void selectionSort(long long int *arr, int n, int flag, int *comparacoes, int *movimentacoes, int cenario, int *exec1)
 {
     int i, j, min_index;
     int selection_comp = 0;
@@ -90,17 +104,31 @@ void selectionSort(long long int *arr, int n, int flag, int *comparacoes, int *m
         movimentacoes[8] += selection_swap;
     }
 
-    if (flag && cenario == 1)
+    if (flag && cenario == 1 && exec1[1] == 5)
     {
+        printf("Arquivo gerado!\n");
+        comparacoes[1] = (comparacoes[1] / 5);
+        movimentacoes[1] = (movimentacoes[1] / 5);
         arquivoX(comparacoes, movimentacoes, 2);
     }
-    else if (flag && cenario == 2)
+    else if (flag && cenario == 2 && exec1[8] == 5)
     {
+        printf("Arquivo gerado!\n");
+        comparacoes[8] = (comparacoes[8] / 5);
+        movimentacoes[8] = (movimentacoes[8] / 5);
         arquivoX(comparacoes, movimentacoes, 9);
+    }
+    if (flag && cenario == 1 && exec1[1] < 5)
+    {
+        printf("Execute o algoritmo mais %d vezes para obter o arquivo de medias!\n", (5 - exec1[1]));
+    }
+    else if (flag && cenario == 2 && exec1[8] < 5)
+    {
+        printf("Execute o algoritmo mais %d vezes para obter o arquivo de medias!\n", (5 - exec1[8]));
     }
 }
 
-void insertionSort(long long int *arr, int n, int flag, int *comparacoes, int *movimentacoes, int cenario)
+void insertionSort(long long int *arr, int n, int flag, int *comparacoes, int *movimentacoes, int cenario, int *exec1)
 {
     int i, j;
     int temp;
@@ -135,17 +163,31 @@ void insertionSort(long long int *arr, int n, int flag, int *comparacoes, int *m
         movimentacoes[9] += insertion_swap;
     }
 
-    if (flag && cenario == 1)
+    if (flag && cenario == 1 && exec1[2] == 5)
     {
+        printf("Arquivo gerado!\n");
+        comparacoes[2] = (comparacoes[2] / 5);
+        movimentacoes[2] = (movimentacoes[2] / 5);
         arquivoX(comparacoes, movimentacoes, 3);
     }
-    else if (flag && cenario == 2)
+    else if (flag && cenario == 2 && exec1[9] == 5)
     {
+        printf("Arquivo gerado!\n");
+        comparacoes[9] = (comparacoes[9] / 5);
+        movimentacoes[9] = (movimentacoes[9] / 5);
         arquivoX(comparacoes, movimentacoes, 10);
+    }
+    if (flag && cenario == 1 && exec1[2] < 5)
+    {
+        printf("Execute o algoritmo mais %d vezes para obter o arquivo de medias!\n", (5 - exec1[2]));
+    }
+    else if (flag && cenario == 2 && exec1[9] < 5)
+    {
+        printf("Execute o algoritmo mais %d vezes para obter o arquivo de medias!\n", (5 - exec1[9]));
     }
 }
 
-void shellSort(long long int *arr, int n, int flag, int *comparacoes, int *movimentacoes, int cenario)
+void shellSort(long long int *arr, int n, int flag, int *comparacoes, int *movimentacoes, int cenario, int *exec1)
 {
     int i, j, gap;
     int temp;
@@ -187,13 +229,27 @@ void shellSort(long long int *arr, int n, int flag, int *comparacoes, int *movim
         movimentacoes[10] += shell_swap;
     }
 
-    if (flag && cenario == 1)
+    if (flag && cenario == 1 && exec1[3] == 5)
     {
+        printf("Arquivo gerado!\n");
+        comparacoes[3] = (comparacoes[3] / 5);
+        movimentacoes[3] = (movimentacoes[3] / 5);
         arquivoX(comparacoes, movimentacoes, 4);
     }
-    else if (flag && cenario == 2)
+    else if (flag && cenario == 2 && exec1[10] == 5)
     {
+        printf("Arquivo gerado!\n");
+        comparacoes[10] = (comparacoes[10] / 5);
+        movimentacoes[10] = (movimentacoes[10] / 5);
         arquivoX(comparacoes, movimentacoes, 11);
+    }
+    if (flag && cenario == 1 && exec1[3] < 5)
+    {
+        printf("Execute o algoritmo mais %d vezes para obter o arquivo de medias!\n", (5 - exec1[3]));
+    }
+    else if (flag && cenario == 2 && exec1[10] < 5)
+    {
+        printf("Execute o algoritmo mais %d vezes para obter o arquivo de medias!\n", (5 - exec1[10]));
     }
 }
 
@@ -215,24 +271,10 @@ int partition(long long int *arr, int low, int high, int *comparacoes, int *movi
     }
     swap(&arr[i + 1], &arr[high]);
     quick_swap++;
-    // if (cenario == 1)
-    // {
-    //     comparacoes[4] = quick_comp;
-    //     movimentacoes[4] = quick_swap;
-    //     printf("comp: %d", comparacoes[4]);
-    //     printf("movi: %d", movimentacoes[4]);
-    // }
-    // else if (cenario == 2)
-    // {
-    //     comparacoes[11] = quick_comp;
-    //     movimentacoes[11] = quick_swap;
-    //     printf("comp: %d", comparacoes[11]);
-    //     printf("movi: %d", movimentacoes[11]);
-    // }
     return (i + 1);
 }
 
-void quickSort(long long int *arr, int low, int high, int flag, int *comparacoes, int *movimentacoes, int cenario)
+void quickSort(long long int *arr, int low, int high, int flag, int *comparacoes, int *movimentacoes, int cenario,int *exec1)
 {
     if (low < high)
     {
@@ -242,8 +284,8 @@ void quickSort(long long int *arr, int low, int high, int flag, int *comparacoes
 
         // Separately sort elements before
         // partition and after partition
-        quickSort(arr, low, pi - 1, 0, comparacoes, movimentacoes, cenario);
-        quickSort(arr, pi + 1, high, 0, comparacoes, movimentacoes, cenario);
+        quickSort(arr, low, pi - 1, 0, comparacoes, movimentacoes, cenario, exec1);
+        quickSort(arr, pi + 1, high, 0, comparacoes, movimentacoes, cenario, exec1);
     }
     if (cenario == 1)
     {
@@ -256,17 +298,31 @@ void quickSort(long long int *arr, int low, int high, int flag, int *comparacoes
         movimentacoes[11] += quick_swap;
     }
 
-    if (flag && cenario == 1)
+    if (flag && cenario == 1 && exec1[4] == 5)
     {
+        printf("Arquivo gerado!\n");
+        comparacoes[4] = (comparacoes[4] / 5);
+        movimentacoes[4] = (movimentacoes[4] / 5);
         arquivoX(comparacoes, movimentacoes, 5);
     }
-    else if (flag && cenario == 2)
+    else if (flag && cenario == 2 && exec1[11] == 5)
     {
+        printf("Arquivo gerado!\n");
+        comparacoes[11] = (comparacoes[11] / 5);
+        movimentacoes[11] = (movimentacoes[11] / 5);
         arquivoX(comparacoes, movimentacoes, 12);
+    }
+    if (flag && cenario == 1 && exec1[4] < 5)
+    {
+        printf("Execute o algoritmo mais %d vezes para obter o arquivo de medias!\n", (5 - exec1[4]));
+    }
+    else if (flag && cenario == 2 && exec1[11] < 5)
+    {
+        printf("Execute o algoritmo mais %d vezes para obter o arquivo de medias!\n", (5 - exec1[11]));
     }
 }
 
-void merge(long long int *arr, int l, int m, int r, int comp, int mov, int flag, int *comparacoes, int *movimentacoes, int cenario)
+void merge(long long int *arr, int l, int m, int r, int comp, int mov, int flag, int *comparacoes, int *movimentacoes, int cenario, int *exec1)
 {
     int i, j, k;
     int n1 = m - l + 1;
@@ -340,7 +396,7 @@ void merge(long long int *arr, int l, int m, int r, int comp, int mov, int flag,
 }
 
 /* l é para o índice esquerdo e r é o índice direito do subvetor de te[] a ser classificado*/
-void mergeSort(long long int *arr, int l, int r, int flag, int *comparacoes, int *movimentacoes, int cenario)
+void mergeSort(long long int *arr, int l, int r, int flag, int *comparacoes, int *movimentacoes, int cenario, int *exec1)
 {
     int comp = 0, mov = 0;
     if (l < r)
@@ -350,18 +406,32 @@ void mergeSort(long long int *arr, int l, int r, int flag, int *comparacoes, int
         int m = l + (r - l) / 2;
 
         // Classificar primeira e segunda metades
-        mergeSort(arr, l, m, 0, comparacoes, movimentacoes, cenario);
-        mergeSort(arr, m + 1, r, 0, comparacoes, movimentacoes, cenario);
+        mergeSort(arr, l, m, 0, comparacoes, movimentacoes, cenario,exec1);
+        mergeSort(arr, m + 1, r, 0, comparacoes, movimentacoes, cenario,exec1);
 
-        merge(arr, l, m, r, comp, mov, 0, comparacoes, movimentacoes, cenario);
+        merge(arr, l, m, r, comp, mov, 0, comparacoes, movimentacoes, cenario,exec1);
     }
-    if (flag && cenario == 1)
+    if (flag && cenario == 1 && exec1[5] == 5)
     {
+        printf("Arquivo gerado!\n");
+        comparacoes[5] = (comparacoes[5] / 5);
+        movimentacoes[5] = (movimentacoes[5] / 5);
         arquivoX(comparacoes, movimentacoes, 6);
     }
     else if (flag && cenario == 2)
     {
+        printf("Arquivo gerado!\n");
+        comparacoes[12] = (comparacoes[12] / 5);
+        movimentacoes[12] = (movimentacoes[12] / 5);
         arquivoX(comparacoes, movimentacoes, 13);
+    }
+    if (flag && cenario == 1 && exec1[5] < 5)
+    {
+        printf("Execute o algoritmo mais %d vezes para obter o arquivo de medias!\n", (5 - exec1[5]));
+    }
+    else if (flag && cenario == 2 && exec1[12] < 5)
+    {
+        printf("Execute o algoritmo mais %d vezes para obter o arquivo de medias!\n", (5 - exec1[12]));
     }
 }
 
@@ -411,7 +481,7 @@ void countSort(long long int *arr, int n, int exp, int flag)
         arr[i] = output[i];
 }
 
-void radixSort(long long int *arr, int n, int flag, int *comparacoes, int *movimentacoes, int cenario)
+void radixSort(long long int *arr, int n, int flag, int *comparacoes, int *movimentacoes, int cenario, int *exec1)
 {
     // Find the maximum number to know number of digits
     long long int m = getMax(arr, n);
@@ -435,13 +505,27 @@ void radixSort(long long int *arr, int n, int flag, int *comparacoes, int *movim
         movimentacoes[13] += radix_swap;
     }
 
-    if (flag && cenario == 1)
+    if (flag && cenario == 1 && exec1[6] == 5)
     {
+        printf("Arquivo gerado!\n");
+        comparacoes[6] = (comparacoes[6] / 5);
+        movimentacoes[6] = (movimentacoes[6] / 5);
         arquivoX(comparacoes, movimentacoes, 7);
     }
-    else if (flag && cenario == 2)
+    else if (flag && cenario == 2 && exec1[13] == 5)
     {
+        printf("Arquivo gerado!\n");
+        comparacoes[13] = (comparacoes[13] / 5);
+        movimentacoes[13] = (movimentacoes[13] / 5);
         arquivoX(comparacoes, movimentacoes, 14);
+    }
+    if (flag && cenario == 1 && exec1[6] < 5)
+    {
+        printf("Execute o algoritmo mais %d vezes para obter o arquivo de medias!\n", (5 - exec1[6]));
+    }
+    else if (flag && cenario == 2 && exec1[13] < 5)
+    {
+        printf("Execute o algoritmo mais %d vezes para obter o arquivo de medias!\n", (5 - exec1[13]));
     }
 }
 
