@@ -61,7 +61,7 @@ int menu()
             if (escolha[1] == 1)
             {
                 inicio = clock();
-                bubbleSort(arr, resposta, 1);
+                bubbleSort(arr, resposta, 1,comparacoes, movimentacoes,cenario);
                 fim = clock();
                 tempo = ((double)(fim-inicio))/CLOCKS_PER_SEC;
                 exec1[0] += 1;
@@ -180,7 +180,7 @@ int menu()
             if (escolha[1] == 1)
             {
                 inicio = clock();
-                bubbleSort(array, resposta,1);
+                bubbleSort(array, resposta,1,comparacoes, movimentacoes,cenario);
                 fim = clock();
                 tempo = ((double)(fim-inicio))/CLOCKS_PER_SEC;
                 exec1[7] += 1;

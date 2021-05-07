@@ -8,7 +8,7 @@
 
 void swap(long long int* xp, long long int* yp);
 //As funcoes precisam ser int para retornar o contador
-void bubbleSort(long long int* arr, int n,int flag);
+void bubbleSort(long long int* arr, int n,int flag,int* comparacoes,int* movimentacoes, int cenario);
 void selectionSort(long long int* arr, int n,int flag);
 void insertionSort(long long int* arr, int n,int flag);
 void shellSort(long long int* arr, int n,int flag);
