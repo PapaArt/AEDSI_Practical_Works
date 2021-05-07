@@ -60,8 +60,9 @@ void random_realvalue(Registro *item)
     }
 }
 
-int geraReg(Registro* item, long long int* arr, int pos){
-    item->chave = rand()%10001;
+int geraReg(Registro *item, long long int *arr, int pos)
+{
+    item->chave = rand() % 10001;
     arr[pos] = item->chave;
     //printf("id: %d\n", item->chave);
     int i, j;
@@ -76,13 +77,13 @@ int geraReg(Registro* item, long long int* arr, int pos){
 
     for (int i = 0; i < 4; i++)
     {
-        item->real_value[i] =(float) rand()/10001;
+        item->real_value[i] = (float)rand() / 10001;
         //printf("real value: %f\n", item->real_value[i]);
     }
 }
 
 // Funcao para coletar os dados
-void arquivoX(int* comparacoes, int* movimentacoes, int valor)
+void arquivoX(int *comparacoes, int *movimentacoes, int valor)
 {
     FILE *pFile;
     switch (valor)

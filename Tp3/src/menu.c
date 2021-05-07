@@ -4,12 +4,17 @@ int menu()
 {
     int escolha[3];
     int resposta;
-    int cenario=0;
-    int exec1[14];
-    int* comparacoes;
-    comparacoes = (int*)malloc(sizeof(int)*14);
-    int* movimentacoes;
-    movimentacoes = (int*)malloc(sizeof(int)*14);
+    int cenario = 0;
+    int *exec1;
+    exec1 = (int *)malloc(sizeof(int) * 14);
+    for (int i = 0; i < 14; i++)
+    {
+        exec1[i] = 0;
+    }
+    int *comparacoes;
+    comparacoes = (int *)malloc(sizeof(int) * 14);
+    int *movimentacoes;
+    movimentacoes = (int *)malloc(sizeof(int) * 14);
     double mediatemp[14];
     double tempo;
     clock_t fim, inicio;
@@ -55,50 +60,50 @@ int menu()
                 resposta = 1000000;
             }
 
-            long long int* arr;
-            arr = (long long int*)malloc(sizeof(long long int)*resposta);
+            long long int *arr;
+            arr = (long long int *)malloc(sizeof(long long int) * resposta);
             random_array(arr, resposta);
 
             // O vetor ordenado deve ter sua saida no arquivo .txt
             if (escolha[1] == 1)
             {
                 inicio = clock();
-                bubbleSort(arr, resposta, 1, comparacoes , movimentacoes, cenario);
+                bubbleSort(arr, resposta, 1, comparacoes, movimentacoes, cenario);
                 fim = clock();
-                tempo = ((double)(fim-inicio))/CLOCKS_PER_SEC;
+                tempo = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
                 exec1[0] += 1;
-
+                printf("exec: %d\n", exec1[0]);
             }
             else if (escolha[1] == 2)
             {
                 inicio = clock();
-                selectionSort(arr, resposta, 1, comparacoes , movimentacoes, cenario);
+                selectionSort(arr, resposta, 1, comparacoes, movimentacoes, cenario);
                 fim = clock();
-                tempo = ((double)(fim-inicio))/CLOCKS_PER_SEC;
+                tempo = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
                 exec1[1] += 1;
             }
             else if (escolha[1] == 3)
             {
                 inicio = clock();
-                insertionSort(arr, resposta, 1, comparacoes , movimentacoes, cenario);
+                insertionSort(arr, resposta, 1, comparacoes, movimentacoes, cenario);
                 fim = clock();
-                tempo = ((double)(fim-inicio))/CLOCKS_PER_SEC;
+                tempo = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
                 exec1[2] += 1;
             }
             else if (escolha[1] == 4)
             {
                 inicio = clock();
-                shellSort(arr, resposta, 1, comparacoes , movimentacoes, cenario);
+                shellSort(arr, resposta, 1, comparacoes, movimentacoes, cenario);
                 fim = clock();
-                tempo = ((double)(fim-inicio))/CLOCKS_PER_SEC;
+                tempo = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
                 exec1[3] += 1;
             }
             else if (escolha[1] == 5)
             {
                 inicio = clock();
-                quickSort(arr, 0, resposta - 1, 1, comparacoes , movimentacoes, cenario);
+                quickSort(arr, 0, resposta - 1, 1, comparacoes, movimentacoes, cenario);
                 fim = clock();
-                tempo = ((double)(fim-inicio))/CLOCKS_PER_SEC;
+                tempo = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
                 exec1[4] += 1;
             }
             else if (escolha[1] == 6)
@@ -106,15 +111,15 @@ int menu()
                 inicio = clock();
                 mergeSort(arr, 0, resposta - 1, 1, comparacoes, movimentacoes, cenario);
                 fim = clock();
-                tempo = ((double)(fim-inicio))/CLOCKS_PER_SEC;
+                tempo = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
                 exec1[5] += 1;
             }
             else if (escolha[1] == 7)
             {
                 inicio = clock();
-                radixSort(arr, resposta, 1, comparacoes , movimentacoes, cenario);
+                radixSort(arr, resposta, 1, comparacoes, movimentacoes, cenario);
                 fim = clock();
-                tempo = ((double)(fim-inicio))/CLOCKS_PER_SEC;
+                tempo = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
                 exec1[6] += 1;
             }
 
@@ -166,8 +171,8 @@ int menu()
                 resposta = 1000000;
             }
 
-            long long int* array;
-            array = (long long int*)malloc(sizeof(long long int)*resposta);
+            long long int *array;
+            array = (long long int *)malloc(sizeof(long long int) * resposta);
             int pos = 0;
             srand((unsigned)time(NULL));
             for (int i = 0; i < resposta; i++)
@@ -177,56 +182,66 @@ int menu()
                 pos++;
                 Insere(&item, &lista);
             }
-            
 
             if (escolha[1] == 1)
             {
                 inicio = clock();
-                bubbleSort(array, resposta, 1, comparacoes, movimentacoes,cenario);
+                bubbleSort(array, resposta, 1, comparacoes, movimentacoes, cenario);
                 fim = clock();
-                tempo = ((double)(fim-inicio))/CLOCKS_PER_SEC;
+                tempo = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
                 exec1[7] += 1;
                 printf("\n");
-
-            } else if(escolha[1] == 2){
+            }
+            else if (escolha[1] == 2)
+            {
                 inicio = clock();
-                selectionSort(array, resposta,1, comparacoes , movimentacoes, cenario);
+                selectionSort(array, resposta, 1, comparacoes, movimentacoes, cenario);
                 fim = clock();
-                tempo = ((double)(fim-inicio))/CLOCKS_PER_SEC;
+                tempo = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
                 exec1[8] += 1;
                 printf("\n");
-            } else if(escolha[1] == 3){
+            }
+            else if (escolha[1] == 3)
+            {
                 inicio = clock();
-                insertionSort(array, resposta,1, comparacoes , movimentacoes, cenario);
+                insertionSort(array, resposta, 1, comparacoes, movimentacoes, cenario);
                 fim = clock();
-                tempo = ((double)(fim-inicio))/CLOCKS_PER_SEC;
+                tempo = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
                 exec1[8] += 1;
                 printf("\n");
-            } else if(escolha[1] == 4){
+            }
+            else if (escolha[1] == 4)
+            {
                 inicio = clock();
-                shellSort(array, resposta,1, comparacoes , movimentacoes, cenario);
+                shellSort(array, resposta, 1, comparacoes, movimentacoes, cenario);
                 fim = clock();
-                tempo = ((double)(fim-inicio))/CLOCKS_PER_SEC;
+                tempo = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
                 exec1[10] += 1;
-            } else if(escolha[1] == 5){
+            }
+            else if (escolha[1] == 5)
+            {
                 inicio = clock();
-                quickSort(array, 0, resposta - 1, 1, comparacoes , movimentacoes, cenario);
+                quickSort(array, 0, resposta - 1, 1, comparacoes, movimentacoes, cenario);
                 fim = clock();
-                tempo = ((double)(fim-inicio))/CLOCKS_PER_SEC;
+                tempo = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
                 exec1[11] += 1;
                 printf("\n");
-            } else if(escolha[1] == 6){
+            }
+            else if (escolha[1] == 6)
+            {
                 inicio = clock();
                 mergeSort(array, 0, resposta - 1, 1, comparacoes, movimentacoes, cenario);
                 fim = clock();
-                tempo = ((double)(fim-inicio))/CLOCKS_PER_SEC;
+                tempo = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
                 exec1[12] += 1;
                 printf("\n");
-            } else if(escolha[1] == 7){
+            }
+            else if (escolha[1] == 7)
+            {
                 inicio = clock();
-                radixSort(array, resposta, 1, comparacoes , movimentacoes, cenario);
+                radixSort(array, resposta, 1, comparacoes, movimentacoes, cenario);
                 fim = clock();
-                tempo = ((double)(fim-inicio))/CLOCKS_PER_SEC;
+                tempo = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
                 exec1[13] += 1;
                 printf("\n");
             }
