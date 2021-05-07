@@ -82,7 +82,7 @@ int geraReg(Registro* item, long long int* arr, int pos){
 }
 
 // Funcao para coletar os dados
-void arquivoX(int comparacoes[14], int movimentacoes[14], int valor)
+void arquivoX(int* comparacoes, int* movimentacoes, int valor)
 {
     FILE *pFile;
     switch (valor)
