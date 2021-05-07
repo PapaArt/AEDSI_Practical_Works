@@ -33,6 +33,6 @@ void random_id(Registro item);
 void random_char(Registro* item);
 void random_realvalue(Registro* item);
 int geraReg(Registro* item, long long int* arr, int pos);
-void arquivoX(int comparacoes[14], int movimentacoes[14], double tempo[14],int valor);
+void arquivoX(int comparacoes[14], int movimentacoes[14], int valor);
 
 #endif

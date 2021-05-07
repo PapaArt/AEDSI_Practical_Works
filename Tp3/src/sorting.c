@@ -36,23 +36,20 @@ void bubbleSort(long long int *arr, int n, int flag, int comparacoes[14], int mo
             }
         }
     }
-    if (cenario == 1)
+    if (flag && cenario == 1)
     {
         comparacoes[0] = bubble_comp;
         movimentacoes[0] = bubble_swap;
         printf("comp: %d", comparacoes[0]);
         printf("mov: %d", movimentacoes[0]);
+        arquivoX(comparacoes[14], movimentacoes[14], 1);
     }
-    if (cenario == 2)
+    else if (flag && cenario == 2)
     {
         comparacoes[7] = bubble_comp;
         movimentacoes[7] = bubble_swap;
         printf("comp: %d", comparacoes[7]);
         printf("mov: %d", movimentacoes[7]);
-    }
-    if (flag)
-    {
-        arquivoX(bubble_comp, bubble_swap, 1);
     }
 }
 
@@ -377,7 +374,7 @@ void mergeSort(long long int *arr, int l, int r, int flag, int comparacoes[14], 
     }
     if (flag)
     {
-        arquivoX(comp, mov, 6);
+        arquivoX(comparacoes[14], movimentacoes[14], 6);
     }
 }
 
