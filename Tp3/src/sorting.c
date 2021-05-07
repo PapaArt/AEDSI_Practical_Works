@@ -428,8 +428,8 @@ void radixSort(long long int *arr, int n, int flag, int *comparacoes, int *movim
     }
     else if (cenario == 2)
     {
-        comparacoes[13] = radix_comp;
-        movimentacoes[13] = radix_swap;
+        comparacoes[13] += radix_comp;
+        movimentacoes[13] += radix_swap;
     }
 
     if (flag && cenario == 1)
