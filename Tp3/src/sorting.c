@@ -433,18 +433,27 @@ void mergeSort(long long int *arr, int l, int r, int flag, int *comparacoes, int
     }
     fim = clock();
 
+    if (cenario == 1)
+    {
+        tempo[5] += ((double)(fim-inicio))/CLOCKS_PER_SEC;
+    }else if (cenario == 2)
+    {
+        tempo[12] += ((double)(fim-inicio))/CLOCKS_PER_SEC;
+    }
+    
+
     if (flag && cenario == 1 && exec1[5] == 5)
     {
         comparacoes[5] = (comparacoes[5] / 5);
         movimentacoes[5] = (movimentacoes[5] / 5);
-        tempo[5] += ((double)(fim-inicio))/CLOCKS_PER_SEC;
+        tempo[5] = (tempo[5] / 5);
         arquivoX(comparacoes, movimentacoes, tempo, 6);
     }
     else if (flag && cenario == 2 && exec1[12] == 5)
     {
         comparacoes[12] = (comparacoes[12] / 5);
         movimentacoes[12] = (movimentacoes[12] / 5);
-        tempo[12] += ((double)(fim-inicio))/CLOCKS_PER_SEC;
+        tempo[12] = (tempo[12] / 5);
         arquivoX(comparacoes, movimentacoes, tempo, 13);
     }
     if (flag && cenario == 1 && exec1[5] < 5)
