@@ -19,7 +19,6 @@ void swap(long long int* xp, long long int* yp)
 
 void bubbleSort(long long int* arr, int n, int flag,int* comparacoes, int* movimentacoes, int cenario)
 {
-    printf("entrou");
     int i,j;
     int bubble_comp = 0;
     int bubble_swap = 0;
@@ -41,16 +40,17 @@ void bubbleSort(long long int* arr, int n, int flag,int* comparacoes, int* movim
         comparacoes[0] = bubble_comp;
         movimentacoes[0] = bubble_swap;
         printf("comp: %d",comparacoes[0]);
+        printf("movi: %d", movimentacoes[0]);
     }
     if(cenario == 2)
     {
         comparacoes[7] = bubble_comp;
         movimentacoes[7] = bubble_swap;
     }
-    if (flag)
-    {
-        //arquivoX(bubble_comp, bubble_swap, 1,1);
-    }
+    // if (flag)
+    // {
+    //     //arquivoX(bubble_comp, bubble_swap, 1,1);
+    // }
 }
 
 void selectionSort(long long int* arr, int n,int flag)

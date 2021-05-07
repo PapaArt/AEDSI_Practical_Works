@@ -7,7 +7,9 @@ int menu()
     int cenario=0;
     int exec1[14];
     int* comparacoes;
+    comparacoes = (int*)malloc(sizeof(int)*14);
     int* movimentacoes;
+    movimentacoes = (int*)malloc(sizeof(int)*14);
     double mediatemp[14];
     double tempo;
     clock_t fim, inicio;
@@ -61,7 +63,7 @@ int menu()
             if (escolha[1] == 1)
             {
                 inicio = clock();
-                bubbleSort(arr, resposta, 1,comparacoes, movimentacoes,cenario);
+                bubbleSort(arr, resposta, 1,comparacoes , movimentacoes, cenario);
                 fim = clock();
                 tempo = ((double)(fim-inicio))/CLOCKS_PER_SEC;
                 exec1[0] += 1;
@@ -180,7 +182,7 @@ int menu()
             if (escolha[1] == 1)
             {
                 inicio = clock();
-                bubbleSort(array, resposta,1,comparacoes, movimentacoes,cenario);
+                bubbleSort(array, resposta, 1, comparacoes, movimentacoes,cenario);
                 fim = clock();
                 tempo = ((double)(fim-inicio))/CLOCKS_PER_SEC;
                 exec1[7] += 1;
