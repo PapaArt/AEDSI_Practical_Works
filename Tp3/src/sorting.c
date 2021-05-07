@@ -49,10 +49,13 @@ void bubbleSort(long long int *arr, int n, int flag, int *comparacoes, int *movi
         printf("comp: %d", comparacoes[7]);
         printf("movi: %d", movimentacoes[7]);
     }
-    // if (flag)
-    // {
-    //     //arquivoX(bubble_comp, bubble_swap, 1,1);
-    // }
+
+    if (flag && cenario == 1)
+    {
+        arquivoX(comparacoes, movimentacoes, 1);
+    }else if (flag && cenario == 2){
+        arquivoX(comparacoes, movimentacoes, 8);
+    }
 }
 
 void selectionSort(long long int *arr, int n, int flag, int *comparacoes, int *movimentacoes, int cenario)
@@ -88,10 +91,15 @@ void selectionSort(long long int *arr, int n, int flag, int *comparacoes, int *m
         comparacoes[8] += selection_comp;
         movimentacoes[8] += selection_swap;
     }
-    // if (flag)
-    // {
-    //    //arquivoX(selection_comp, selection_swap, 2,2);
-    // }
+
+    if (flag && cenario == 1)
+    {
+       arquivoX(comparacoes, movimentacoes, 2);
+    }else if (flag && cenario == 2)
+    {
+        arquivoX(comparacoes, movimentacoes, 9);
+    }
+    
 }
 
 void insertionSort(long long int *arr, int n, int flag, int *comparacoes, int *movimentacoes, int cenario)
@@ -128,10 +136,15 @@ void insertionSort(long long int *arr, int n, int flag, int *comparacoes, int *m
         comparacoes[9] += insertion_comp;
         movimentacoes[9] += insertion_swap;
     }
-    // if (flag)
-    // {
-    //     //arquivoX(insertion_comp, insertion_swap, 3,3);
-    // }
+
+    if (flag && cenario == 1)
+    {
+        arquivoX(comparacoes, movimentacoes, 3);
+    }else if (flag && cenario == 2)
+    {
+        arquivoX(comparacoes, movimentacoes, 10);
+    }
+    
 }
 
 void shellSort(long long int *arr, int n, int flag, int *comparacoes, int *movimentacoes, int cenario)
@@ -175,10 +188,14 @@ void shellSort(long long int *arr, int n, int flag, int *comparacoes, int *movim
         comparacoes[10] += shell_comp;
         movimentacoes[10] += shell_swap;
     }
-    // if (flag)
-    // {
-    //     //arquivoX(shell_comp, shell_swap, 4,4);
-    // }
+
+    if (flag && cenario == 1)
+    {
+        arquivoX(comparacoes, movimentacoes, 4);
+    }else if (flag && cenario == 2){
+        arquivoX(comparacoes, movimentacoes, 11);
+    }
+    
 }
 
 int partition(long long int *arr, int low, int high, int *comparacoes, int *movimentacoes, int cenario)
@@ -233,16 +250,19 @@ void quickSort(long long int *arr, int low, int high, int flag, int *comparacoes
     {
         comparacoes[4] += quick_comp;
         movimentacoes[4] += quick_swap;
-    }
-    else if (cenario == 2)
-    {
+    }else if (cenario == 2){
         comparacoes[11] += quick_comp;
         movimentacoes[11] += quick_swap;
     }
-    if (flag)
+
+    if (flag && cenario == 1)
     {
-        //arquivoX(quick_comp, quick_swap, 5,5);
+        arquivoX(comparacoes, movimentacoes, 5);
+    }else if (flag && cenario == 2)
+    {
+        arquivoX(comparacoes, movimentacoes, 12);
     }
+    
 }
 
 void merge(long long int *arr, int l, int m, int r, int comp, int mov, int flag, int *comparacoes, int *movimentacoes, int cenario)
@@ -310,9 +330,7 @@ void merge(long long int *arr, int l, int m, int r, int comp, int mov, int flag,
     {
         comparacoes[5] += (comp);
         movimentacoes[5] += mov;
-    }
-    else if (cenario == 2)
-    {
+    }else if (cenario == 2){
         comparacoes[12] += (comp);
         movimentacoes[12] += mov;
     }
@@ -334,10 +352,14 @@ void mergeSort(long long int *arr, int l, int r, int flag, int *comparacoes, int
 
         merge(arr, l, m, r, comp, mov, 0, comparacoes, movimentacoes, cenario);
     }
-    if (flag)
+    if (flag && cenario == 1)
     {
-        //arquivoX(comp, mov, 6,6);
+        arquivoX(comparacoes, movimentacoes, 6);
+    }else if (flag && cenario == 2)
+    {
+        arquivoX(comparacoes, movimentacoes, 13);
     }
+    
 }
 
 int getMax(long long int *arr, int n)
@@ -409,10 +431,15 @@ void radixSort(long long int *arr, int n, int flag, int *comparacoes, int *movim
         comparacoes[13] = radix_comp;
         movimentacoes[13] = radix_swap;
     }
-    // if (flag)
-    // {
-    //     //arquivoX(radix_comp, radix_swap, 7,7);
-    // }
+
+    if (flag && cenario == 1)
+    {
+        arquivoX(comparacoes, movimentacoes, 7);
+    }else if (flag && cenario == 2)
+    {
+        arquivoX(comparacoes, movimentacoes, 14);
+    }
+    
 }
 
 // Modificar essa funcao para gerar a saida em .txt
