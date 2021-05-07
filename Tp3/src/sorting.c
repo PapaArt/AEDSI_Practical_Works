@@ -8,6 +8,7 @@ int count_swap = 0;
 
 int radix_swap = 0;
 int radix_comp = 0;
+clock_t inicio, fim;
 //Array contador vai ter duas casas, casa 0 e o numero de comparacoes, casa 1 e o numero de trocas;
 
 void swap(long long int *xp, long long int *yp)
@@ -17,8 +18,9 @@ void swap(long long int *xp, long long int *yp)
     *yp = temp;
 }
 
-void bubbleSort(long long int *arr, int n, int flag, int *comparacoes, int *movimentacoes, int cenario, int *exec1)
+void bubbleSort(long long int *arr, int n, int flag, int *comparacoes, int *movimentacoes, double* tempo, int cenario, int *exec1)
 {
+    inicio = clock();
     int i, j;
     int bubble_comp = 0;
     int bubble_swap = 0;
@@ -35,15 +37,18 @@ void bubbleSort(long long int *arr, int n, int flag, int *comparacoes, int *movi
             }
         }
     }
+    fim = clock();
     if (cenario == 1)
     {
         comparacoes[0] += bubble_comp;
         movimentacoes[0] += bubble_swap;
+        tempo[0] += ((double)(fim-inicio))/CLOCKS_PER_SEC;
     }
     else if (cenario == 2)
     {
         comparacoes[7] += bubble_comp;
         movimentacoes[7] += bubble_swap;
+        tempo[7] += ((double)(fim-inicio))/CLOCKS_PER_SEC;
     }
 
     if (flag && cenario == 1 && exec1[0] == 5)
@@ -70,8 +75,9 @@ void bubbleSort(long long int *arr, int n, int flag, int *comparacoes, int *movi
     }
 }
 
-void selectionSort(long long int *arr, int n, int flag, int *comparacoes, int *movimentacoes, int cenario, int *exec1)
+void selectionSort(long long int *arr, int n, int flag, int *comparacoes, int *movimentacoes, double* tempo, int cenario, int *exec1)
 {
+    inicio = clock();
     int i, j, min_index;
     int selection_comp = 0;
     int selection_swap = 0;
@@ -93,15 +99,18 @@ void selectionSort(long long int *arr, int n, int flag, int *comparacoes, int *m
         swap(&arr[min_index], &arr[i]);
         selection_swap++;
     }
+    fim = clock();
     if (cenario == 1)
     {
         comparacoes[1] += selection_comp;
         movimentacoes[1] += selection_swap;
+        tempo[1] += ((double)(fim-inicio))/CLOCKS_PER_SEC;
     }
     else if (cenario == 2)
     {
         comparacoes[8] += selection_comp;
         movimentacoes[8] += selection_swap;
+        tempo[8] += ((double)(fim-inicio))/CLOCKS_PER_SEC;
     }
 
     if (flag && cenario == 1 && exec1[1] == 5)
@@ -128,8 +137,9 @@ void selectionSort(long long int *arr, int n, int flag, int *comparacoes, int *m
     }
 }
 
-void insertionSort(long long int *arr, int n, int flag, int *comparacoes, int *movimentacoes, int cenario, int *exec1)
+void insertionSort(long long int *arr, int n, int flag, int *comparacoes, int *movimentacoes, double* tempo, int cenario, int *exec1)
 {
+    inicio = clock();
     int i, j;
     int temp;
     int insertion_comp = 0;
@@ -152,15 +162,18 @@ void insertionSort(long long int *arr, int n, int flag, int *comparacoes, int *m
             insertion_swap++;
         }
     }
+    fim = clock();
     if (cenario == 1)
     {
         comparacoes[2] += insertion_comp;
         movimentacoes[2] += insertion_swap;
+        tempo[2] += ((double)(fim-inicio))/CLOCKS_PER_SEC;
     }
     else if (cenario == 2)
     {
         comparacoes[9] += insertion_comp;
         movimentacoes[9] += insertion_swap;
+        tempo[9] += ((double)(fim-inicio))/CLOCKS_PER_SEC;
     }
 
     if (flag && cenario == 1 && exec1[2] == 5)
@@ -187,8 +200,9 @@ void insertionSort(long long int *arr, int n, int flag, int *comparacoes, int *m
     }
 }
 
-void shellSort(long long int *arr, int n, int flag, int *comparacoes, int *movimentacoes, int cenario, int *exec1)
+void shellSort(long long int *arr, int n, int flag, int *comparacoes, int *movimentacoes, double* tempo, int cenario, int *exec1)
 {
+    inicio = clock();
     int i, j, gap;
     int temp;
     int shell_comp = 0;
@@ -218,15 +232,18 @@ void shellSort(long long int *arr, int n, int flag, int *comparacoes, int *movim
             shell_comp++;
         }
     }
+    fim = clock();
     if (cenario == 1)
     {
         comparacoes[3] += shell_comp;
         movimentacoes[3] += shell_swap;
+        tempo[3] += ((double)(fim-inicio))/CLOCKS_PER_SEC;
     }
     else if (cenario == 2)
     {
         comparacoes[10] += shell_comp;
         movimentacoes[10] += shell_swap;
+        tempo[10] += ((double)(fim-inicio))/CLOCKS_PER_SEC;
     }
 
     if (flag && cenario == 1 && exec1[3] == 5)
@@ -274,8 +291,9 @@ int partition(long long int *arr, int low, int high, int *comparacoes, int *movi
     return (i + 1);
 }
 
-void quickSort(long long int *arr, int low, int high, int flag, int *comparacoes, int *movimentacoes, int cenario,int *exec1)
+void quickSort(long long int *arr, int low, int high, int flag, int *comparacoes, int *movimentacoes, double* tempo, int cenario, int *exec1)
 {
+    inicio = clock();
     if (low < high)
     {
         /* pi is partitioning index, arr[p] is now
@@ -284,18 +302,19 @@ void quickSort(long long int *arr, int low, int high, int flag, int *comparacoes
 
         // Separately sort elements before
         // partition and after partition
-        quickSort(arr, low, pi - 1, 0, comparacoes, movimentacoes, cenario, exec1);
-        quickSort(arr, pi + 1, high, 0, comparacoes, movimentacoes, cenario, exec1);
+        quickSort(arr, low, pi - 1, 0, comparacoes, movimentacoes, tempo, cenario,exec1);
+        quickSort(arr, pi + 1, high, 0, comparacoes, movimentacoes, tempo, cenario,exec1);
     }
+    fim = clock();
     if (cenario == 1)
     {
         comparacoes[4] += quick_comp;
         movimentacoes[4] += quick_swap;
-    }
-    else if (cenario == 2)
-    {
+        tempo[4] += ((double)(fim-inicio))/CLOCKS_PER_SEC;
+    }else if (cenario == 2){
         comparacoes[11] += quick_comp;
         movimentacoes[11] += quick_swap;
+        tempo[11] += ((double)(fim-inicio))/CLOCKS_PER_SEC;
     }
 
     if (flag && cenario == 1 && exec1[4] == 5)
@@ -396,8 +415,9 @@ void merge(long long int *arr, int l, int m, int r, int comp, int mov, int flag,
 }
 
 /* l é para o índice esquerdo e r é o índice direito do subvetor de te[] a ser classificado*/
-void mergeSort(long long int *arr, int l, int r, int flag, int *comparacoes, int *movimentacoes, int cenario, int *exec1)
+void mergeSort(long long int *arr, int l, int r, int flag, int *comparacoes, int *movimentacoes, double* tempo, int cenario, int *exec1)
 {
+    inicio = clock();
     int comp = 0, mov = 0;
     if (l < r)
     {
@@ -406,23 +426,27 @@ void mergeSort(long long int *arr, int l, int r, int flag, int *comparacoes, int
         int m = l + (r - l) / 2;
 
         // Classificar primeira e segunda metades
-        mergeSort(arr, l, m, 0, comparacoes, movimentacoes, cenario,exec1);
-        mergeSort(arr, m + 1, r, 0, comparacoes, movimentacoes, cenario,exec1);
+        mergeSort(arr, l, m, 0, comparacoes, movimentacoes, tempo, cenario,exec1);
+        mergeSort(arr, m + 1, r, 0, comparacoes, movimentacoes, tempo, cenario, exec1);
 
         merge(arr, l, m, r, comp, mov, 0, comparacoes, movimentacoes, cenario,exec1);
     }
+    fim = clock();
+
     if (flag && cenario == 1 && exec1[5] == 5)
     {
         printf("Arquivo gerado!\n");
         comparacoes[5] = (comparacoes[5] / 5);
         movimentacoes[5] = (movimentacoes[5] / 5);
+        tempo[5] += ((double)(fim-inicio))/CLOCKS_PER_SEC;
         arquivoX(comparacoes, movimentacoes, 6);
     }
-    else if (flag && cenario == 2)
+    else if (flag && cenario == 2 && exec1[12] == 5)
     {
         printf("Arquivo gerado!\n");
         comparacoes[12] = (comparacoes[12] / 5);
         movimentacoes[12] = (movimentacoes[12] / 5);
+        tempo[12] += ((double)(fim-inicio))/CLOCKS_PER_SEC;
         arquivoX(comparacoes, movimentacoes, 13);
     }
     if (flag && cenario == 1 && exec1[5] < 5)
@@ -481,8 +505,9 @@ void countSort(long long int *arr, int n, int exp, int flag)
         arr[i] = output[i];
 }
 
-void radixSort(long long int *arr, int n, int flag, int *comparacoes, int *movimentacoes, int cenario, int *exec1)
+void radixSort(long long int *arr, int n, int flag, int *comparacoes, int *movimentacoes, double* tempo, int cenario, int *exec1)
 {
+    inicio = clock();
     // Find the maximum number to know number of digits
     long long int m = getMax(arr, n);
     // Do counting sort for every digit. Note that instead
@@ -493,16 +518,19 @@ void radixSort(long long int *arr, int n, int flag, int *comparacoes, int *movim
         countSort(arr, n, exp, 1);
         radix_swap = radix_swap + count_swap;
     }
+    fim = clock();
 
     if (cenario == 1)
     {
         comparacoes[6] += radix_comp;
         movimentacoes[6] += radix_swap;
+        tempo[6] += ((double)(fim-inicio))/CLOCKS_PER_SEC;
     }
     else if (cenario == 2)
     {
         comparacoes[13] += radix_comp;
         movimentacoes[13] += radix_swap;
+        tempo[13] += ((double)(fim-inicio))/CLOCKS_PER_SEC;
     }
 
     if (flag && cenario == 1 && exec1[6] == 5)
