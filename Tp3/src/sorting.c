@@ -118,12 +118,12 @@ void insertionSort(long long int *arr, int n, int flag, int *comparacoes, int *m
             insertion_swap++;
         }
     }
-    if(cenario == 1)
+    if (cenario == 1)
     {
         comparacoes[2] = insertion_comp;
         movimentacoes[2] = insertion_swap;
     }
-    else if(cenario == 2)
+    else if (cenario == 2)
     {
         comparacoes[9] = insertion_comp;
         movimentacoes[9] = insertion_swap;
@@ -165,12 +165,12 @@ void shellSort(long long int *arr, int n, int flag, int *comparacoes, int *movim
             shell_comp++;
         }
     }
-    if(cenario == 1)
+    if (cenario == 1)
     {
         comparacoes[3] = shell_comp;
         movimentacoes[3] = shell_swap;
     }
-    else if(cenario == 2)
+    else if (cenario == 2)
     {
         comparacoes[10] = shell_comp;
         movimentacoes[10] = shell_swap;
@@ -181,7 +181,7 @@ void shellSort(long long int *arr, int n, int flag, int *comparacoes, int *movim
     // }
 }
 
-int partition(long long int *arr, int low, int high)
+int partition(long long int *arr, int low, int high, int *comparacoes, int *movimentacoes, int cenario)
 {
     int pivot = arr[high]; // pivot
     int i = (low - 1);     //Index of smaller element and indicates the right position of pivot found so far
@@ -199,31 +199,45 @@ int partition(long long int *arr, int low, int high)
     }
     swap(&arr[i + 1], &arr[high]);
     quick_swap++;
+    // if (cenario == 1)
+    // {
+    //     comparacoes[4] = quick_comp;
+    //     movimentacoes[4] = quick_swap;
+    //     printf("comp: %d", comparacoes[4]);
+    //     printf("movi: %d", movimentacoes[4]);
+    // }
+    // else if (cenario == 2)
+    // {
+    //     comparacoes[11] = quick_comp;
+    //     movimentacoes[11] = quick_swap;
+    //     printf("comp: %d", comparacoes[11]);
+    //     printf("movi: %d", movimentacoes[11]);
+    // }
     return (i + 1);
 }
 
-void quickSort(long long int *arr, int low, int high, int flag, int* comparacoes, int* movimentacoes, int cenario)
+void quickSort(long long int *arr, int low, int high, int flag, int *comparacoes, int *movimentacoes, int cenario)
 {
     if (low < high)
     {
         /* pi is partitioning index, arr[p] is now
         at right place */
-        int pi = partition(arr, low, high);
+        int pi = partition(arr, low, high, comparacoes, movimentacoes, cenario);
 
         // Separately sort elements before
         // partition and after partition
         quickSort(arr, low, pi - 1, 0, comparacoes, movimentacoes, cenario);
         quickSort(arr, pi + 1, high, 0, comparacoes, movimentacoes, cenario);
     }
-    if(cenario == 1)
+    if (cenario == 1)
     {
-        comparacoes[4] = quick_comp;
-        movimentacoes[4] = quick_swap;
+        comparacoes[4] += quick_comp;
+        movimentacoes[4] += quick_swap;
     }
-    else if(cenario == 2)
+    else if (cenario == 2)
     {
-        comparacoes[11] = quick_comp;
-        movimentacoes[11] = quick_swap;
+        comparacoes[11] += quick_comp;
+        movimentacoes[11] += quick_swap;
     }
     if (flag)
     {
@@ -231,7 +245,7 @@ void quickSort(long long int *arr, int low, int high, int flag, int* comparacoes
     }
 }
 
-void merge(long long int *arr, int l, int m, int r, int *comp, int mov, int flag)
+void merge(long long int *arr, int l, int m, int r, int comp, int mov, int flag, int *comparacoes, int *movimentacoes, int cenario)
 {
     int i, j, k;
     int n1 = m - l + 1;
@@ -258,12 +272,14 @@ void merge(long long int *arr, int l, int m, int r, int *comp, int mov, int flag
         (comp)++;
         if (L[i] <= R[j])
         {
+            (comp)++;
             (mov)++;
             arr[k] = L[i];
             i++;
         }
         else
         {
+            (comp)++;
             (mov)++;
             arr[k] = R[j];
             j++;
@@ -274,6 +290,7 @@ void merge(long long int *arr, int l, int m, int r, int *comp, int mov, int flag
     // Copia os elementos restantes de L [],se houver algum/
     while (i < n1)
     {
+        (comp)++;
         (mov)++;
         arr[k] = L[i];
         i++;
@@ -283,15 +300,26 @@ void merge(long long int *arr, int l, int m, int r, int *comp, int mov, int flag
     // Copia os elementos restantes de R [],se houver algum/
     while (j < n2)
     {
+        (comp)++;
         (mov)++;
         arr[k] = R[j];
         j++;
         k++;
     }
+    if (cenario == 1)
+    {
+        comparacoes[5] += (comp);
+        movimentacoes[5] += mov;
+    }
+    else if (cenario == 2)
+    {
+        comparacoes[12] += (comp);
+        movimentacoes[12] += mov;
+    }
 }
 
 /* l é para o índice esquerdo e r é o índice direito do subvetor de te[] a ser classificado*/
-void mergeSort(long long int *arr, int l, int r, int flag)
+void mergeSort(long long int *arr, int l, int r, int flag, int *comparacoes, int *movimentacoes, int cenario)
 {
     int comp = 0, mov = 0;
     if (l < r)
@@ -301,10 +329,10 @@ void mergeSort(long long int *arr, int l, int r, int flag)
         int m = l + (r - l) / 2;
 
         // Classificar primeira e segunda metades
-        mergeSort(arr, l, m, 0);
-        mergeSort(arr, m + 1, r, 0);
+        mergeSort(arr, l, m, 0, comparacoes, movimentacoes, cenario);
+        mergeSort(arr, m + 1, r, 0, comparacoes, movimentacoes, cenario);
 
-        merge(arr, l, m, r, &comp, mov, 0);
+        merge(arr, l, m, r, comp, mov, 0, comparacoes, movimentacoes, cenario);
     }
     if (flag)
     {
@@ -358,7 +386,7 @@ void countSort(long long int *arr, int n, int exp, int flag)
         arr[i] = output[i];
 }
 
-void radixSort(long long int *arr, int n, int flag, int* comparacoes, int* movimentacoes, int cenario)
+void radixSort(long long int *arr, int n, int flag, int *comparacoes, int *movimentacoes, int cenario)
 {
     // Find the maximum number to know number of digits
     long long int m = getMax(arr, n);
@@ -371,12 +399,12 @@ void radixSort(long long int *arr, int n, int flag, int* comparacoes, int* movim
         radix_swap = radix_swap + count_swap;
     }
 
-    if(cenario == 1)
+    if (cenario == 1)
     {
         comparacoes[6] = radix_comp;
         movimentacoes[6] = radix_swap;
     }
-    else if(cenario == 2)
+    else if (cenario == 2)
     {
         comparacoes[13] = radix_comp;
         movimentacoes[13] = radix_swap;

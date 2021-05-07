@@ -104,7 +104,7 @@ int menu()
             else if (escolha[1] == 6)
             {
                 inicio = clock();
-                mergeSort(arr, 0, resposta - 1, 1);
+                mergeSort(arr, 0, resposta - 1, 1, comparacoes, movimentacoes, cenario);
                 fim = clock();
                 tempo = ((double)(fim-inicio))/CLOCKS_PER_SEC;
                 exec1[5] += 1;
@@ -217,7 +217,7 @@ int menu()
                 printf("\n");
             } else if(escolha[1] == 6){
                 inicio = clock();
-                mergeSort(array, 0, resposta - 1, 1);
+                mergeSort(array, 0, resposta - 1, 1, comparacoes, movimentacoes, cenario);
                 fim = clock();
                 tempo = ((double)(fim-inicio))/CLOCKS_PER_SEC;
                 exec1[12] += 1;
