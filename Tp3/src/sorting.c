@@ -37,15 +37,15 @@ void bubbleSort(long long int *arr, int n, int flag, int *comparacoes, int *movi
     }
     if (cenario == 1)
     {
-        comparacoes[0] = bubble_comp;
-        movimentacoes[0] = bubble_swap;
+        comparacoes[0] += bubble_comp;
+        movimentacoes[0] += bubble_swap;
         printf("comp: %d", comparacoes[0]);
         printf("movi: %d", movimentacoes[0]);
     }
     else if (cenario == 2)
     {
-        comparacoes[7] = bubble_comp;
-        movimentacoes[7] = bubble_swap;
+        comparacoes[7] += bubble_comp;
+        movimentacoes[7] += bubble_swap;
         printf("comp: %d", comparacoes[7]);
         printf("movi: %d", movimentacoes[7]);
     }
@@ -80,13 +80,13 @@ void selectionSort(long long int *arr, int n, int flag, int *comparacoes, int *m
     }
     if (cenario == 1)
     {
-        comparacoes[1] = selection_comp;
-        movimentacoes[1] = selection_swap;
+        comparacoes[1] += selection_comp;
+        movimentacoes[1] += selection_swap;
     }
     else if (cenario == 2)
     {
-        comparacoes[8] = selection_comp;
-        movimentacoes[8] = selection_swap;
+        comparacoes[8] += selection_comp;
+        movimentacoes[8] += selection_swap;
     }
     // if (flag)
     // {
@@ -120,13 +120,13 @@ void insertionSort(long long int *arr, int n, int flag, int *comparacoes, int *m
     }
     if (cenario == 1)
     {
-        comparacoes[2] = insertion_comp;
-        movimentacoes[2] = insertion_swap;
+        comparacoes[2] += insertion_comp;
+        movimentacoes[2] += insertion_swap;
     }
     else if (cenario == 2)
     {
-        comparacoes[9] = insertion_comp;
-        movimentacoes[9] = insertion_swap;
+        comparacoes[9] += insertion_comp;
+        movimentacoes[9] += insertion_swap;
     }
     // if (flag)
     // {
@@ -167,13 +167,13 @@ void shellSort(long long int *arr, int n, int flag, int *comparacoes, int *movim
     }
     if (cenario == 1)
     {
-        comparacoes[3] = shell_comp;
-        movimentacoes[3] = shell_swap;
+        comparacoes[3] += shell_comp;
+        movimentacoes[3] += shell_swap;
     }
     else if (cenario == 2)
     {
-        comparacoes[10] = shell_comp;
-        movimentacoes[10] = shell_swap;
+        comparacoes[10] += shell_comp;
+        movimentacoes[10] += shell_swap;
     }
     // if (flag)
     // {
@@ -401,8 +401,8 @@ void radixSort(long long int *arr, int n, int flag, int *comparacoes, int *movim
 
     if (cenario == 1)
     {
-        comparacoes[6] = radix_comp;
-        movimentacoes[6] = radix_swap;
+        comparacoes[6] += radix_comp;
+        movimentacoes[6] += radix_swap;
     }
     else if (cenario == 2)
     {
