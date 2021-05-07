@@ -1,3 +1,0 @@
-Bubble Sort -> Cenario 1
-Numero de comparacoes: 12497500
-Numero de movimentacoes: 6276815
