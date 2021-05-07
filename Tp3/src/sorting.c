@@ -38,7 +38,7 @@ void bubbleSort(long long int* arr, int n, int flag)
     }
     if (flag)
     {
-        arquivoX(bubble_comp, bubble_swap, 1,1);
+        //arquivoX(bubble_comp, bubble_swap, 1,1);
     }
 }
 
@@ -67,7 +67,7 @@ void selectionSort(long long int* arr, int n,int flag)
     }
     if (flag)
     {
-        arquivoX(selection_comp, selection_swap, 2,2);
+       //arquivoX(selection_comp, selection_swap, 2,2);
     }
 }
 
@@ -118,7 +118,7 @@ void insertionSort(long long int* arr, int n,int flag)
     }
 if (flag)
     {
-        arquivoX(insertion_comp, insertion_swap, 3,3);
+        //arquivoX(insertion_comp, insertion_swap, 3,3);
     }
 }
 
@@ -155,7 +155,7 @@ void shellSort(long long int* arr, int n,int flag)
     }
     if (flag)
     {
-        arquivoX(shell_comp, shell_swap, 4,4);
+        //arquivoX(shell_comp, shell_swap, 4,4);
     }
 }
 
@@ -196,7 +196,7 @@ void quickSort(long long int* arr, int low, int high,int flag)
     }
     if (flag)
     {
-        arquivoX(quick_comp, quick_swap, 5,5);
+        //arquivoX(quick_comp, quick_swap, 5,5);
     }
 }
 
@@ -268,7 +268,7 @@ void mergeSort(long long int* arr, int l, int r,int flag) {
         merge(arr, l, m, r,&comp,mov,0);
     }
     if(flag){
-        arquivoX(comp, mov, 6,6);
+        //arquivoX(comp, mov, 6,6);
     }
 }
 
@@ -333,7 +333,7 @@ void radixSort(long long int* arr, int n,int flag)
     }
     if (flag)
     {
-        arquivoX(radix_comp, radix_swap, 7,7);
+        //arquivoX(radix_comp, radix_swap, 7,7);
     }
 }
 

@@ -6,8 +6,8 @@ int menu()
     int resposta;
     int cenario=0;
     int exec1[14];
-    int comparacoes[14];
-    int movimentacoes[14];
+    int* comparacoes;
+    int* movimentacoes;
     double mediatemp[14];
     double tempo;
     clock_t fim, inicio;
