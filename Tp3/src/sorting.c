@@ -23,7 +23,6 @@ void bubbleSort(long long int* arr, int n, int flag,int* comparacoes, int* movim
     int i,j;
     int bubble_comp = 0;
     int bubble_swap = 0;
-
     for (i = 0; i < n-1; i++)
     {
         // Last i elements are already in place
