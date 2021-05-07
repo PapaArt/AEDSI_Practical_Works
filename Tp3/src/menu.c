@@ -63,7 +63,7 @@ int menu()
             if (escolha[1] == 1)
             {
                 inicio = clock();
-                bubbleSort(arr, resposta, 1,comparacoes , movimentacoes, cenario);
+                bubbleSort(arr, resposta, 1, comparacoes , movimentacoes, cenario);
                 fim = clock();
                 tempo = ((double)(fim-inicio))/CLOCKS_PER_SEC;
                 exec1[0] += 1;
@@ -72,7 +72,7 @@ int menu()
             else if (escolha[1] == 2)
             {
                 inicio = clock();
-                selectionSort(arr, resposta, 1);
+                selectionSort(arr, resposta, 1, comparacoes , movimentacoes, cenario);
                 fim = clock();
                 tempo = ((double)(fim-inicio))/CLOCKS_PER_SEC;
                 exec1[1] += 1;
@@ -80,7 +80,7 @@ int menu()
             else if (escolha[1] == 3)
             {
                 inicio = clock();
-                insertionSort(arr, resposta, 1);
+                insertionSort(arr, resposta, 1, comparacoes , movimentacoes, cenario);
                 fim = clock();
                 tempo = ((double)(fim-inicio))/CLOCKS_PER_SEC;
                 exec1[2] += 1;
@@ -88,7 +88,7 @@ int menu()
             else if (escolha[1] == 4)
             {
                 inicio = clock();
-                shellSort(arr, resposta, 1);
+                shellSort(arr, resposta, 1, comparacoes , movimentacoes, cenario);
                 fim = clock();
                 tempo = ((double)(fim-inicio))/CLOCKS_PER_SEC;
                 exec1[3] += 1;
@@ -96,7 +96,7 @@ int menu()
             else if (escolha[1] == 5)
             {
                 inicio = clock();
-                quickSort(arr, 0, resposta - 1, 1);
+                quickSort(arr, 0, resposta - 1, 1, comparacoes , movimentacoes, cenario);
                 fim = clock();
                 tempo = ((double)(fim-inicio))/CLOCKS_PER_SEC;
                 exec1[4] += 1;
@@ -112,7 +112,7 @@ int menu()
             else if (escolha[1] == 7)
             {
                 inicio = clock();
-                radixSort(arr, resposta, 1);
+                radixSort(arr, resposta, 1, comparacoes , movimentacoes, cenario);
                 fim = clock();
                 tempo = ((double)(fim-inicio))/CLOCKS_PER_SEC;
                 exec1[6] += 1;
@@ -190,27 +190,27 @@ int menu()
 
             } else if(escolha[1] == 2){
                 inicio = clock();
-                selectionSort(array, resposta,1);
+                selectionSort(array, resposta,1, comparacoes , movimentacoes, cenario);
                 fim = clock();
                 tempo = ((double)(fim-inicio))/CLOCKS_PER_SEC;
                 exec1[8] += 1;
                 printf("\n");
             } else if(escolha[1] == 3){
                 inicio = clock();
-                insertionSort(array, resposta,1);
+                insertionSort(array, resposta,1, comparacoes , movimentacoes, cenario);
                 fim = clock();
                 tempo = ((double)(fim-inicio))/CLOCKS_PER_SEC;
                 exec1[8] += 1;
                 printf("\n");
             } else if(escolha[1] == 4){
                 inicio = clock();
-                shellSort(array, resposta,1);
+                shellSort(array, resposta,1, comparacoes , movimentacoes, cenario);
                 fim = clock();
                 tempo = ((double)(fim-inicio))/CLOCKS_PER_SEC;
                 exec1[10] += 1;
             } else if(escolha[1] == 5){
                 inicio = clock();
-                quickSort(array, 0, resposta - 1,1);
+                quickSort(array, 0, resposta - 1, 1, comparacoes , movimentacoes, cenario);
                 fim = clock();
                 tempo = ((double)(fim-inicio))/CLOCKS_PER_SEC;
                 exec1[11] += 1;
@@ -224,7 +224,7 @@ int menu()
                 printf("\n");
             } else if(escolha[1] == 7){
                 inicio = clock();
-                radixSort(array, resposta,1);
+                radixSort(array, resposta, 1, comparacoes , movimentacoes, cenario);
                 fim = clock();
                 tempo = ((double)(fim-inicio))/CLOCKS_PER_SEC;
                 exec1[13] += 1;
