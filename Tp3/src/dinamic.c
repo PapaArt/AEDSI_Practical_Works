@@ -22,6 +22,17 @@ Registro *iniciaReg()
     }
     return reg;
 }
+vetor* iniciaVet(){
+
+    vetor* vet;
+    vet = (vetor*)malloc(sizeof(vet));
+    if(vet != NULL){
+        vet->inicio = 0;
+        vet->final = 0;
+        vet->quantidade = 0;
+    }
+
+}
 int geraReg(Registro *item, vetor* vet, int pos){
     item->chave = rand() % 10001;
     vet->registros[pos] = item->chave;
