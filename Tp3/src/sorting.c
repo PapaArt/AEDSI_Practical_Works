@@ -288,6 +288,16 @@ int partition(long long int *arr, int low, int high, long long int *comparacoes,
     }
     swap(&arr[i + 1], &arr[high]);
     quick_swap++;
+    if (cenario == 1)
+    {
+        comparacoes[4] += quick_comp;
+        movimentacoes[4] += quick_swap;
+    }
+    else if (cenario == 2)
+    {
+        comparacoes[11] += quick_comp;
+        movimentacoes[11] += quick_swap;
+    }
     return (i + 1);
 }
 
@@ -308,14 +318,10 @@ void quickSort(long long int *arr, int low, int high, int flag, long long int *c
     fim = clock();
     if (cenario == 1)
     {
-        comparacoes[4] += quick_comp;
-        movimentacoes[4] += quick_swap;
         tempo[4] += ((double)(fim - inicio)) / CLOCKS_PER_SEC;
     }
     else if (cenario == 2)
     {
-        comparacoes[11] += quick_comp;
-        movimentacoes[11] += quick_swap;
         tempo[11] += ((double)(fim - inicio)) / CLOCKS_PER_SEC;
     }
 
