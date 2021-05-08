@@ -139,9 +139,9 @@ int menu()
             {
                 exec1[6] += 1;
                 radixSort(arr, resposta, 1, comparacoes, movimentacoes, tempo, cenario, exec1);
-                if (exec1[7] == 5)
+                if (exec1[6] == 5)
                 {
-                    exec1[7] = 0;
+                    exec1[6] = 0;
                     printf("Arquivo criado com sucesso!!!\n");
                 }
             }
