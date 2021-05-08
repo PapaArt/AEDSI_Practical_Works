@@ -1,4 +1,5 @@
 #include "dinamic.h"
+
 Registro *iniciaReg()
 {
 
@@ -6,24 +7,33 @@ Registro *iniciaReg()
     reg = (Registro *)malloc(sizeof(reg));
     if (reg != NULL)
     {
-        reg->chave = 0;
-        reg->real_value[0] = 0;
-        reg->real_value[1] = 0;
-        reg->real_value[2] = 0;
-        reg->real_value[3] = 0;
+        reg->chave = rand() % 10001;
+        reg->real_value[0] = (float)rand() / 10001;
+        ;
+        reg->real_value[1] = (float)rand() / 10001;
+        ;
+        reg->real_value[2] = (float)rand() / 10001;
+        ;
+        reg->real_value[3] = (float)rand() / 10001;
+        ;
 
         for (int i = 0; i < 20; i++)
         {
             for (int j = 0; j < 100; j++)
             {
-                reg->string[i][j] = 0;
+                reg->string[i][j] = 'a' + (char)(rand() % 26);
             }
         }
     }
     return reg;
 }
-vetor *iniciaVet()
+
+void insereRegistro(Registro *item, vetor *vet, int pos)
 {
+    vet->registros[pos]->chave = item->chave;
+}
+
+vetor* iniciaVet(){
 
     vetor *vet;
     vet = (vetor *)malloc(sizeof(vet));
@@ -35,10 +45,10 @@ vetor *iniciaVet()
     }
     return vet;
 }
-int geraReg(Registro *item, vetor *vet, int pos)
+int geraRegistro(Registro *item, vetor *vet, int pos)
 {
     item->chave = rand() % 10001;
-    vet->registros[pos] = item->chave;
+    vet->registros[pos]->chave = rand() % 10001;
     //printf("id: %d\n", item->chave);
     int i, j;
     for (i = 0; i < 10; i++)
@@ -58,7 +68,6 @@ int geraReg(Registro *item, vetor *vet, int pos)
 }
 void select_sort(vetor *vet, int flag)
 {
-
     int i, j, min;
     double comp = 0, mov = 0;
     int n = vet->quantidade;
