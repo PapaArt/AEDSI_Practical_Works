@@ -18,11 +18,9 @@ void inicializa(vetor *vet, int tam)
     
         for (j = 0; j < 4; j++)
         {
-            vet[i].registros.real_value[j] = (float)(10.0 * rand() / 1001);
+            vet[i].registros.real_value[j] = (float)(rand() / 1001);
         }
-   
     }
-    
 }
 
 void imprime(vetor *vet, int tam)

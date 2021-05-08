@@ -11,31 +11,13 @@ typedef struct Registro
 
 } Registro;
 
-typedef struct Celula *Apontador;
-typedef struct Celula
-{
-
-    Registro registro;
-    Apontador pProx;
-
-} TipoCelula;
-
 typedef struct
 {
+    Registro registros;
+} vetor;
 
-    Apontador pPrimeiro;
-    Apontador pUltimo;
-
-} TipoLista;
-
-void FLVazia(TipoLista *item);
-void Insere(Registro *x, TipoLista *item);
-void Imprime(TipoLista item);
-void random_array(long long int *arr, int resposta);
-void random_id(Registro item);
-void random_char(Registro *item);
-void random_realvalue(Registro *item);
-int geraReg(Registro *item, long long int *arr, int pos);
+void inicializa(vetor* vet, int tam);
+void imprime(vetor* vet, int tam);
 void arquivoX(long long int *comparacoes, long long int *movimentacoes, double* tempo, int valor);
 
 #endif

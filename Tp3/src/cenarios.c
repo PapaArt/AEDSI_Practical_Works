@@ -1,84 +1,51 @@
 #include "cenarios.h"
 #include "time.h"
 
-void FLVazia(TipoLista *item)
+void inicializa(vetor *vet, int tam)
 {
-    item->pPrimeiro = (Apontador)malloc(sizeof(TipoCelula));
-    item->pUltimo = item->pPrimeiro;
-    item->pPrimeiro->pProx = NULL;
-}
-
-void Insere(Registro *x, TipoLista *item)
-{
-    item->pUltimo->pProx = (Apontador)malloc(sizeof(TipoCelula));
-    item->pUltimo = item->pUltimo->pProx;
-    item->pUltimo->registro = *x;
-    item->pUltimo->pProx = NULL;
-}
-
-void Imprime(TipoLista item)
-{
-    Apontador Aux;
-    Aux = item.pPrimeiro->pProx;
-    while (Aux != NULL)
+    int i, j, k, l;
+    srand(time(NULL));
+    for (i = 0; i < tam; i++)
     {
-        printf("%d ", Aux->registro.chave);
-        Aux = Aux->pProx;
-    }
-    printf("\n");
-}
+        vet[i].registros.chave = rand()%101;
 
-void random_array(long long int *arr, int resposta)
-{
-    int i;
-    for (i = 0; i < resposta; i++)
-    {
-        arr[i] = rand() % 101;
-    }
-}
-
-void random_char(Registro *item)
-{
-    int i, j;
-    for (i = 0; i < 10; i++)
-    {
-        for (j = 0; j < 200; j++)
+        for (l = 0; l < 10; l++)
         {
-            item->string[i][j] = 'a' + (char)(rand() % 26);
-            printf("%c", item->string[i][j]);
+            for (k = 0; k < 200; k++)
+            {
+                vet[i].registros.string[l][k] = 'a' + (char)(rand() % 26);
+            }
+        }
+    
+        for (j = 0; j < 4; j++)
+        {
+            vet[i].registros.real_value[j] = (float)(rand() / 1001);
         }
     }
-    printf("\n");
 }
 
-void random_realvalue(Registro *item)
+void imprime(vetor *vet, int tam)
 {
-    srand((unsigned)time(NULL));
-    for (int i = 0; i < 4; i++)
+    int i, j, l, k;
+    for (i = 0; i < tam; i++)
     {
-        item->real_value[i] = (float)rand() / 101;
-    }
-}
-
-int geraReg(Registro *item, long long int *arr, int pos)
-{
-    item->chave = rand() % 10001;
-    arr[pos] = item->chave;
-    //printf("id: %d\n", item->chave);
-    int i, j;
-    for (i = 0; i < 10; i++)
-    {
-        for (j = 0; j < 200; j++)
+        printf("Chave \n");
+        printf("%d\n", vet[i].registros.chave);
+        
+        printf("Matriz de char \n");
+        for (l = 0; l < 10; l++)
         {
-            item->string[i][j] = 'a' + (char)(rand() % 26);
-            //printf("%c", item->string[i][j]);
-        }
-    } //printf("\n");
+            for (k = 0; k < 200; k++)
+            {
+                printf("%c", vet[i].registros.string[l][k]);
+            }
+        }printf("\n");
 
-    for (int i = 0; i < 4; i++)
-    {
-        item->real_value[i] = (float)rand() / 10001;
-        //printf("real value: %f\n", item->real_value[i]);
+        printf("Vetor de float \n");
+        for (j = 0; j < 4; j++)
+        {
+            printf("%f\n", vet[i].registros.real_value[j]);
+        }printf("\n\n");
     }
 }
 
