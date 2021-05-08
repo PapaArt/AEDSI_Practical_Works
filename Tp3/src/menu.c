@@ -199,8 +199,9 @@ int menu()
             for (int i = 0; i < resposta; i++)
             {
                 Registro item;
-                iniciaReg();
+                iniciaVet();
                 printf("Aqui\n");
+                insereRegistro(&item, vet, pos);
                 pos++;
             }
 
