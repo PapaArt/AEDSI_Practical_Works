@@ -22,6 +22,7 @@ typedef struct
 } vetor;
 
 Registro* iniciaReg();
+int geraReg(Registro *item,vetor* vet, int pos);
 void select_sort(vetor *vet,int flag);
 
 #endif

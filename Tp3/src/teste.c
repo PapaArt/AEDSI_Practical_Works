@@ -22,6 +22,26 @@ Registro *iniciaReg()
     }
     return reg;
 }
+int geraReg(Registro *item, vetor* vet, int pos){
+    item->chave = rand() % 10001;
+    vet->registros[pos] = item->chave;
+    //printf("id: %d\n", item->chave);
+    int i, j;
+    for (i = 0; i < 10; i++)
+    {
+        for (j = 0; j < 200; j++)
+        {
+            item->string[i][j] = 'a' + (char)(rand() % 26);
+            //printf("%c", item->string[i][j]);
+        }
+    } //printf("\n");
+
+    for (int i = 0; i < 4; i++)
+    {
+        item->real_value[i] = (float)rand() / 10001;
+        //printf("real value: %f\n", item->real_value[i]);
+    }
+}
 void select_sort(vetor *vet, int flag)
 {
 
