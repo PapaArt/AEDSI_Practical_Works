@@ -11,10 +11,10 @@ int menu()
     {
         exec1[i] = 0;
     }
-    int *comparacoes;
-    comparacoes = (int *)malloc(sizeof(int) * 14);
-    int *movimentacoes;
-    movimentacoes = (int *)malloc(sizeof(int) * 14);
+    long long int *comparacoes;
+    comparacoes = (long long int *)malloc(sizeof(long long int) * 14);
+    long long int *movimentacoes;
+    movimentacoes = (long long int *)malloc(sizeof(long long int) * 14);
     double mediatemp[14];
     double *tempo;
     tempo = (double *)malloc(sizeof(double) * 14);
