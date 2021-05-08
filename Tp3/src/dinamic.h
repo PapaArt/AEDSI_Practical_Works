@@ -1,6 +1,6 @@
 #include "sorting.h"
-#ifndef TESTE_H
-#define TESTE_H
+#ifndef DINAMIC_H
+#define DINAMIC_H
 #define MAX_REG 1000000
 
 typedef struct Registro

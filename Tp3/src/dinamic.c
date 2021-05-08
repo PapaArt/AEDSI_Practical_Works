@@ -1,4 +1,4 @@
-#include "teste.h"
+#include "dinamic.h"
 Registro *iniciaReg()
 {
 
