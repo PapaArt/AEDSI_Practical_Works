@@ -48,6 +48,14 @@ void imprime(vetor *vet, int tam)
         }printf("\n\n");
     }
 }
+void random_array(long long int *arr, int resposta)
+{
+    int i;
+    for (i = 0; i < resposta; i++)
+    {
+        arr[i] = rand() % 101;
+    }
+}
 
 // Funcao para coletar os dados
 void arquivoX(long long int *comparacoes, long long int *movimentacoes, double* tempo, int valor)

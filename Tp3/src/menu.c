@@ -1,5 +1,4 @@
 #include "menu.h"
-#include "dinamic.h"
 
 int menu()
 {
@@ -156,13 +155,13 @@ int menu()
         {
             // Cenario 2 -> ordenar registros
             cenario = 2;
-            TipoLista lista;
+            //TipoLista lista;
             Registro item;
             print_menu2();
             scanf("%d", &escolha[1]);
             print_menu3();
             scanf("%d", &escolha[2]);
-            FLVazia(&lista);
+            //FLVazia(&lista);
             if (escolha[2] == 1)
             {
                 resposta = 1000;
@@ -199,9 +198,9 @@ int menu()
             for (int i = 0; i < resposta; i++)
             {
                 Registro item;
-                iniciaVet();
-                printf("Aqui\n");
-                insereRegistro(&item, vet, pos);
+                //iniciaVet();
+                //printf("Aqui\n");
+                //insereRegistro(&item, vet, pos);
                 pos++;
             }
 
@@ -218,7 +217,7 @@ int menu()
             else if (escolha[1] == 2)
             {
                 exec1[8] += 1;
-                select_sort(vet, 1);
+                //select_sort(vet, 1);
                 if (exec1[8] == 5)
                 {
                     printf("Arquivo criado com sucesso!!!\n");
