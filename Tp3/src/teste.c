@@ -1,5 +1,18 @@
 #include "teste.h"
+Registro* iniciaReg(){
 
+    Registro *reg;
+    reg = (Registro*)malloc(sizeof(reg));
+    if(reg != NULL){
+        reg->chave = 0;
+        reg->real_value[0] = 0;
+        reg->real_value[1] = 0;
+        reg->real_value[2] = 0;
+        reg->real_value[3] = 0;
+    }
+    return reg;
+
+}
 void FLVazia(TipoLista *item)
 {
     item->pPrimeiro = (Apontador)malloc(sizeof(TipoCelula));

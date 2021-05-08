@@ -12,23 +12,6 @@ typedef struct Registro
 
 } Registro;
 
-typedef struct Celula *Apontador;
-typedef struct Celula
-{
-
-    Registro registro;
-    Apontador pProx;
-
-} TipoCelula;
-
-typedef struct
-{
-
-    Apontador pPrimeiro;
-    Apontador pUltimo;
-
-} TipoLista;
-
 typedef struct
 {
 
@@ -38,10 +21,7 @@ typedef struct
 
 } vetor;
 
-
-void FLVazia(TipoLista *item);
-void Insere(Registro *x, TipoLista *item);
-void Imprime(TipoLista item);
+Registro* iniciaReg();
 void select_sort(vetor *vet,int flag);
 
 #endif
