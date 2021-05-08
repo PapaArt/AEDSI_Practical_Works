@@ -22,6 +22,7 @@ typedef struct
 
 } vetor;
 
+vetor* iniciaVet();
 Registro* iniciaReg();
 int geraRegistro(Registro *item,vetor* vet, int pos);
 void insereRegistro(Registro* item, vetor* vet , int pos);
