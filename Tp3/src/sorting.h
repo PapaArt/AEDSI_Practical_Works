@@ -12,8 +12,11 @@ void bubbleSort(long long int *arr, int n, int flag, long long int *comparacoes,
 void selectionSort(long long int *arr, int n, int flag, long long int *comparacoes, long long int *movimentacoes, double *tempo, int cenario, int *exec1);
 void insertionSort(long long int *arr, int n, int flag, long long int *comparacoes, long long int *movimentacoes, double *tempo, int cenario, int *exec1);
 void shellSort(long long int *arr, int n, int flag, long long int *comparacoes, long long int *movimentacoes, double *tempo, int cenario, int *exec1);
-int partition(long long int *arr, int low, int high, long long int *comparacoes, long long int *movimentacoes, int cenario);
-void quickSort(long long int *arr, int low, int high, int flag, long long int *comparacoes, long long int *movimentacoes, double *tempo, int cenario, int *exec1);
+// int partition(long long int *arr, int low, int high, long long int *comparacoes, long long int *movimentacoes, int cenario);
+// void quickSort(long long int *arr, int low, int high, int flag, long long int *comparacoes, long long int *movimentacoes, double *tempo, int cenario, int *exec1);
+void particao(int left, int right, int *i, int *j, long long int *arr, long long int* comparacoes, long long int* movimentacoes);
+void ordena(int left, int right, long long int* arr, long long int* comparacoes, long long int* movimentacoes);
+void quickSort(long long int* arr, int n, int flag, long long int* comparacoes, long long int* movimentacoes);
 void merge(long long int *arr, int l, int m, int r, long long int comp, long long int mov, int flag, long long int *comparacoes, long long int *movimentacoes, int cenario, int *exec1);
 void mergeSort(long long int *arr, int l, int r, int flag, long long int *comparacoes, long long int *movimentacoes, double *tempo, int cenario, int *exec1);
 int getMax(long long int *arr, int n, long long int comp);

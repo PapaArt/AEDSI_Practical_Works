@@ -116,7 +116,7 @@ int menu()
             else if (escolha[1] == 5)
             {
                 exec1[4] += 1;
-                quickSort(arr, 0, resposta - 1, 1, comparacoes, movimentacoes, tempo, cenario, exec1);
+                quickSort(arr, resposta, 1, comparacoes, movimentacoes);
                 if (exec1[4] == 5)
                 {
                     exec1[4] = 0;
@@ -245,7 +245,7 @@ int menu()
             else if (escolha[1] == 5)
             {
                 exec1[11] += 1;
-                quickSort(array, 0, resposta - 1, 1, comparacoes, movimentacoes, tempo, cenario, exec1);
+                quickSort(array, resposta, 1, comparacoes, movimentacoes);
                 if (exec1[11] == 5)
                 {
                     printf("Arquivo criado com sucesso!!!\n");

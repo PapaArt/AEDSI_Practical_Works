@@ -1,9 +1,6 @@
 #include "sorting.h"
 
 // contadores auxiliares para as funcoes recursivas
-long long int quick_swap = 0;
-long long int quick_comp = 0;
-
 long long int count_swap = 0;
 
 long long int radix_swap = 0;
@@ -270,84 +267,136 @@ void shellSort(long long int *arr, int n, int flag, long long int *comparacoes, 
     }
 }
 
-int partition(long long int *arr, int low, int high, long long int *comparacoes, long long int *movimentacoes, int cenario)
-{
-    int pivot = arr[high]; // pivot
-    int i = (low - 1);     //Index of smaller element and indicates the right position of pivot found so far
-    int j;
+// int partition(long long int *arr, int low, int high, long long int *comparacoes, long long int *movimentacoes, int cenario)
+// {
+//     int pivot = arr[high]; // pivot
+//     int i = (low - 1);     //Index of smaller element and indicates the right position of pivot found so far
+//     int j;
 
-    for (j = low; j <= high - 1; j++)
+//     for (j = low; j <= high - 1; j++)
+//     {
+//         if (arr[j] < pivot)
+//         {
+//             quick_comp++;
+//             i++; // increment index of smaller element
+//             swap(&arr[i], &arr[j]);
+//             quick_swap++;
+//             quick_comp++;
+//         }
+//     }
+//     swap(&arr[i + 1], &arr[high]);
+//     quick_swap++;
+//     if (cenario == 1)
+//     {
+//         comparacoes[4] += quick_comp;
+//         movimentacoes[4] += quick_swap;
+//     }
+//     else if (cenario == 2)
+//     {
+//         comparacoes[11] += quick_comp;
+//         movimentacoes[11] += quick_swap;
+//     }
+//     return (i + 1);
+// }
+
+// void quickSort(long long int *arr, int low, int high, int flag, long long int *comparacoes, long long int *movimentacoes, double *tempo, int cenario, int *exec1)
+// {
+//     inicio = clock();
+//     if (low < high)
+//     {
+//         /* pi is partitioning index, arr[p] is now
+//         at right place */
+//         int pi = partition(arr, low, high, comparacoes, movimentacoes, cenario);
+
+//         // Separately sort elements before
+//         // partition and after partition
+//         quickSort(arr, low, pi - 1, 0, comparacoes, movimentacoes, tempo, cenario, exec1);
+//         quickSort(arr, pi + 1, high, 0, comparacoes, movimentacoes, tempo, cenario, exec1);
+//     }
+//     fim = clock();
+//     if (cenario == 1)
+//     {
+//         tempo[4] += ((double)(fim - inicio)) / CLOCKS_PER_SEC;
+//     }
+//     else if (cenario == 2)
+//     {
+//         tempo[11] += ((double)(fim - inicio)) / CLOCKS_PER_SEC;
+//     }
+
+//     if (flag && cenario == 1 && exec1[4] == 5)
+//     {
+//         comparacoes[4] = (comparacoes[4] / 5);
+//         movimentacoes[4] = (movimentacoes[4] / 5);
+//         tempo[4] = (tempo[4] / 5);
+//         arquivoX(comparacoes, movimentacoes, tempo, 5);
+//     }
+//     else if (flag && cenario == 2 && exec1[11] == 5)
+//     {
+//         comparacoes[11] = (comparacoes[11] / 5);
+//         movimentacoes[11] = (movimentacoes[11] / 5);
+//         tempo[11] = (tempo[11] / 5);
+//         arquivoX(comparacoes, movimentacoes, tempo, 12);
+//     }
+//     if (flag && cenario == 1 && exec1[4] < 5)
+//     {
+//         printf("Execute o algoritmo mais %d vezes para obter o arquivo de medias!\n", (5 - exec1[4]));
+//     }
+//     else if (flag && cenario == 2 && exec1[11] < 5)
+//     {
+//         printf("Execute o algoritmo mais %d vezes para obter o arquivo de medias!\n", (5 - exec1[11]));
+//     }
+// }
+
+void particao(int left, int right, int *i, int *j, long long int *arr, long long int* comparacoes, long long int* movimentacoes)
+{
+    *i = left;
+    *j = right;
+    int pivot = arr[(*i + *j) / 2]; /* obtem o pivo x */
+    int aux;
+    do
     {
-        if (arr[j] < pivot)
-        {
-            quick_comp++;
-            i++; // increment index of smaller element
-            swap(&arr[i], &arr[j]);
-            quick_swap++;
-            quick_comp++;
+        comparacoes[4]++;
+        while (pivot > arr[*i]){
+            (*i)++;
+            comparacoes[4]++;
         }
-    }
-    swap(&arr[i + 1], &arr[high]);
-    quick_swap++;
-    if (cenario == 1)
-    {
-        comparacoes[4] += quick_comp;
-        movimentacoes[4] += quick_swap;
-    }
-    else if (cenario == 2)
-    {
-        comparacoes[11] += quick_comp;
-        movimentacoes[11] += quick_swap;
-    }
-    return (i + 1);
+
+        while (pivot < arr[*j]){
+            (*j)--;
+            comparacoes[4]++;
+        }
+        comparacoes[4]++;
+        if (*i <= *j)
+        {
+            movimentacoes[4]++;
+            aux = arr[*i];
+            arr[*i] = arr[*j];
+            arr[*j] = aux;
+            (*i)++;(*j)--;
+        }
+    } while (*i <= *j);
 }
 
-void quickSort(long long int *arr, int low, int high, int flag, long long int *comparacoes, long long int *movimentacoes, double *tempo, int cenario, int *exec1)
+void ordena(int left, int right, long long int* arr, long long int* comparacoes, long long int* movimentacoes)
 {
-    inicio = clock();
-    if (low < high)
-    {
-        /* pi is partitioning index, arr[p] is now
-        at right place */
-        int pi = partition(arr, low, high, comparacoes, movimentacoes, cenario);
+    int i, j;
+    particao(left, right, &i, &j, arr, comparacoes, movimentacoes);
+    comparacoes[4]++;
+    if (left < j) ordena(left, j, arr, comparacoes, movimentacoes);
+    comparacoes[4]++;
+    if (i < right) ordena(i, right, arr, comparacoes, movimentacoes);
+}
 
-        // Separately sort elements before
-        // partition and after partition
-        quickSort(arr, low, pi - 1, 0, comparacoes, movimentacoes, tempo, cenario, exec1);
-        quickSort(arr, pi + 1, high, 0, comparacoes, movimentacoes, tempo, cenario, exec1);
-    }
-    fim = clock();
-    if (cenario == 1)
-    {
-        tempo[4] += ((double)(fim - inicio)) / CLOCKS_PER_SEC;
-    }
-    else if (cenario == 2)
-    {
-        tempo[11] += ((double)(fim - inicio)) / CLOCKS_PER_SEC;
-    }
+void quickSort(long long int* arr, int n, int flag, long long int* comparacoes, long long int* movimentacoes)
+{
+    ordena(0, n-1, arr, comparacoes, movimentacoes);
 
-    if (flag && cenario == 1 && exec1[4] == 5)
+    if (flag)
     {
-        comparacoes[4] = (comparacoes[4] / 5);
-        movimentacoes[4] = (movimentacoes[4] / 5);
-        tempo[4] = (tempo[4] / 5);
-        arquivoX(comparacoes, movimentacoes, tempo, 5);
+        printf("Comparações iguais a = %lld\n",comparacoes[4]);
+        printf("Movimentações iguais a = %lld\n",movimentacoes[4]);   
     }
-    else if (flag && cenario == 2 && exec1[11] == 5)
-    {
-        comparacoes[11] = (comparacoes[11] / 5);
-        movimentacoes[11] = (movimentacoes[11] / 5);
-        tempo[11] = (tempo[11] / 5);
-        arquivoX(comparacoes, movimentacoes, tempo, 12);
-    }
-    if (flag && cenario == 1 && exec1[4] < 5)
-    {
-        printf("Execute o algoritmo mais %d vezes para obter o arquivo de medias!\n", (5 - exec1[4]));
-    }
-    else if (flag && cenario == 2 && exec1[11] < 5)
-    {
-        printf("Execute o algoritmo mais %d vezes para obter o arquivo de medias!\n", (5 - exec1[11]));
-    }
+    
 }
 
 void merge(long long int *arr, int l, int m, int r, long long int comp, long long int mov, int flag, long long int *comparacoes, long long int *movimentacoes, int cenario, int *exec1)
