@@ -13,8 +13,16 @@ int menu()
     }
     long long int *comparacoes;
     comparacoes = (long long int *)malloc(sizeof(long long int) * 14);
+    for (int i = 0; i < 14; i++)
+    {
+        comparacoes[i] = 0;
+    }
     long long int *movimentacoes;
     movimentacoes = (long long int *)malloc(sizeof(long long int) * 14);
+    for (int i = 0; i < 14; i++)
+    {
+        movimentacoes[i] = 0;
+    }
     double mediatemp[14];
     double *tempo;
     tempo = (double *)malloc(sizeof(double) * 14);
