@@ -79,8 +79,8 @@ int menu()
                 bubbleSort(arr, resposta, 1, comparacoes, movimentacoes, tempo, cenario, exec1);
                 if (exec1[0] == 5)
                 {
-                    printf("Arquivo criado com sucesso!!!\n");
                     exec1[0] = 0;
+                    printf("Arquivo criado com sucesso!!!\n");
                 }
             }
             else if (escolha[1] == 2)
@@ -89,8 +89,8 @@ int menu()
                 selectionSort(arr, resposta, 1, comparacoes, movimentacoes, tempo, cenario, exec1);
                 if (exec1[1] == 5)
                 {
-                    printf("Arquivo criado com sucesso!!!\n");
                     exec1[1] = 0;
+                    printf("Arquivo criado com sucesso!!!\n");
                 }
             }
             else if (escolha[1] == 3)
@@ -99,8 +99,8 @@ int menu()
                 insertionSort(arr, resposta, 1, comparacoes, movimentacoes, tempo, cenario, exec1);
                 if (exec1[2] == 5)
                 {
-                    printf("Arquivo criado com sucesso!!!\n");
                     exec1[2] = 0;
+                    printf("Arquivo criado com sucesso!!!\n");
                 }
             }
             else if (escolha[1] == 4)
@@ -109,8 +109,8 @@ int menu()
                 shellSort(arr, resposta, 1, comparacoes, movimentacoes, tempo, cenario, exec1);
                 if (exec1[3] == 5)
                 {
-                    printf("Arquivo criado com sucesso!!!\n");
                     exec1[3] = 0;
+                    printf("Arquivo criado com sucesso!!!\n");
                 }
             }
             else if (escolha[1] == 5)
@@ -119,8 +119,8 @@ int menu()
                 quickSort(arr, 0, resposta - 1, 1, comparacoes, movimentacoes, tempo, cenario, exec1);
                 if (exec1[4] == 5)
                 {
-                    printf("Arquivo criado com sucesso!!!\n");
                     exec1[4] = 0;
+                    printf("Arquivo criado com sucesso!!!\n");
                 }
             }
             else if (escolha[1] == 6)
@@ -129,8 +129,8 @@ int menu()
                 mergeSort(arr, 0, resposta - 1, 1, comparacoes, movimentacoes, tempo, cenario, exec1);
                 if (exec1[5] == 5)
                 {
-                    printf("Arquivo criado com sucesso!!!\n");
                     exec1[5] = 0;
+                    printf("Arquivo criado com sucesso!!!\n");
                 }
             }
             else if (escolha[1] == 7)
@@ -139,8 +139,8 @@ int menu()
                 radixSort(arr, resposta, 1, comparacoes, movimentacoes, tempo, cenario, exec1);
                 if (exec1[7] == 5)
                 {
-                    printf("Arquivo criado com sucesso!!!\n");
                     exec1[7] = 0;
+                    printf("Arquivo criado com sucesso!!!\n");
                 }
             }
 
