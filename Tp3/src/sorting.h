@@ -6,6 +6,7 @@
 #define SORTING_H
 #include "cenarios.h"
 
+
 void swap(long long int *xp, long long int *yp);
 //As funcoes precisam ser int para retornar o contador
 void bubbleSort(long long int *arr, int n, int flag, long long int *comparacoes, long long int *movimentacoes, double *tempo, int cenario, int *exec1);

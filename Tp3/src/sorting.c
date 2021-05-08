@@ -15,6 +15,7 @@ void swap(long long int *xp, long long int *yp)
     *yp = temp;
 }
 
+/* ---  Ordenação Cenario 1 --- */
 void bubbleSort(long long int *arr, int n, int flag, long long int *comparacoes, long long int *movimentacoes, double *tempo, int cenario, int *exec1)
 {
     inicio = clock();
@@ -664,6 +665,8 @@ void radixSort(long long int *arr, int n, int flag, long long int *comparacoes, 
         printf("Execute o algoritmo mais %d vezes para obter o arquivo de medias!\n", (5 - exec1[13]));
     }
 }
+/* ---------------------------- Ordenacao Cenario 2 ---------------------------- */
+
 
 // Modificar essa funcao para gerar a saida em .txt
 void printArray(long long int *arr, int n)

@@ -1,4 +1,5 @@
 #include "menu.h"
+#include "dinamic.h"
 
 int menu()
 {
@@ -6,6 +7,7 @@ int menu()
     int resposta;
     int cenario = 0;
     int *exec1;
+    vetor* vet;
     exec1 = (int *)malloc(sizeof(int) * 14);
     for (int i = 0; i < 14; i++)
     {
@@ -197,9 +199,9 @@ int menu()
             for (int i = 0; i < resposta; i++)
             {
                 Registro item;
-                geraReg(&item, array, pos);
+                iniciaReg();
+                printf("Aqui\n");
                 pos++;
-                Insere(&item, &lista);
             }
 
             if (escolha[1] == 1)
@@ -215,7 +217,7 @@ int menu()
             else if (escolha[1] == 2)
             {
                 exec1[8] += 1;
-                selectionSort(array, resposta, 1, comparacoes, movimentacoes, tempo, cenario, exec1);
+                select_sort(vet, 1);
                 if (exec1[8] == 5)
                 {
                     printf("Arquivo criado com sucesso!!!\n");
