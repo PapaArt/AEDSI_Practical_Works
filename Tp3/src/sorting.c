@@ -280,6 +280,7 @@ int partition(long long int *arr, int low, int high, long long int *comparacoes,
     {
         if (arr[j] < pivot)
         {
+            quick_comp++;
             i++; // increment index of smaller element
             swap(&arr[i], &arr[j]);
             quick_swap++;
