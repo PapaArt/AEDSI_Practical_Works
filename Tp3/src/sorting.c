@@ -54,7 +54,7 @@ void bubbleSort(long long int *arr, int n, int flag, long long int *comparacoes,
         tempo[7] += ((double)(fim - inicio)) / CLOCKS_PER_SEC;
     }
 
-    if (flag && cenario == 1 && exec1[0] == 5)
+    if (flag && cenario == 1 )
     {
         comparacoes[0] = (comparacoes[0] / 5);
         movimentacoes[0] = (movimentacoes[0] / 5);
@@ -116,7 +116,7 @@ void selectionSort(long long int *arr, int n, int flag, long long int *comparaco
         tempo[8] += ((double)(fim - inicio)) / CLOCKS_PER_SEC;
     }
 
-    if (flag && cenario == 1 && exec1[1] == 5)
+    if (flag && cenario == 1)
     {
         comparacoes[1] = (comparacoes[1] / 5);
         movimentacoes[1] = (movimentacoes[1] / 5);
@@ -179,7 +179,7 @@ void insertionSort(long long int *arr, int n, int flag, long long int *comparaco
         tempo[9] += ((double)(fim - inicio)) / CLOCKS_PER_SEC;
     }
 
-    if (flag && cenario == 1 && exec1[2] == 5)
+    if (flag && cenario == 1)
     {
         comparacoes[2] = (comparacoes[2] / 5);
         movimentacoes[2] = (movimentacoes[2] / 5);
