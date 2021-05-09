@@ -190,7 +190,6 @@ int menu()
             {
                 resposta = 1000000;
             }
-<<<<<<< Updated upstream
 
             vetor vet[resposta];
             inicializa(vet,resposta);
@@ -202,27 +201,6 @@ int menu()
             {
                 exec1[7] += 1;
                 bubble_Sort(vet, resposta, 1, comparacoes, movimentacoes, tempo, cenario, exec1);
-=======
-            vetor vet;
-            inicializa(&vet,resposta);
-            printf("aqui\n");
-            // long long int *array;
-            // array = (long long int *)malloc(sizeof(long long int) * resposta);
-            // int pos = 0;
-            srand((unsigned)time(NULL));
-            for (int i = 0; i < resposta; i++)
-            {
-                
-                //printf("Aqui\n");
-                //insereRegistro(&item, vet, pos);
-                //pos++;
-            }
-
-            if (escolha[1] == 1)
-            {
-                exec1[7] += 1;
-                bubble_Sort(&vet, resposta, 1, comparacoes, movimentacoes, tempo, cenario, exec1);
->>>>>>> Stashed changes
                 if (exec1[7] == 5)
                 {
                     printf("Arquivo criado com sucesso!!!\n");
@@ -242,11 +220,7 @@ int menu()
             else if (escolha[1] == 3)
             {
                 exec1[9] += 1;
-<<<<<<< Updated upstream
                 insertion_Sort(vet, resposta, 1, comparacoes, movimentacoes, tempo, cenario, exec1);
-=======
-                insertion_Sort(&vet, resposta, 1, comparacoes, movimentacoes, tempo, cenario, exec1);
->>>>>>> Stashed changes
                 if (exec1[9] == 5)
                 {
                     printf("Arquivo criado com sucesso!!!\n");
@@ -256,11 +230,7 @@ int menu()
             else if (escolha[1] == 4)
             {
                 exec1[10] += 1;
-<<<<<<< Updated upstream
                 shell_Sort(vet, resposta, 1, comparacoes, movimentacoes, tempo, cenario, exec1);
-=======
-                shell_Sort(&vet, resposta, 1, comparacoes, movimentacoes, tempo, cenario, exec1);
->>>>>>> Stashed changes
                 if (exec1[10] == 5)
                 {
                     printf("Arquivo criado com sucesso!!!\n");
@@ -270,11 +240,7 @@ int menu()
             else if (escolha[1] == 5)
             {
                 exec1[11] += 1;
-<<<<<<< Updated upstream
                 quick_Sort(vet, resposta, 1, comparacoes, movimentacoes, cenario,tempo, exec1);
-=======
-                quick_Sort(&vet, resposta, 1, comparacoes, movimentacoes, cenario,tempo, exec1);
->>>>>>> Stashed changes
                 if (exec1[11] == 5)
                 {
                     printf("Arquivo criado com sucesso!!!\n");
@@ -284,11 +250,7 @@ int menu()
             else if (escolha[1] == 6)
             {
                 exec1[12] += 1;
-<<<<<<< Updated upstream
                 merge_Sort(vet, 0, resposta - 1, 1, comparacoes, movimentacoes, tempo, cenario, exec1);
-=======
-                merge_Sort(&vet, 0, resposta - 1, 1, comparacoes, movimentacoes, tempo, cenario, exec1);
->>>>>>> Stashed changes
                 if (exec1[12] == 5)
                 {
                     printf("Arquivo criado com sucesso!!!\n");
@@ -298,11 +260,7 @@ int menu()
             else if (escolha[1] == 7)
             {
                 exec1[13] += 1;
-<<<<<<< Updated upstream
                 radix_Sort(vet, resposta, 1, comparacoes, movimentacoes, tempo, cenario, exec1);
-=======
-                radix_Sort(&vet, resposta, 1, comparacoes, movimentacoes, tempo, cenario, exec1);
->>>>>>> Stashed changes
                 if (exec1[13] == 5)
                 {
                     printf("Arquivo criado com sucesso!!!\n");
@@ -310,18 +268,10 @@ int menu()
                 }
             }
 
-<<<<<<< Updated upstream
             imprime(vet, resposta);
 
             print_menu1();
             scanf("%d", &escolha[0]);
-=======
-            imprime(&vet, resposta);
-
-            print_menu1();
-            scanf("%d", &escolha[0]);
-            // free(array);
->>>>>>> Stashed changes
         }
 
     } while (escolha[0] == 1 || escolha[0] == 2);
