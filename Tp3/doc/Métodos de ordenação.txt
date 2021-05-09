@@ -1,0 +1,43 @@
+Métodos de ordenação 
+
+1) Bubble Sort :
+	
+	Bubble Sort é um método de ordenação bastante simples,, uma lista é percorrida e elementos adjacentes são comparados e caso eles estejam na ordem errada suas posições são trocadas, esse processo se repete inúmeras vezes até que a lista esteja ordenada.
+	O Bubble Sort não é um método muito eficiente com uma complexidade de médio caso de O(n²), aonde n é a quantidade de itens a serem ordenados, além disso esse método é estável, ou seja, a posição relativa de elementos com chaves iguais não muda durante o processo de ordenação.
+	
+	
+2) Selection Sort :
+	
+	No Selection Sort, a lista é divida em duas sub-listas,uma para os elementos ordenados e a segunda para os elementos não-ordenados, a cada iteração o algoritmo encontra o menor elemento da sub-lista de não ordenados e o move para a sublista de ordenados.Esse processo se repete até que a lista esteja ordenada.
+	O Selection Sort, é um método de ordenação estável, que tem uma complexidade de caso médio de O(n²), aonde n é o tamanho da lista.
+	
+3) Insertion Sort :
+	
+	O método do Insertion Sort é similar ao que as pessoas usam para ordenar um baralho. A lista é divida em duas sub listas, uma ordenada e outra não ordenada, o algoritmo então vai escanear a sub-lista não ordenada em busca de um elemento a ser inserido na sub-lista ordenada, essa inserção já põe o elemento no lugar correto.
+	Este método de ordenação é estável, in-place, e tem complexidade de O(n²) .
+	
+4) Shell Sort :
+
+	O Shell Sort é uma versão otimizada do Insertion Sort, sua proposta é separar a lista principal em listas menores, com intervalos na comparação que,decrescerão até chegar ao intervalo 1.
+	Esse método não é estável, é in-place, e tem complexidade de O(n²) .
+	
+5) Quick Sort :
+	
+	A proposta do Quick Sort é escolher um pivô na lista, e então dividir a lista em duas sub-listas uma com elementos menores e outras com elementos menores que o vetor. Esse processo é repetido diversas vezes até a lista estar ordenada.
+	Esse método não é estável, é in-place, e tem complexidade de caso médio de O(n log n).
+	
+6) Merge Sort :
+	
+	O Merge Sort funciona dividindo a lista ao meio diversas vezes e depois juntando essas sublistas de maneira ordenada.
+	Esse método é estável, não é in-place, e tem complexidade de caso médio de O(n log n).
+
+7) Counting Sort :
+
+	O Counting Sort é um método de ordenação que diferente dos outros que vimos até agora, não usa comparações, ao invés disso ele conta quantas vezes cada número aparece na lista , e através de algumas manipulações matemáticas nesses contadores ele determina a posição aonde cada item tem que assumir para que a lista seja ordenada. Devido a isso o Counting Sort não pode ser usado pra ordenar listas com números de ponto flutuante.
+	Esse método não é estável(No entanto decidimos por implementar uma versão estável dele no TP), não é in-place, e tem complexidade de O(n).
+	
+8) Radix Sort :
+
+	O Counting Sort é um método de ordenação cuja a estratégia baseia-se em usar o valor de cada algorismo do elemento a ser ordenado para ordernar a lista, usando o Counting Sort. Ou seja dada uma lista, o algoritmo, através do Counting Sort, irá usar o valor do algorismo na casa das unidades como chave de ordenação , após isso ira usar o valor do algorismo na casa das dezenas, e depois das centenas e assim por diante, ao final desse processo a lista estara ordenada. É importante mencionar que a versão do Counting Sort implementada deve ser estável para que o Radix Sort funcione corretamente
+	Esse método é estável, não é in-place, e tem complexidade O(d(n + b)) aonde é n o tamanho do vetor, b é a base dos números utilizados na lista e d é a quantidade de números que podem ser usados para representa-los.
+	
