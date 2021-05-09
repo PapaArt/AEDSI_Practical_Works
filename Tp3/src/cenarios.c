@@ -8,10 +8,6 @@ void inicializa(vetor *vet, int tam)
     printf("aqui\n");
     for (i = 0; i < tam; i++)
     {   
-<<<<<<< Updated upstream
-=======
-        printf("aqui1\n");
->>>>>>> Stashed changes
         vet[i].registros.chave = rand()%101;
         printf("aqui2\n");
         for (l = 0; l < 10; l++)
@@ -38,14 +34,7 @@ void imprime(vetor *vet, int tam)
         printf("%lld ", vet[i].registros.chave);
     }printf("\n");
 }
-void random_array(long long int *arr, int resposta)
-{
-    int i;
-    for (i = 0; i < resposta; i++)
-    {
-        arr[i] = rand() % 101;
-    }
-}
+
 void random_array(long long int *arr, int resposta)
 {
     int i;
