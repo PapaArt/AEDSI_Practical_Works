@@ -501,9 +501,10 @@ int getMax(long long int *arr, int n, long long int comp)
     for (int i = 1; i < n; i++)
     {
         radix_comp++;
-        if (arr[i] > mx)
+        if (arr[i] > mx){
             radix_comp++;
-        mx = arr[i];
+            mx = arr[i];
+        }
     }
     return mx;
 }
@@ -673,7 +674,7 @@ void selection_Sort(vetor *vet, int n, int flag, long long int *comparacoes, lon
             }
         }
         // Swap the found minimum element with the first element
-        swap(&vet[min_index].registros.chave, &vet[j].registros.chave);
+        swap(&vet[min_index].registros.chave, &vet[i].registros.chave);
         selection_swap++;
     }
     fim = clock();
@@ -1068,9 +1069,10 @@ int getMax2(vetor *vet, int n, long long int comp)
     for (int i = 1; i < n; i++)
     {
         radix_comp++;
-        if (vet[i].registros.chave > mx)
+        if (vet[i].registros.chave > mx){
             radix_comp++;
-        mx = vet[i].registros.chave;
+            mx = vet[i].registros.chave;
+        }
     }
     return mx;
 }

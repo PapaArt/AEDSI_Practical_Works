@@ -210,7 +210,7 @@ int menu()
             else if (escolha[1] == 2)
             {
                 exec1[8] += 1;
-                //select_sort(vet, 1);
+                selection_Sort(vet, resposta, 1, comparacoes, movimentacoes, tempo, cenario, exec1);
                 if (exec1[8] == 5)
                 {
                     printf("Arquivo criado com sucesso!!!\n");
