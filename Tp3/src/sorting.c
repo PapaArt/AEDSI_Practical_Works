@@ -345,6 +345,12 @@ void quickSort(long long int *arr, int n, int flag, long long int *comparacoes, 
     long long int comp = 0;
     ordena(0, n - 1, arr, comparacoes, movimentacoes, mov, comp, cenario);
     fim = clock();
+    if(cenario == 1){
+        tempo[4] += ((double)(fim - inicio)) / CLOCKS_PER_SEC; 
+    }
+    if(cenario == 2){
+        tempo[11] += ((double)(fim - inicio)) / CLOCKS_PER_SEC; 
+    }
     if (flag && cenario == 1 && exec1[4] == 5)
     {
         comparacoes[4] = (comparacoes[4] / 5);
