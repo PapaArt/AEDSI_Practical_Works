@@ -5,10 +5,15 @@ void inicializa(vetor *vet, int tam)
 {
     int i, j, k, l;
     srand(time(NULL));
+    printf("aqui\n");
     for (i = 0; i < tam; i++)
     {   
+<<<<<<< Updated upstream
+=======
+        printf("aqui1\n");
+>>>>>>> Stashed changes
         vet[i].registros.chave = rand()%101;
-
+        printf("aqui2\n");
         for (l = 0; l < 10; l++)
         {
             for (k = 0; k < 200; k++)
@@ -16,7 +21,7 @@ void inicializa(vetor *vet, int tam)
                 vet[i].registros.string[l][k] = 'a' + (char)(rand() % 26);
             }
         }
-    
+        printf("aqui3\n");
         for (j = 0; j < 4; j++)
         {
             vet[i].registros.real_value[j] = (float)(rand() / 1001);

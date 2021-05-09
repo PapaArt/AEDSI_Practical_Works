@@ -1028,7 +1028,12 @@ void particao2(int left, int right, int *i, int *j, vetor *vet, long long int *c
             aux = vet[*i].registros.chave;
             vet[*i].registros.chave = vet[*j].registros.chave;
             vet[*j].registros.chave = aux;
+<<<<<<< Updated upstream
             (*i)++;(*j)--;
+=======
+            (*i)++;
+            (*j)--;
+>>>>>>> Stashed changes
         }
     } while (*i <= *j);
 
@@ -1262,10 +1267,22 @@ void count_Sort(vetor *vet, int n, int exp, int flag)
 
     // Copy the output array to arr[], so that arr[] now contains sorted numbers according to current digit
     for (i = 0; i < n; i++)
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> Stashed changes
         (vet[i].registros.chave) = output[i];
 }
 
 void radix_Sort(vetor *vet, int n, int flag, long long int *comparacoes, long long int *movimentacoes, double *tempo, int cenario, int *exec1)
+<<<<<<< Updated upstream
+=======
+=======
+        vet[i].registros.chave = output[i];
+}
+void radix_Sort(vetor* vet, int n, int flag, long long int *comparacoes, long long int *movimentacoes, double *tempo, int cenario, int *exec1)
+>>>>>>> 1d02075174211752dc30b778b0f27bb281e7a4fc
+>>>>>>> Stashed changes
 {
     inicio = clock();
     // Find the maximum number to know number of digits
