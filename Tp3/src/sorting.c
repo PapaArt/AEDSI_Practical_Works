@@ -594,6 +594,162 @@ void radixSort(long long int *arr, int n, int flag, long long int *comparacoes, 
     }
 }
 /* ---------------------------- Ordenacao Cenario 2 ---------------------------- */
+void bubble_Sort(vetor* vet, int n, int flag, long long int *comparacoes, long long int *movimentacoes, double *tempo, int cenario, int *exec1)
+{
+  inicio = clock();
+    int i, j;
+    long long int bubble_comp = 0;
+    long long int bubble_swap = 0;
+    for (i = 0; i < n - 1; i++)
+    {
+        // Last i elements are already in place
+        for (j = 0; j < n - i - 1; j++)
+        {
+            bubble_comp++;
+            if (vet[j].registros.chave > vet[j+1].registros.chave)
+            {
+                swap(&vet[j].registros.chave, &vet[j + 1].registros.chave);
+                bubble_swap++;
+            }
+        }
+    }
+    fim = clock();
+    if (cenario == 1)
+    {
+        comparacoes[0] += bubble_comp;
+        movimentacoes[0] += bubble_swap;
+        tempo[0] += ((double)(fim - inicio)) / CLOCKS_PER_SEC;
+    }
+    else if (cenario == 2)
+    {
+        comparacoes[7] += bubble_comp;
+        movimentacoes[7] += bubble_swap;
+        tempo[7] += ((double)(fim - inicio)) / CLOCKS_PER_SEC;
+    }
+
+    if (flag && cenario == 1 && exec1[0] == 5)
+    {
+        comparacoes[0] = (comparacoes[0] / 5);
+        movimentacoes[0] = (movimentacoes[0] / 5);
+        tempo[0] = (tempo[0] / 5);
+        arquivoX(comparacoes, movimentacoes, tempo, 1);
+    }
+    else if (flag && cenario == 2 && exec1[7] == 5)
+    {
+        comparacoes[7] = (comparacoes[7] / 5);
+        movimentacoes[7] = (movimentacoes[7] / 5);
+        tempo[7] = (tempo[7] / 5);
+        arquivoX(comparacoes, movimentacoes, tempo, 8);
+    }
+    if (flag && cenario == 1 && exec1[0] < 5)
+    {
+        printf("Execute o algoritmo mais %d vezes para obter o arquivo de medias!\n", (5 - exec1[0]));
+    }
+    else if (flag && cenario == 2 && exec1[7] < 5)
+    {
+        printf("Execute o algoritmo mais %d vezes para obter o arquivo de medias!\n", (5 - exec1[7]));
+    }   
+}
+void selection_Sort(vetor* vet, int n, int flag, long long int *comparacoes, long long int *movimentacoes, double *tempo, int cenario, int *exec1)
+{
+    inicio = clock();
+    int i, j, min_index;
+    long long int selection_comp = 0;
+    long long int selection_swap = 0;
+    // One by one move boundary of unsorted subarray
+    for (i = 0; i < n - 1; i++)
+    {
+        // Find the minimum element in unsorted array
+        min_index = i;
+        for (j = i + 1; j < n; j++)
+        {
+            selection_comp++;
+            if (vet[j].registros.chave < vet[min_index].registros.chave)
+            {
+                min_index = j;
+                selection_swap++;
+            }
+        }
+        // Swap the found minimum element with the first element
+        swap(&vet[min_index].registros.chave,&vet[i].registros.chave);
+        selection_swap++;
+    }
+    fim = clock();
+    if (cenario == 1)
+    {
+        comparacoes[1] += selection_comp;
+        movimentacoes[1] += selection_swap;
+        tempo[1] += ((double)(fim - inicio)) / CLOCKS_PER_SEC;
+    }
+    else if (cenario == 2)
+    {
+        comparacoes[8] += selection_comp;
+        movimentacoes[8] += selection_swap;
+        tempo[8] += ((double)(fim - inicio)) / CLOCKS_PER_SEC;
+    }
+
+    if (flag && cenario == 1 && exec1[1] == 5)
+    {
+        comparacoes[1] = (comparacoes[1] / 5);
+        movimentacoes[1] = (movimentacoes[1] / 5);
+        tempo[1] = (tempo[1] / 5);
+        arquivoX(comparacoes, movimentacoes, tempo, 2);
+    }
+    else if (flag && cenario == 2 && exec1[8] == 5)
+    {
+        comparacoes[8] = (comparacoes[8] / 5);
+        movimentacoes[8] = (movimentacoes[8] / 5);
+        tempo[8] = (tempo[8] / 5);
+        arquivoX(comparacoes, movimentacoes, tempo, 9);
+    }
+    if (flag && cenario == 1 && exec1[1] < 5)
+    {
+        printf("Execute o algoritmo mais %d vezes para obter o arquivo de medias!\n", (5 - exec1[1]));
+    }
+    else if (flag && cenario == 2 && exec1[8] < 5)
+    {
+        printf("Execute o algoritmo mais %d vezes para obter o arquivo de medias!\n", (5 - exec1[8]));
+    }
+}
+void insertion_Sort(vetor* vet, int n, int flag, long long int *comparacoes, long long int *movimentacoes, double *tempo, int cenario, int *exec1)
+{
+    
+    inicio = clock();
+    int i, j;
+    int temp;
+    long long int insertion_comp = 0;
+    long long int insertion_swap = 0;
+
+    for (i = 1; i < n; i++)
+    {
+        j = i;
+        insertion_comp++;
+        while ((j > 0) && (vet[j - 1].registros.chave > vet[j].registros.chave))
+        {
+            if (vet[j - 1].registros.chave > vet[j].registros.chave)
+            {
+                insertion_comp++;
+            }
+            temp = vet[j - 1].registros.chave;
+            vet[j - 1].registros.chave = vet[j].registros.chave;
+            vet[j].registros.chave = temp;
+            j--;
+            insertion_swap++;
+        }
+    }
+    fim = clock();
+    if (cenario == 1)
+    {
+        comparacoes[2] += insertion_comp;
+        movimentacoes[2] += insertion_swap;
+        tempo[2] += ((double)(fim - inicio)) / CLOCKS_PER_SEC;
+    }
+    else if (cenario == 2)
+    {
+        comparacoes[9] += insertion_comp;
+        movimentacoes[9] += insertion_swap;
+        tempo[9] += ((double)(fim - inicio)) / CLOCKS_PER_SEC;
+    }
 
 void bubble_Sort(vetor *vet, int n, int flag, long long int *comparacoes, long long int *movimentacoes, double *tempo, int cenario, int *exec1)
 {
@@ -872,8 +1028,7 @@ void particao2(int left, int right, int *i, int *j, vetor *vet, long long int *c
             aux = vet[*i].registros.chave;
             vet[*i].registros.chave = vet[*j].registros.chave;
             vet[*j].registros.chave = aux;
-            (*i)++;
-            (*j)--;
+            (*i)++;(*j)--;
         }
     } while (*i <= *j);
 
