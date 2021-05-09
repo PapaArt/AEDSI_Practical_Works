@@ -744,9 +744,7 @@ void insertion_Sort(vetor *vet, int n, int flag, long long int *comparacoes, lon
         comparacoes[2] += insertion_comp;
         movimentacoes[2] += insertion_swap;
         tempo[2] += ((double)(fim - inicio)) / CLOCKS_PER_SEC;
-    }
-    else if (cenario == 2)
-    {
+    }else if (cenario == 2){
         comparacoes[9] += insertion_comp;
         movimentacoes[9] += insertion_swap;
         tempo[9] += ((double)(fim - inicio)) / CLOCKS_PER_SEC;
@@ -758,14 +756,13 @@ void insertion_Sort(vetor *vet, int n, int flag, long long int *comparacoes, lon
         movimentacoes[2] = (movimentacoes[2] / 5);
         tempo[2] = (tempo[2] / 5);
         arquivoX(comparacoes, movimentacoes, tempo, 3);
-    }
-    else if (flag && cenario == 2 && exec1[9] == 5)
-    {
+    }else if (flag && cenario == 2 && exec1[9] == 5){
         comparacoes[9] = (comparacoes[9] / 5);
         movimentacoes[9] = (movimentacoes[9] / 5);
         tempo[9] = (tempo[9] / 5);
         arquivoX(comparacoes, movimentacoes, tempo, 10);
     }
+
     if (flag && cenario == 1 && exec1[2] < 5)
     {
         printf("Execute o algoritmo mais %d vezes para obter o arquivo de medias!\n", (5 - exec1[2]));
@@ -775,6 +772,7 @@ void insertion_Sort(vetor *vet, int n, int flag, long long int *comparacoes, lon
         printf("Execute o algoritmo mais %d vezes para obter o arquivo de medias!\n", (5 - exec1[9]));
     }
 }
+
 void shell_Sort(vetor *vet, int n, int flag, long long int *comparacoes, long long int *movimentacoes, double *tempo, int cenario, int *exec1)
 {
     inicio = clock();
