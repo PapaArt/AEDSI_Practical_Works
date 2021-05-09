@@ -191,7 +191,8 @@ int menu()
                 resposta = 1000000;
             }
 
-            vetor vet[resposta];
+            vetor* vet;
+            vet = (vetor *)malloc(sizeof(vetor) * resposta);
             inicializa(vet,resposta);
             // long long int *array;
             // array = (long long int *)malloc(sizeof(long long int) * resposta);
