@@ -270,7 +270,7 @@ int menu()
             }
 
             imprime(vet, resposta);
-
+            free(vet);
             print_menu1();
             scanf("%d", &escolha[0]);
         }

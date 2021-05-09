@@ -54,7 +54,7 @@ void bubbleSort(long long int *arr, int n, int flag, long long int *comparacoes,
         tempo[7] += ((double)(fim - inicio)) / CLOCKS_PER_SEC;
     }
 
-    if (flag && cenario == 1 )
+    if (flag && cenario == 1 && exec1[0] == 5)
     {
         comparacoes[0] = (comparacoes[0] / 5);
         movimentacoes[0] = (movimentacoes[0] / 5);
@@ -116,7 +116,7 @@ void selectionSort(long long int *arr, int n, int flag, long long int *comparaco
         tempo[8] += ((double)(fim - inicio)) / CLOCKS_PER_SEC;
     }
 
-    if (flag && cenario == 1)
+    if (flag && cenario == 1 && exec1[1] == 5)
     {
         comparacoes[1] = (comparacoes[1] / 5);
         movimentacoes[1] = (movimentacoes[1] / 5);
@@ -179,7 +179,7 @@ void insertionSort(long long int *arr, int n, int flag, long long int *comparaco
         tempo[9] += ((double)(fim - inicio)) / CLOCKS_PER_SEC;
     }
 
-    if (flag && cenario == 1)
+    if (flag && cenario == 1 && exec1[2] == 5)
     {
         comparacoes[2] = (comparacoes[2] / 5);
         movimentacoes[2] = (movimentacoes[2] / 5);
@@ -642,11 +642,11 @@ void bubble_Sort(vetor *vet, int n, int flag, long long int *comparacoes, long l
         tempo[0] = (tempo[0] / 5);
         arquivoX(comparacoes, movimentacoes, tempo, 1);
     }
-    else if (flag && cenario == 2 && exec1[7] == 5)
+    else if (flag && cenario == 2)
     {
-        comparacoes[7] = (comparacoes[7] / 5);
-        movimentacoes[7] = (movimentacoes[7] / 5);
-        tempo[7] = (tempo[7] / 5);
+        comparacoes[7] = (comparacoes[7]);
+        movimentacoes[7] = (movimentacoes[7]);
+        tempo[7] = (tempo[7]);
         arquivoX(comparacoes, movimentacoes, tempo, 8);
     }
     if (flag && cenario == 1 && exec1[0] < 5)
@@ -704,11 +704,11 @@ void selection_Sort(vetor *vet, int n, int flag, long long int *comparacoes, lon
         tempo[1] = (tempo[1] / 5);
         arquivoX(comparacoes, movimentacoes, tempo, 2);
     }
-    else if (flag && cenario == 2 && exec1[8] == 5)
+    else if (flag && cenario == 2)
     {
-        comparacoes[8] = (comparacoes[8] / 5);
-        movimentacoes[8] = (movimentacoes[8] / 5);
-        tempo[8] = (tempo[8] / 5);
+        comparacoes[8] = (comparacoes[8]);
+        movimentacoes[8] = (movimentacoes[8]);
+        tempo[8] = (tempo[8]);
         arquivoX(comparacoes, movimentacoes, tempo, 9);
     }
     if (flag && cenario == 1 && exec1[1] < 5)
@@ -763,10 +763,10 @@ void insertion_Sort(vetor *vet, int n, int flag, long long int *comparacoes, lon
         movimentacoes[2] = (movimentacoes[2] / 5);
         tempo[2] = (tempo[2] / 5);
         arquivoX(comparacoes, movimentacoes, tempo, 3);
-    }else if (flag && cenario == 2 && exec1[9] == 5){
-        comparacoes[9] = (comparacoes[9] / 5);
-        movimentacoes[9] = (movimentacoes[9] / 5);
-        tempo[9] = (tempo[9] / 5);
+    }else if (flag && cenario == 2){
+        comparacoes[9] = (comparacoes[9]);
+        movimentacoes[9] = (movimentacoes[9]);
+        tempo[9] = (tempo[9]);
         arquivoX(comparacoes, movimentacoes, tempo, 10);
     }
 
