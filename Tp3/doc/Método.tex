@@ -1,70 +1,79 @@
-Métodos de ordenação 
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{indentfirst}
 
-1) Bubble Sort :
+\title{}
+\author{}
+\date{}
+
+\begin{document}
 	
-	Bubble Sort é um método de ordenação bastante simples, uma lista é percorrida e elementos adjacentes são comparados e caso eles estejam na ordem errada suas posições são trocadas, esse processo se repete inúmeras vezes até que a lista esteja ordenada.
+	\maketitle
+	
+	\section{Métodos de Ordenação}
+	
+	\subsection{Bubble Sort}
+	
+	
+	 Bubble Sort é um método de ordenação bastante simples, uma lista é percorrida e elementos adjacentes são comparados e caso eles estejam na ordem errada suas posições são trocadas, esse processo se repete inúmeras vezes até que a lista esteja ordenada.
 	
 	Em termos de complexidade, o melhor caso para o Bubble Sort ocorre quando a lista já está ordenada, nesse caso a complexidade é de O(n), aonde n é o tamanho da lista. O pior caso é quando a lista está em ordem decrescente (ou crescente dependendo da ordem em que se deseja ordenar a lista), nesse caso, e no caso médio também, a complexidade é de O(n²).
 	
-	O Bubble Sort é um método estável, ou seja, elementos da lista com chaves de ordenação iguais não são trocados, ele também é um método in-place, ou in situ, ou seja, ele não precisa de uma estrutura de dados auxiliar para funcionar.
+	O Bubble Sort é um método estável, ou seja, elementos da lista com chaves de ordenação iguais não são trocados, ele também é um método in-place, ou in situ, ou seja, ele não precisa de uma estrutura de dados auxiliar para funcionar.\\
 	
+	\subsection{Selection Sort}
 	
-2) Selection Sort :
-	
-	No Selection Sort, a lista é dívida em duas sub listas, uma para os elementos ordenados e a segunda para os elementos não-ordenados, a cada iteração o algoritmo encontra o menor elemento da sub lista de não ordenados e o move para a sub lista de ordenados. Esse processo se repete até que a lista esteja ordenada.
+	No Selection Sort, a lista é dívida em duas sub listas, uma para os elementos ordenados e a outra para os elementos não-ordenados, a cada iteração o algoritmo encontra o menor elemento da sub lista de não ordenados e o move para a sub lista de ordenados. Esse processo se repete até que a lista esteja ordenada.
 	
 	Em termos de complexidade, o melhor caso seria quando a lista já estivesse ordenada, porém isso não vai alterar muito a performance do algoritmo, a complexidade no pior, melhor e caso médio é de O(n²).
 	
-	O Selection Sort não é um método estável de ordenação, e é in-place.
+	O Selection Sort não é um método estável de ordenação, e é in-place.\\
 	
-	
-3) Insertion Sort :
-	
+	\subsection{Insertion Sort}
 	O método do Insertion Sort é similar ao que as pessoas usam para ordenar um baralho. A lista é dívida em duas sub listas, uma ordenada e outra não ordenada, conforme a lista é percorrida cada elemento é transferido para a sub lista de elementos não ordenados, e através de uma série de comparações, ele já é inserido na posição correta.
 	
 	Em termos de complexidade, o melhor caso para o Insertion Sort ocorre quando a lista já está ordenada, nesse caso a complexidade é de O(n), aonde n é o tamanho da lista. O pior caso é quando a lista está em ordem decrescente (ou crescente dependendo da ordem em que se deseja ordenar a lista), nesse caso, e no caso médio também, a complexidade é de O(n²).
 	
-	Esse método de ordenação é estável e in-place.
+	Esse método de ordenação é estável e in-place.\\
 	
-4) Shell Sort :
-
+	\subsection{Shell Sort}
 	O Shell Sort é uma versão otimizada do Insertion Sort, sua proposta é separar a lista principal em listas menores, com intervalos na comparação que, decrescerão até chegar ao intervalo 1.
 	
 	A análise de complexidade do Shell Sort contém problemas matemáticos muito difíceis e nínguem ainda foi capaz de analisa-lo por completo.
 	
-	O Shell Sort é um método que não é estável e é in-place.
+	O Shell Sort é um método que não é estável e é in-place.\\
 	
-5) Quick Sort :
-	
-	A proposta do Quick Sort é escolher um pivô na lista, e então dividir a lista em duas sublistas uma com elementos menores e outras com elementos menores que o vetor. Esse processo é repetido diversas vezes até a lista estar ordenada.
+	\subsection{Quick Sort}
+	A proposta do Quick Sort é escolher um pivô na lista, e então dividir a lista em duas sublistas uma com elementos maiores e outras com elementos menores que o vetor. Esse processo é repetido diversas vezes até a lista estar ordenada.
 	
 	A complexidade do Quick Sort também depende da lógica por trás da escolha do pivô, No pior caso, quando o pivô escolhido for o menor ou o maior elemento da lista várias vezes a complexidade vai ser de O(n²), no entanto o pior caso pode ser evitado fazendo com alterações na implementação. O melhor caso para este método tem complexidade de O(n log n) e ele ocorre quando os pivôs escolhidos são os elementos do meio.
 	
-	A implementação default do Quick Sort não é estável, e ele é in-place.
+	A implementação default do Quick Sort não é estável, e ele é in-place.\\	
 	
-6) Merge Sort :
-	
+	\subsection{Merge Sort}
 	O Merge Sort funciona dividindo a lista ao meio diversas vezes e depois juntando essas sublistas de maneira ordenada.
 	
 	A complexidade do Quick Sort sempre será O(n log n), então não faz sentido em discutir melhores e piores casos.
 	
-	Esse método é estável e não é in-place, pois ele precisa de memória adicional para armazenar as sub listas temporárias.
-
-7) Counting Sort :
-
+	Esse método é estável e não é in-place, pois ele precisa de memória adicional para armazenar as sub listas temporárias.\\
+	
+	\subsection{Counting Sort}
 	O Counting Sort é um método de ordenação que diferente dos outros que vimos até agora, não usa comparações, ao invés disso ele conta quantas vezes cada número aparece na lista, e através de algumas manipulações matemáticas nesses contadores ele determina a posição aonde cada item tem que assumir para que a lista seja ordenada.
 	
 	O Counting Sort não pode ser usado para ordenar listas com números de ponto flutuante por causa de sua implementação, outra observação importante sobre este método é que ele funciona melhor quando o intervalo entre o menor elemento e o maior elemento já é conhecido antes da ordenação. O Counting Sort é frequentemente usado como um subprograma para outros métodos de ordenação como por exemplo o Radix Sort.
 	
 	A complexidade do Counting Sort é O(n + k), aonde n é o tamanho da lista e k é o intervalo entre os elementos da lista.
 	
-	A versão deste método que implementamos no TP, é estável, e não é in-place pois vai precisar de memória adicional para guardar a lista temporária de contadores, no entanto há implementações desse método que não precisam de memória extra, no entanto, essas implementações não são estáveis.
-	
-8) Radix Sort :
+	A versão deste método que implementamos no TP, é estável, e não é in-place pois vai precisar de memória adicional para guardar a lista temporária de contadores, no entanto há implementações desse método que não precisam de memória extra, no entanto, essas implementações não são estáveis.\\
 
+	\subsection{Radix Sort}
 	O Counting Sort é um método de ordenação cuja a estratégia baseia-se em usar o valor de cada algarismo do elemento a ser ordenado para ordenar a lista, usando o Counting Sort. Ou seja, dada uma lista, o algoritmo, através do Counting Sort, irá usar o valor do algarismo na casa das unidades como chave de ordenação, após isso irá usar o valor do algarismo na casa das dezenas, e depois das centenas e assim por diante, ao final desse processo a lista estará ordenada. É importante mencionar que a versão do Counting Sort implementada deve ser estável para que o Radix Sort funcione corretamente.
 	
 	A complexidade do Radix Sort é O(d(n + b)) aonde é n o tamanho do vetor, b é a base dos números utilizados na lista e d é a quantidade de números que podem ser usados para representa-los.
 	
 	
-	Esse método é estável, e não é in-place pois ele usa o Counting Sort, método esse que não é in-site, como um subprograma.
+	Esse método é estável, e não é in-place pois ele usa o Counting Sort, método esse que não é in-site, como um subprograma.\\
+	
+	
+
+\end{document}
