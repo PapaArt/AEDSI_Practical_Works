@@ -642,7 +642,7 @@ void bubble_Sort(vetor *vet, int n, int flag, long long int *comparacoes, long l
         tempo[0] = (tempo[0] / 5);
         arquivoX(comparacoes, movimentacoes, tempo, 1);
     }
-    else if (flag && cenario == 2)
+    else if (flag && cenario == 2 && exec1[7] == 5)
     {
         comparacoes[7] = (comparacoes[7]);
         movimentacoes[7] = (movimentacoes[7]);
@@ -704,7 +704,7 @@ void selection_Sort(vetor *vet, int n, int flag, long long int *comparacoes, lon
         tempo[1] = (tempo[1] / 5);
         arquivoX(comparacoes, movimentacoes, tempo, 2);
     }
-    else if (flag && cenario == 2)
+    else if (flag && cenario == 2 && exec1[8] == 5)
     {
         comparacoes[8] = (comparacoes[8]);
         movimentacoes[8] = (movimentacoes[8]);
@@ -763,7 +763,7 @@ void insertion_Sort(vetor *vet, int n, int flag, long long int *comparacoes, lon
         movimentacoes[2] = (movimentacoes[2] / 5);
         tempo[2] = (tempo[2] / 5);
         arquivoX(comparacoes, movimentacoes, tempo, 3);
-    }else if (flag && cenario == 2){
+    }else if (flag && cenario == 2 && exec1[9] == 5){
         comparacoes[9] = (comparacoes[9]);
         movimentacoes[9] = (movimentacoes[9]);
         tempo[9] = (tempo[9]);
