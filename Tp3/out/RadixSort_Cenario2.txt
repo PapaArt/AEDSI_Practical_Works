@@ -1,0 +1,4 @@
+Radix Sort -> Cenario 2
+Media das comparacoes: 3013
+Media das movimentacoes: 52883
+Media do tempo: 0.000600 segundos

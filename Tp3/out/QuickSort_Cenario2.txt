@@ -1,0 +1,4 @@
+Quick Sort -> Cenario 2
+Media das comparacoes: 65826395
+Media das movimentacoes: 7887694
+Media do tempo: 0.418600 segundos

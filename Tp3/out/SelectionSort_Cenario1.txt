@@ -1,0 +1,4 @@
+Selection Sort -> Cenario 1
+Media das comparacoes: 124999750000
+Media das movimentacoes: 2599903
+Media do tempo: 278.927400 segundos

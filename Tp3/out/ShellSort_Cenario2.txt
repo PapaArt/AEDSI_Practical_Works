@@ -1,0 +1,4 @@
+Shell Sort -> Cenario 2
+Media das comparacoes: 13766
+Media das movimentacoes: 5760
+Media do tempo: 0.000000 segundos

@@ -1,0 +1,4 @@
+Insertion Sort -> Cenario 2
+Media das comparacoes: 61935444367
+Media das movimentacoes: 61934944368
+Media do tempo: 1939.207000 segundos

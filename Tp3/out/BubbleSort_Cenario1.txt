@@ -1,0 +1,4 @@
+Bubble Sort -> Cenario 1
+Media das comparacoes: 99999900000
+Media das movimentacoes: 49491753472
+Media do tempo: 745.269800 segundos

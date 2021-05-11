@@ -1,0 +1,4 @@
+Merge Sort -> Cenario 1
+Media das comparacoes: 42230132
+Media das movimentacoes: 21846566
+Media do tempo: 0.704640 segundos
