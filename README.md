@@ -1,4 +1,4 @@
-# AEDSI_Practical_Works
+# AEDSI - Practical Works
 
 Practical work that we did at UFV during graduation, in the first period of 2021 (pandemic season).
 
@@ -6,7 +6,7 @@ The main programming language used is C.
 
 In this repository there are basic concepts of the language, as well as:
 
-• Abstract Data Type (concept and implementation)
+•<ahref="https://www.geeksforgeeks.org/abstract-data-types/"> Abstract Data Type</a> (concept and implementation)
 
 • Dynamic allocation
 
