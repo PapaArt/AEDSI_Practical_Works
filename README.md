@@ -7,7 +7,7 @@ The main programming language used is C.
 In this repository there are basic concepts of the language, as well as:
 
 •<a
-"href=https://www.geeksforgeeks.org/abstract-data-types/">
+href="https://www.geeksforgeeks.org/abstract-data-types/">
   Abstract Data Type</a> (concept and implementation)
 
 • Dynamic allocation
